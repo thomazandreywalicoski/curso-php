@@ -2,10 +2,8 @@
 
 function numeroPotencia($numero, $potencia) {
 
-    $resultado = $numero;
-
     for($i = 1; $i < $potencia; $i++) {
-        $resultado = $resultado * $numero;
+        $resultado = $numero  * $numero;
     }    
     return $resultado;
 }
