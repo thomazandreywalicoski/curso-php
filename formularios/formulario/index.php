@@ -64,13 +64,19 @@
 
         .dados {
             display: flex;
-            align-items: center;
+            align-items: start;
             flex-direction: column;
             margin-top: 50px;
             background-color: #ccc;
             padding: 20px;
             border-radius: 20px;
             max-width: 350px;
+        }
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 0px;
+            margin-bottom: 10px;
         }
 
     </style>
@@ -115,11 +121,11 @@
                     $genero = $_POST['genero'];
                 }
 
-                echo "<p>Nome: " . $_POST['nome'] . "</p>";
-                echo "<p>E-mail: " . $_POST['email'] . "</p>";
-                echo "<p>Website: " . $_POST['website'] . "</p>";
-                echo "<p>Comentário: " . $_POST['comentario'] . "</p>";
-                echo "<p>Gênero: " . $genero. "</p>";
+                echo "<p><b>Nome: </b>" . $_POST['nome'] . "</p>";
+                echo "<p><b>E-mail: </b>" . $_POST['email'] . "</p>";
+                echo "<p><b>Website: </b>" . $_POST['website'] . "</p>";
+                echo "<p><b>Comentário: </b>" . $_POST['comentario'] . "</p>";
+                echo "<p><b>Gênero: </b>" . $genero. "</p>";
             }
             
             ?>
