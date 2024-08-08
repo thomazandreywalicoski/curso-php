@@ -79,6 +79,14 @@
             margin-bottom: 10px;
         }
 
+        .obrigatorio {
+            color: red;
+        }
+
+        .aaa {
+            background-color: blue;
+        }
+
     </style>
 </head>
 <body>
@@ -87,13 +95,13 @@
             <h1>Formulário com PHP</h1>
             <div class="c-input">
                 <label for="nome" class="label">Nome</label>
-                <input required type="text" name="nome" class="input">
+                <input type="text" name="nome" class="input">
             
                 <label for="nome" class="label">E-mail</label>
-                <input required type="email" name="email" class="input">
+                <input type="text" name="email" class="input">
             
                 <label for="nome" class="label">Website</label>
-                <input type="url" name="website" class="input">
+                <input type="text" name="website" class="input">
            
                 <label for="nome" class="label">Comentário</label>
                 <textarea name="comentario"></textarea>
@@ -109,17 +117,50 @@
     </div>
     <div class="container">
         <div class="dados">
-            <h1>Dados do Formulário</h1>
 
             <?php
 
-            if(isset($_POST['enviar'])) {
+            if(isset($_POST['enviar'])) { // Verifica se a variável existe
 
+                // NOME
+                    
+                if(empty($_POST['nome'])) { // Verifica se a variável nome é vazia
+                    echo "<p class='obrigatorio'>Preencha o campo Nome</p>";
+                    die();
+                } else if(strlen($_POST['nome']) < 3 || strlen($_POST['nome']) > 100) { // Verifica a quantidade de caractéres digitados
+                    echo "<P class='obrigatorio'>Erro!, Mínimo: 3 caractéres, Máximo: 100 caractéres</p>";
+                    die();        
+                }
+
+                // EMAIL
+
+                if(empty($_POST['email'])) { // Verifica se a variável é vazia
+                    echo "<P class='obrigatorio'>Preencha o campo E-mail</p>";
+                    die();
+                } else if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) { // Verifica se o E-mail é válido
+                    echo "<P class='obrigatorio'>E-mail Inválido</p>";
+                    die();
+                }
+
+                // URL
+
+                if(!empty($_POST['website']) && !filter_var($_POST['website'], FILTER_VALIDATE_URL)) { // Verifica se a variável não está vazia e Verifica se a URL é válida
+                    echo "<P class='obrigatorio'>URL Inválida</p>";
+                    die();
+                }
+
+                // GÊNERO
                 $genero = "Não selecionado";
-
+                
                 if(isset($_POST['genero'])) {
                     $genero = $_POST['genero'];
+                    if($genero != "masculino" && $genero != "feminino") {
+                        echo "<P class='obrigatorio'>Gênero Inválido</p>";
+                        die(); 
+                    }
                 }
+           
+                echo "<h1>Dados do Formulário</h1>";
 
                 echo "<p><b>Nome: </b>" . $_POST['nome'] . "</p>";
                 echo "<p><b>E-mail: </b>" . $_POST['email'] . "</p>";
