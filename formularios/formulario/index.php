@@ -71,6 +71,17 @@
             padding: 20px;
             border-radius: 20px;
             max-width: 350px;
+            
+        }
+
+        .avisos {
+            margin-top: 50px;
+            background-color: #ffc2c2;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 350px;
+            border: 2px solid red;
+            
         }
 
         p {
@@ -81,11 +92,10 @@
 
         .obrigatorio {
             color: red;
+            margin: 0px;
+            font-weight: 600;
         }
 
-        .aaa {
-            background-color: blue;
-        }
 
     </style>
 </head>
@@ -93,6 +103,7 @@
     <div class="container">
         <form action="" method="post" class="formulario">
             <h1>Formulário com PHP</h1>
+
             <div class="c-input">
                 <label for="nome" class="label">Nome</label>
                 <input type="text" name="nome" class="input">
@@ -116,7 +127,7 @@
         </form>
     </div>
     <div class="container">
-        <div class="dados">
+        <div class="avisos">
 
             <?php
 
@@ -128,7 +139,7 @@
                     echo "<p class='obrigatorio'>Preencha o campo Nome</p>";
                     die();
                 } else if(strlen($_POST['nome']) < 3 || strlen($_POST['nome']) > 100) { // Verifica a quantidade de caractéres digitados
-                    echo "<P class='obrigatorio'>Erro!, Mínimo: 3 caractéres, Máximo: 100 caractéres</p>";
+                    echo "<P class='obrigatorio'>Nome Inválido! Mín: 3 caractéres, Máx: 100 caractéres</p>";
                     die();        
                 }
 
@@ -159,7 +170,12 @@
                         die(); 
                     }
                 }
-           
+            }
+
+            ?>
+        </div>
+        <div class="dados">
+            <?php
                 echo "<h1>Dados do Formulário</h1>";
 
                 echo "<p><b>Nome: </b>" . $_POST['nome'] . "</p>";
@@ -167,10 +183,7 @@
                 echo "<p><b>Website: </b>" . $_POST['website'] . "</p>";
                 echo "<p><b>Comentário: </b>" . $_POST['comentario'] . "</p>";
                 echo "<p><b>Gênero: </b>" . $genero. "</p>";
-            }
-            
             ?>
-
         </div>
     </div>
 </body>
