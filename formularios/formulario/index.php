@@ -34,7 +34,7 @@
         </form>
     </div>
     <div class="container">
-        <div class="avisos">
+        <div class="dados">
 
             <?php
 
@@ -77,12 +77,7 @@
                         die(); 
                     }
                 }
-            }
 
-            ?>
-        </div>
-        <div class="dados">
-            <?php
                 echo "<h1>Dados do Formulário</h1>";
 
                 echo "<p><b>Nome: </b>" . $_POST['nome'] . "</p>";
@@ -90,6 +85,8 @@
                 echo "<p><b>Website: </b>" . $_POST['website'] . "</p>";
                 echo "<p><b>Comentário: </b>" . $_POST['comentario'] . "</p>";
                 echo "<p><b>Gênero: </b>" . $genero. "</p>";
+            }
+
             ?>
         </div>
     </div>
