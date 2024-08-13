@@ -17,7 +17,7 @@ if(count($_POST) > 0) {
     }
     
     if(!empty($preco)) {
-        $preco_digitado = explode(',', $preco);
+        $preco = str_replace(",",".",$preco);
         $preco = number_format($preco, 2, ',', '.');
     
     } else if(empty($preco)) {
