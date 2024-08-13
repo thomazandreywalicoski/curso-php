@@ -1,8 +1,11 @@
 <?php
 
-$erro = false;
-
 if(count($_POST) > 0) {
+
+    include('conexao.php');
+
+    $erro = false;
+
     $nome = $_POST['nome'];
     $categoria = $_POST['categoria'];
     $quantidade = $_POST['quantidade'];
@@ -18,7 +21,6 @@ if(count($_POST) > 0) {
     
     if(!empty($preco)) {
         $preco = str_replace(",",".",$preco);
-        $preco = number_format($preco, 2, ',', '.');
     
     } else if(empty($preco)) {
         $erro = "Preecha o preço do produto!";
@@ -39,7 +41,12 @@ if(count($_POST) > 0) {
     if($erro) {
         echo "ERRO: " . $erro;
     } else {
-       
+        $sql_code = "INSERT INTO produtos (nome, categoria, quantidade, preco, validade, estoque) VALUES ('$nome', '$categoria', '$quantidade', '$preco', '$validade', '$estoque')";
+        $deu_certo = $mysqli->query($sql_code) or die($mysqli->error);
+        if($deu_certo) {
+            echo "Produto cadastrado com sucesso!";
+            unset($_POST); // Limpa o formulário se o produto foi cadastrado
+        }
     }
 }
 
@@ -58,31 +65,31 @@ if(count($_POST) > 0) {
         <form method="POST" action="" class="formulario-cadastro">
             <div class="formulario-dados">
                 <label>Nome:</label>
-                <input name="nome" type="text">
+                <input value="<?php if(isset($_POST['nome'])) echo $_POST['nome'] ?>" name="nome" type="text">
             </div>
             <div class="formulario-dados">
                 <label>Categoria:</label>
                 <select name="categoria">
                     <option value="automotivo">Automotivo</option>
                     <option value="residencial">Residencial</option>
-                    <option value="Roupas">Roupas</option>
+                    <option value="roupas">Roupas</option>
                 </select>
             </div>
             <div class="formulario-dados">
                 <label>Quantidade:</label>
-                <input placeholder="ex: 5 litros" name="quantidade" type="text">
+                <input value="<?php if(isset($_POST['quantidade'])) echo $_POST['quantidade'] ?>" placeholder="ex: 5 litros" name="quantidade" type="text">
             </div>
             <div class="formulario-dados">
                 <label>Preço:</label>
-                <input placeholder="00.00" name="preco" type="text">
+                <input value="<?php if(isset($_POST['preco'])) echo $_POST['preco'] ?>" placeholder="ex: 1000,00" name="preco" type="text">
             </div>
             <div class="formulario-dados">
                 <label>Validade:</label>
-                <input placeholder="00/00/0000" name="validade" type="text">
+                <input value="<?php if(isset($_POST['validade'])) echo $_POST['validade'] ?>" placeholder="00/00/0000" name="validade" type="text">
             </div>
             <div class="formulario-dados">
                 <label>Estoque:</label>
-                <input name="estoque" type="number">
+                <input value="<?php if(isset($_POST['estoque'])) echo $_POST['estoque'] ?>" name="estoque" type="number">
             </div>
             <div class="btn-formulario-salvar">
                 <button type="submit">Salvar</button>
