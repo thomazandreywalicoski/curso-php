@@ -57,7 +57,7 @@ if(count($_POST) > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo/style.css">
+    <link rel="stylesheet" href="./estilo/style.css">
     <title>Cadastrar Produto</title>
 </head>
 <body>
@@ -94,6 +94,7 @@ if(count($_POST) > 0) {
             <div class="btn-formulario-salvar">
                 <button type="submit">Salvar</button>
             </div>
+            <a href="produtos.php">Ver Produtos Cadastrados</a>
         </form>
     </div>
     
