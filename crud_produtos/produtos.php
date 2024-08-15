@@ -14,7 +14,7 @@ $num_produtos = $query_produtos->num_rows; // Verifica quantos produtos tem cada
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./estilo/lista.css">
+    <link rel="stylesheet" href="./estilo/lista_produtos.css">
     <title>Lista de Produtos</title>   
 </head>
 <body>
