@@ -6,16 +6,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./estilo/lista_produtos.css">
+    <link rel="stylesheet" href="./estilo/pagina_administracao/pagina_administracao.css">
+    <link rel="stylesheet" href="./estilo/modal_cadastrar_editat_deletar_produto/estilo_modal.css">
     <title>Lista de Produtos</title>  
 </head>
 <body>
 
-
     <div class="fundo-modal">
         
         <div class="modal-cadastrar-produto">
-            <div onclick="fecharCadastrarProdutos()" class="btn-fechar-modal-cadastrar-produto">X
+            <div onclick="fecharCadastrarProdutos()" class="btn-fechar-modal-cadastrar-produto">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
             </div>
 
             <?php
@@ -65,13 +67,17 @@
             ?>
             
             <form method="POST" action="" class="formulario-cadastro">
-                <div class="titulo-formulario-cadastrar-produto">
-                    <h1>Cadastrar produto</h1>
+                <div class="header-formulario-cadastrar-produto">
+                    <div class="titulo-formulario-cadastrar-produto">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#008702"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
+                        </svg>
+                        <h1>Cadastrar produto</h1>
+                    </div>
                     <p>Preencha todos os dados do formulário abaixo</p>
                 </div>
                 <div class="formulario-dados">
-                    <input required value="<?php if(isset($_POST['nome'])) echo $_POST['nome'] ?>" name="nome" type="text" id="informacao-input" class="input-formulario">
-                    <label for="informacao-input">Nome</label>
+                    <input required value="<?php if(isset($_POST['nome'])) echo $_POST['nome'] ?>" name="nome" type="text" id="nome-input" class="input-formulario">
+                    <label for="nome-input">Nome</label>
                 </div>
                 <div class="formulario-dados">
                     <div class="formulario-dados-categoria">
@@ -84,28 +90,30 @@
                     </div>
                 </div>
                 <div class="formulario-dados">
-                    <input required value="<?php if(isset($_POST['quantidade'])) echo $_POST['quantidade'] ?>" name="quantidade" type="text" id="informacao-input" class="input-formulario">
-                    <label for="informacao-input">Quantidade</label>
+                    <input required value="<?php if(isset($_POST['quantidade'])) echo $_POST['quantidade'] ?>" name="quantidade" type="text" id="quantidade-input" class="input-formulario">
+                    <label for="quantidade-input">Quantidade</label>
                 </div>
                 <div class="formulario-dados">
-                    <input required value="<?php if(isset($_POST['preco'])) echo $_POST['preco'] ?>" name="preco" type="text" id="informacao-input" class="input-formulario">
-                    <label for="informacao-input">Preço</label>
+                    <input required value="<?php if(isset($_POST['preco'])) echo $_POST['preco'] ?>" name="preco" type="text" id="preco-input" class="input-formulario">
+                    <label for="preco-input">Preço</label>
                 </div>
                 <div class="formulario-dados-img">
                     <p>Imagem</p>
                     <input type="file">
                 </div>
                 <div class="formulario-dados">
-                    <input value="<?php if(isset($_POST['validade'])) echo $_POST['validade'] ?>" name="validade" type="text" id="informacao-input" class="input-formulario">
-                    <label for="informacao-input">Validade</label>
+                    <input required value="<?php if(isset($_POST['validade'])) echo $_POST['validade'] ?>" name="validade" type="text" id="validade-input" class="input-formulario">
+                    <label for="validade-input">Validade</label>
                 </div>
                 <div class="formulario-dados">
-                    <input value="<?php if(isset($_POST['estoque'])) echo $_POST['estoque'] ?>" name="estoque" type="number" id="informacao-input" class="input-formulario">
-                    <label for="informacao-input">Estoque</label>
+                    <input required value="<?php if(isset($_POST['estoque'])) echo $_POST['estoque'] ?>" name="estoque" type="number" id="estoque-input" class="input-formulario">
+                    <label for="estoque-input">Estoque</label>
                 </div>
                 <div class="btn-formulario-salvar-c">
                     <button class="btn-formulario-salvar" type="submit">
-                        Salvar
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#008702"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
+                        </svg>
+                        <p>Salvar</p>
                     </button>
                 </div>
             </form>

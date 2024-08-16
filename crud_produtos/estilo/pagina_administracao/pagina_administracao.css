@@ -1,0 +1,54 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container-produtos-cadastrados {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    background-color: white;
+}
+
+p {
+    margin: 0px;
+}
+
+.cabecalho-tabela {
+    background-color: #94c0ff;
+}
+
+.informacao-tabela {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.corpo-tabela:nth-child(even) {
+    background-color:#77b0ff6e;
+}
+
+.dado-produto {
+    padding: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dado-produto-centralizado {
+    text-align: center;
+}
+
+
+
+
+.container-cadastrar {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
