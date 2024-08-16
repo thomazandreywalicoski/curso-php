@@ -47,7 +47,13 @@ p {
     padding: 20px;
 }
 
+
+
+
+/* MODAL */
+
 .btn-cadastrar {
+    display: inline-block;
     background-color: rgb(0, 255, 0);
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
@@ -55,8 +61,93 @@ p {
     border-radius: 10px;
     text-decoration: none;
     color: black;
-    
+    cursor: pointer;  
 }
+
+.modal-cadastrar-produto {
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    animation: animacao;
+    animation-duration: 1s;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid blue;
+}
+
+.btn-fechar-modal-cadastrar-produto {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: red;
+    padding: 5px;
+    float: right;
+    cursor: pointer;
+}
+
+@keyframes animacao {
+    from {
+        opacity: 500ms;
+    }
+    
+    from {
+        opacity: 0;
+    }
+}
+
+.formulario-cadastro {
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-formulario-cadastrar-produto h1{
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #00007b;
+    margin-bottom: 15px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.titulo-formulario-cadastrar-produto p {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.formulario-dados {
+    position: relative;
+    margin: 10px 0px;
+}
+
+.formulario-dados label {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-formulario {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid blue;
+    padding: 5px;
+}
+
+.formulario-cadastro .formulario-dados .input-formulario:focus ~ label {
+    transform: translateY(-22px);
+    font-size: 14px ;
+}
+
 
 
 
