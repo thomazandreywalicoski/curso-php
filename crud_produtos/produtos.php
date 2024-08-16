@@ -1,14 +1,5 @@
 
-<?php
 
-include('conexao.php');
-
-$sql_produtos = "SELECT * FROM produtos";
-$query_produtos = $mysqli->query($sql_produtos) or die($mysqli->error);
-
-$num_produtos = $query_produtos->num_rows; // Verifica quantos produtos tem cadastrados
-
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,110 +11,112 @@ $num_produtos = $query_produtos->num_rows; // Verifica quantos produtos tem cada
 </head>
 <body>
 
-    <div onclick="abrirCadastrarProdutos()" class="btn-cadastrar">
-        Cadastrar Produto
-    </div>
 
-    <div class="modal-cadastrar-produto">
-        <div onclick="fecharCadastrarProdutos()" class="btn-fechar-modal-cadastrar-produto">X
-        </div>
+    <div class="fundo-modal">
+        
+        <div class="modal-cadastrar-produto">
+            <div onclick="fecharCadastrarProdutos()" class="btn-fechar-modal-cadastrar-produto">X
+            </div>
 
-        <?php
-
-            if(count($_POST) > 0) {
-
-                include('conexao.php');
-
-                $erro = false;
-
-                $nome = $_POST['nome'];
-                $categoria = $_POST['categoria'];
-                $quantidade = $_POST['quantidade'];
-                $preco = $_POST['preco'];
-                $validade = $_POST['validade'];
-                $estoque = $_POST['estoque'];
-
-                if(empty($nome)) {
-                    $erro = "Preencha o nome!";
-                } else if(empty($quantidade)) {
-                    $erro = "Preecha a quantidade do produto!";
-                }
-                
-                if(!empty($preco)) {
-                    $preco = str_replace(",",".",$preco);
-                
-                } else if(empty($preco)) {
-                    $erro = "Preecha o preço do produto!";
-                }
-
-                if(!empty($validade)) {
-                    $data_digitada = explode('/', $validade);
-                    if(count($data_digitada) == 3) {
-                        $validade = implode('-', array_reverse($data_digitada));
-                        // array_reverse = Inverte a data de 20/10/2010 para 2010/10/20
-                        // explode = Traforma a data em 2010, 10, 20
-                        // implode = para adiconar o '-' 2010-10-20
+            <?php
+                if(count($_POST) > 0) {
+                    include('conexao.php');
+                    $erro = false;
+                    $nome = $_POST['nome'];
+                    $categoria = $_POST['categoria'];
+                    $quantidade = $_POST['quantidade'];
+                    $preco = $_POST['preco'];
+                    $validade = $_POST['validade'];
+                    $estoque = $_POST['estoque'];
+                    if(empty($nome)) {
+                        $erro = "Preencha o nome!";
+                    } else if(empty($quantidade)) {
+                        $erro = "Preecha a quantidade do produto!";
+                    }
+        
+                    if(!empty($preco)) {
+                        $preco = str_replace(",",".",$preco);
+        
+                    } else if(empty($preco)) {
+                        $erro = "Preecha o preço do produto!";
+                    }
+                    if(!empty($validade)) {
+                        $data_digitada = explode('/', $validade);
+                        if(count($data_digitada) == 3) {
+                            $validade = implode('-', array_reverse($data_digitada));
+                            // array_reverse = Inverte a data de 20/10/2010 para 2010/10/20
+                            // explode = Traforma a data em 2010, 10, 20
+                            // implode = para adiconar o '-' 2010-10-20
+                        } else {
+                            $erro = "A data deve seguir o padrão dia/mês/ano";
+                        }
+                    }
+                    if($erro) {
+                        echo "ERRO: " . $erro;
                     } else {
-                        $erro = "A data deve seguir o padrão dia/mês/ano";
-                    }  
-                }
-
-                if($erro) {
-                    echo "ERRO: " . $erro;
-                } else {
-                    $sql_code = "INSERT INTO produtos (nome, categoria, quantidade, preco, validade, estoque) VALUES ('$nome', '$categoria', '$quantidade', '$preco', '$validade', '$estoque')";
-                    $deu_certo = $mysqli->query($sql_code) or die($mysqli->error);
-                    if($deu_certo) {
-                        echo "Produto cadastrado com sucesso!";
-                        unset($_POST); // Limpa o formulário se o produto foi cadastrado
+                        $sql_code = "INSERT INTO produtos (nome, categoria, quantidade, preco, validade, estoque) VALUES ('$nome', '$categoria', '$quantidade', '$preco', '$validade', '$estoque')";
+                        $deu_certo = $mysqli->query($sql_code) or die($mysqli->error);
+                        if($deu_certo) {
+                            echo "Produto cadastrado com sucesso!";
+                            unset($_POST); // Limpa o formulário se o produto foi cadastrado
+                        }
                     }
                 }
-            }
+            ?>
+            
+            <form method="POST" action="" class="formulario-cadastro">
+                <div class="titulo-formulario-cadastrar-produto">
+                    <h1>Cadastrar produto</h1>
+                    <p>Preencha todos os dados do formulário abaixo</p>
+                </div>
+                <div class="formulario-dados">
+                    <input required value="<?php if(isset($_POST['nome'])) echo $_POST['nome'] ?>" name="nome" type="text" id="informacao-input" class="input-formulario">
+                    <label for="informacao-input">Nome</label>
+                </div>
+                <div class="formulario-dados">
+                    <div class="formulario-dados-categoria">
+                        <p>Categoria</p>
+                        <select name="categoria">
+                            <option value="automotivo">Automotivo</option>
+                            <option value="residencial">Residencial</option>
+                            <option value="roupas">Roupas</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="formulario-dados">
+                    <input required value="<?php if(isset($_POST['quantidade'])) echo $_POST['quantidade'] ?>" name="quantidade" type="text" id="informacao-input" class="input-formulario">
+                    <label for="informacao-input">Quantidade</label>
+                </div>
+                <div class="formulario-dados">
+                    <input required value="<?php if(isset($_POST['preco'])) echo $_POST['preco'] ?>" name="preco" type="text" id="informacao-input" class="input-formulario">
+                    <label for="informacao-input">Preço</label>
+                </div>
+                <div class="formulario-dados-img">
+                    <p>Imagem</p>
+                    <input type="file">
+                </div>
+                <div class="formulario-dados">
+                    <input value="<?php if(isset($_POST['validade'])) echo $_POST['validade'] ?>" name="validade" type="text" id="informacao-input" class="input-formulario">
+                    <label for="informacao-input">Validade</label>
+                </div>
+                <div class="formulario-dados">
+                    <input value="<?php if(isset($_POST['estoque'])) echo $_POST['estoque'] ?>" name="estoque" type="number" id="informacao-input" class="input-formulario">
+                    <label for="informacao-input">Estoque</label>
+                </div>
+                <div class="btn-formulario-salvar-c">
+                    <button class="btn-formulario-salvar" type="submit">
+                        Salvar
+                    </button>
+                </div>
+            </form>
 
-        ?>
-
-        <form method="POST" action="" class="formulario-cadastro">
-            <div class="titulo-formulario-cadastrar-produto">
-                <h1>Cadastrar produto</h1>
-                <p>Preencha todos os dados do formulário abaixo</p>
-            </div>
-            <div class="formulario-dados">
-                <input required value="<?php if(isset($_POST['nome'])) echo $_POST['nome'] ?>" name="nome" type="text" id="informacao-input" class="input-formulario">
-                <label for="informacao-input">Nome</label>
-            </div>
-            <div class="formulario-dados">
-                <label>Categoria:</label>
-                <select name="categoria">
-                    <option value="automotivo">Automotivo</option>
-                    <option value="residencial">Residencial</option>
-                    <option value="roupas">Roupas</option>
-                </select>
-            </div>
-            <div class="formulario-dados">
-                <input required value="<?php if(isset($_POST['quantidade'])) echo $_POST['quantidade'] ?>" name="quantidade" type="text" id="informacao-input" class="input-formulario">
-                <label for="informacao-input">Quantidade</label>
-            </div>
-            <div class="formulario-dados">
-                <input required value="<?php if(isset($_POST['preco'])) echo $_POST['preco'] ?>" name="preco" type="text" id="informacao-input" class="input-formulario">
-                <label for="informacao-input">Preço</label>
-            </div>
-            <div class="formulario-dados">
-                <input value="<?php if(isset($_POST['validade'])) echo $_POST['validade'] ?>" name="validade" type="text" id="informacao-input" class="input-formulario">
-                <label for="informacao-input">Validade</label>
-            </div>
-            <div class="formulario-dados">
-                <input value="<?php if(isset($_POST['estoque'])) echo $_POST['estoque'] ?>" name="estoque" type="number" id="informacao-input" class="input-formulario">
-                <label for="informacao-input">Estoque</label>
-            </div>
-            <div>
-                <button onclick="abrirCadastrarProdutos()" class="btn-formulario-salvar" type="submit">
-                    Salvar
-                </button>
-            </div>
-        </form>
-
+            
         
+        </div>
+    </div>
 
+    <div onclick="abrirCadastrarProdutos()" class="btn-cadastrar">
+            Cadastrar Produto
     </div>
 
     <div class="container-produtos-cadastrados">
@@ -205,6 +198,17 @@ $num_produtos = $query_produtos->num_rows; // Verifica quantos produtos tem cada
                 </thead>
 
                 <tbody>
+
+                <?php
+
+                    include('conexao.php');
+
+                    $sql_produtos = "SELECT * FROM produtos";
+                    $query_produtos = $mysqli->query($sql_produtos) or die($mysqli->error);
+
+                    $num_produtos = $query_produtos->num_rows; // Verifica quantos produtos tem cadastrados
+
+                    ?>
 
                     <?php
                     if($num_produtos == 0) { 
