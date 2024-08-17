@@ -52,3 +52,32 @@ p {
     justify-content: center;
     padding: 20px;
 }
+
+
+
+.acoes-tabela {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.editar-produto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffd889;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid #ffaa00;
+}
+
+.deletar-produto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff9696;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid red;
+}

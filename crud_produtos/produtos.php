@@ -113,7 +113,7 @@
                     <button class="btn-formulario-salvar" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#008702"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
                         </svg>
-                        <p>Salvar</p>
+                        <p>Cadastrar</p>
                     </button>
                 </div>
             </form>
@@ -263,8 +263,144 @@
                                     <td class="dado-produto dado-produto-centralizado">
                                         <?php echo $produto['estoque'] ?>
                                     </td>
-                                    <td class="dado-produto">
+                                    <td class="dado-produto dado-produto-centralizado">
+                                        
+                                        <div class="acoes-tabela">
+                                            <a id="editar" href="produtos.php?id=<?php echo $produto['id'] ?>#modal">
+                                                <div onclick="abrirEditarProdutos()" class="editar-produto" >
+                                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffaa00"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/>
+                                                    </svg>
+                                                </div>
+                                            </a>
+                                            
 
+                                                <div class="fundo-modal-editar" id="modal">
+        
+                                                    <div class="modal-cadastrar-produto">
+                                                        <div onclick="fecharEditarProdutos()" class="btn-fechar-modal-editar-produto">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                                                            </svg>
+                                                        </div>
+
+                                                        <?php
+                                                            include('conexao.php');
+                                                            $id = intval($_GET['id']);
+                                                            $sql_produto = "SELECT * FROM produtos WHERE id = '$id'";
+                                                            $query_produto = $mysqli->query($sql_produto) or die($mysqli->error);
+                                                            $cliente = $query_produto->fetch_assoc();
+
+                                                            var_dump($cliente);
+
+                                                            if(count($_POST) > 0) {
+                                                                
+                                                                $erro = false;
+                                                                $nome = $_POST['nome'];
+                                                                $categoria = $_POST['categoria'];
+                                                                $quantidade = $_POST['quantidade'];
+                                                                $preco = $_POST['preco'];
+                                                                $validade = $_POST['validade'];
+                                                                $estoque = $_POST['estoque'];
+                                                                if(empty($nome)) {
+                                                                    $erro = "Preencha o nome!";
+                                                                } else if(empty($quantidade)) {
+                                                                    $erro = "Preecha a quantidade do produto!";
+                                                                }
+                                                    
+                                                                if(!empty($preco)) {
+                                                                    $preco = str_replace(",",".",$preco);
+                                                    
+                                                                } else if(empty($preco)) {
+                                                                    $erro = "Preecha o preço do produto!";
+                                                                }
+                                                                if(!empty($validade)) {
+                                                                    $data_digitada = explode('/', $validade);
+                                                                    if(count($data_digitada) == 3) {
+                                                                        $validade = implode('-', array_reverse($data_digitada));
+                                                                        // array_reverse = Inverte a data de 20/10/2010 para 2010/10/20
+                                                                        // explode = Traforma a data em 2010, 10, 20
+                                                                        // implode = para adiconar o '-' 2010-10-20
+                                                                    } else {
+                                                                        $erro = "A data deve seguir o padrão dia/mês/ano";
+                                                                    }
+                                                                }
+                                                                if($erro) {
+                                                                    echo "ERRO: " . $erro;
+                                                                } else {
+                                                                    $sql_code = "INSERT INTO produtos (nome, categoria, quantidade, preco, validade, estoque) VALUES ('$nome', '$categoria', '$quantidade', '$preco', '$validade', '$estoque')";
+                                                                    $deu_certo = $mysqli->query($sql_code) or die($mysqli->error);
+                                                                    if($deu_certo) {
+                                                                        echo "Produto cadastrado com sucesso!";
+                                                                        unset($_POST); // Limpa o formulário se o produto foi cadastrado
+                                                                    }
+                                                                }
+                                                            }
+                                                        ?>
+                                                        
+                                                        <form method="POST" action="" class="formulario-cadastro">
+                                                            <div class="header-formulario-cadastrar-produto">
+                                                                <div class="titulo-formulario-editar-produto">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#a39800"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/>
+                                                                    </svg>
+                                                                    <h1>Editar produto</h1>
+                                                                </div>
+                                                                <p>Edite todos os dados necessários do formulário</p>
+                                                            </div>
+                                                            <div class="formulario-dados">
+                                                                <input required value="<?php if(isset($_POST['nome'])) echo $_POST['nome'] ?>" name="nome" type="text" id="nome-input" class="input-formulario">
+                                                                <label for="nome-input">Nome</label>
+                                                            </div>
+                                                            <div class="formulario-dados">
+                                                                <div class="formulario-dados-categoria">
+                                                                    <p>Categoria</p>
+                                                                    <select name="categoria">
+                                                                        <option value="automotivo">Automotivo</option>
+                                                                        <option value="residencial">Residencial</option>
+                                                                        <option value="roupas">Roupas</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="formulario-dados">
+                                                                <input required value="<?php if(isset($_POST['quantidade'])) echo $_POST['quantidade'] ?>" name="quantidade" type="text" id="quantidade-input" class="input-formulario">
+                                                                <label for="quantidade-input">Quantidade</label>
+                                                            </div>
+                                                            <div class="formulario-dados">
+                                                                <input required value="<?php if(isset($_POST['preco'])) echo $_POST['preco'] ?>" name="preco" type="text" id="preco-input" class="input-formulario">
+                                                                <label for="preco-input">Preço</label>
+                                                            </div>
+                                                            <div class="formulario-dados-img">
+                                                                <p>Imagem</p>
+                                                                <input type="file">
+                                                            </div>
+                                                            <div class="formulario-dados">
+                                                                <input required value="<?php if(isset($_POST['validade'])) echo $_POST['validade'] ?>" name="validade" type="text" id="validade-input" class="input-formulario">
+                                                                <label for="validade-input">Validade</label>
+                                                            </div>
+                                                            <div class="formulario-dados">
+                                                                <input required value="<?php if(isset($_POST['estoque'])) echo $_POST['estoque'] ?>" name="estoque" type="number" id="estoque-input" class="input-formulario">
+                                                                <label for="estoque-input">Estoque</label>
+                                                            </div>
+                                                            <div class="btn-formulario-salvar-c">
+                                                                <button class="btn-formulario-salvar" type="submit">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#008702"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
+                                                                    </svg>
+                                                                    <p>Salvar</p>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+
+                                                        
+                                                    
+                                                    </div>
+                                                </div>
+
+
+
+                                            
+                                            <div id="<?php echo $produto['id'] ?>" class="deletar-produto">
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0000"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
                                     </td>
                                 </div>
                             </tr> <!-- .corpo-tabela -->
