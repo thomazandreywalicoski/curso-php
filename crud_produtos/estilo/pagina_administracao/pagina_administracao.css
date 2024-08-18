@@ -6,8 +6,51 @@
 
 .container-produtos-cadastrados {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
+
+.painel-administracao {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.btn-cadastrar {
+    display: inline-block;
+    background-color: rgb(0, 255, 0);
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;  
+    margin-right: 10px;
+}
+
+
+.atualizar-tabela {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: #ccc;
+    padding: 8px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.atualizar-tabela p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: black;
+}
+
+
+
+
 
 table {
     background-color: white;

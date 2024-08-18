@@ -31,8 +31,6 @@ function fecharEditarProdutos() {
 }
 */
 
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const abrirModalEditarProduto = document.getElementById('modal');
 
