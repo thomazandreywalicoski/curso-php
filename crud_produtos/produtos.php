@@ -62,6 +62,7 @@
                         if($deu_certo) {
                             echo "Produto cadastrado com sucesso!";
                             unset($_POST); // Limpa o formulário se o produto foi cadastrado
+                            header('Refresh: 0');
                         }
                     }
                 }
@@ -295,13 +296,13 @@
                                             
 
                                                 
+                                            <a href="produtos.php?id=<?php echo $produto['id'] ?>#modal"> 
+                                                <div class="deletar-produto" onclick="abrirDeletarProdutos()">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0000"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                                                    </svg>
+                                                </div>
+                                            </a>
 
-
-                                            
-                                            <div class="deletar-produto">
-                                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0000"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
-                                                </svg>
-                                            </div>
                                         </div>
                                     </td>
                                 </div>
@@ -316,8 +317,10 @@
 
             </table>
 
+            
 
-            <div class="fundo-modal-editar" id="modal">
+
+            <div class="fundo-modal-editar" id="modal-editar">
         
                 <div class="modal-cadastrar-produto">
                     <div onclick="fecharEditarProdutos()" class="btn-fechar-modal-editar-produto">
@@ -373,6 +376,8 @@
                                 if($deu_certo) {
                                     echo "Produto atualizado com sucesso!";
                                     unset($_POST); // Limpa o formulário se o produto foi cadastrado
+                                    header('Refresh: 0');
+                                    exit;
                                 }
                             }
                         }
@@ -441,6 +446,46 @@
                 
                 </div>
             </div>
+
+
+
+
+            <div class="fundo-modal-deletar" id="modal-deletar">
+        
+                <div class="modal-cadastrar-produto">
+                    <div onclick="fecharDeletarProdutos()" class="btn-fechar-modal-deletar-produto">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                        </svg>
+                    </div>
+
+                    <form>
+                        <input type="hidden" name="tipo_formulario" value="editar">
+                        <div class="header-formulario-cadastrar-produto">
+                            <div class="titulo-formulario-deletar-produto">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#a30000"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                                </svg>
+                                <h1>Deletar produto</h1>
+                            </div>
+                            <p>Deseja realmente DELETAR o produto?</p>
+                        </div>
+                        <div class="btn-deletar-c">
+                            <a id="nao-deletar" href="produtos.php" class="btn-nao-deletar">Não</a>
+                            <button id="deletar-produto" class="btn-deletar" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#a30000"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                                </svg>
+                                <p>Sim</p>
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+
+
+
+
+    
 
 
 
