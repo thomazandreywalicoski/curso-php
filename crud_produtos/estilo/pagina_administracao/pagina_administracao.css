@@ -29,6 +29,26 @@
     margin-right: 10px;
 }
 
+.pesquisar-produto-cadastrado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.pesquisar-produto-cadastrado input {
+    border: none;
+    outline: none;
+    width: 350px;
+}
+
+.pesquisar-produto-cadastrado svg {
+    cursor: pointer;
+}
+
 
 .atualizar-tabela {
     display: flex;

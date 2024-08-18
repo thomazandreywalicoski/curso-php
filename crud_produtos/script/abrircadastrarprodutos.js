@@ -14,7 +14,6 @@ function fecharCadastrarProdutos() {
 }
 
 
-
 /* 
 function abrirEditarProdutos() {
     
