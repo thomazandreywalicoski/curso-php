@@ -85,7 +85,7 @@
                 <div class="formulario-dados">
                     <div class="formulario-dados-categoria">
                         <p>Categoria</p>
-                        <select name="categoria">
+                        <select name="categoria" id="categoria-produtos">
                             <option value="automotivo">Automotivo</option>
                             <option value="residencial">Residencial</option>
                             <option value="roupas">Roupas</option>
@@ -102,7 +102,7 @@
                 </div>
                 <div class="formulario-dados-img">
                     <p>Imagem</p>
-                    <input type="file">
+                    <input type="file" id="imagem-input">
                 </div>
                 <div class="formulario-dados">
                     <input required value="<?php if(isset($_POST['validade'])) echo $_POST['validade'] ?>" name="validade" type="text" id="validade-input" class="input-formulario">
@@ -126,6 +126,11 @@
         </div>
     </div>
 
+
+    <div class="titulo-painel-administracao">
+        <h1>Painel de Administração</h1>
+    </div>
+
     
 
     <div class="container-produtos-cadastrados">
@@ -146,6 +151,11 @@
                 </a>
 
             </div>
+        </div>
+
+
+        <div class="titulo-tabela">
+            <h1>Produtos cadastrados</h1>
         </div>
         
         
@@ -243,7 +253,7 @@
                     if($num_produtos == 0) { 
                     ?>
                         <tr>
-                            <td colspan="8">Nenhum produto cadastrado</td>
+                            <td colspan="8" class="aviso-nenhum-produto-cadastrado">Nenhum produto cadastrado até o momento</td>
                         </tr>
                     <?php 
                     } else { 
@@ -332,8 +342,6 @@
 
                         include_once('conexao.php');
                         $id = intval($_GET['id']);
-
-                        var_dump($id);
                         
                         if(count($_POST) > 0) {
                             
@@ -406,7 +414,7 @@
                         <div class="formulario-dados">
                             <div class="formulario-dados-categoria">
                                 <p>Categoria</p>
-                                <select name="categoria">
+                                <select name="categoria" id="categoria-produtos">
                                     <option value="automotivo">Automotivo</option>
                                     <option value="residencial">Residencial</option>
                                     <option value="roupas">Roupas</option>
@@ -423,7 +431,7 @@
                         </div>
                         <div class="formulario-dados-img">
                             <p>Imagem</p>
-                            <input type="file">
+                            <input type="file" id="imagem-input-editar">
                         </div>
                         <div class="formulario-dados">
                             <input required value="<?php echo formatar_data($produto['validade']) ?>" name="validade" type="text" id="validade-input-editar" class="input-formulario">
@@ -458,8 +466,23 @@
                         </svg>
                     </div>
 
-                    <form>
-                        <input type="hidden" name="tipo_formulario" value="editar">
+                    <?php
+
+                    if(isset($_POST['deletar'])) {
+
+                        include_once('conexao.php');
+                        $id = intval($_GET['id']);
+
+                        if($tipo_formulario == 'deletar') {
+                            $sql_code = "DELETE FROM produtos WHERE id = '$id'";
+                            $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+                        }
+                    }
+                    
+                    ?>
+
+                    <form method="post" id="deletar" name="deletar">
+                        <input type="hidden" name="tipo_formulario" value="deletar">
                         <div class="header-formulario-cadastrar-produto">
                             <div class="titulo-formulario-deletar-produto">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#a30000"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
@@ -469,8 +492,12 @@
                             <p>Deseja realmente DELETAR o produto?</p>
                         </div>
                         <div class="btn-deletar-c">
-                            <a id="nao-deletar" href="produtos.php" class="btn-nao-deletar">Não</a>
-                            <button id="deletar-produto" class="btn-deletar" type="submit">
+                            <a id="nao-deletar" href="produtos.php" class="btn-nao-deletar">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#008702"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                                </svg>
+                                <p>Não</p>
+                            </a>
+                            <button id="deletar-produto" name="deletar" value="1" class="btn-deletar" type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#a30000"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
                                 </svg>
                                 <p>Sim</p>

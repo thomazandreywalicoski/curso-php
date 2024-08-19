@@ -61,9 +61,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById('salvar-edicao').addEventListener('click', function() {
         localStorage.removeItem('modalOpen'); // Remove o item do localStorage
-        window.location.reload();
         
     });
+    
+    
 
 
     const abrirModalDeletarProduto = document.getElementById('modal-deletar');

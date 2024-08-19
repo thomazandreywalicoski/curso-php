@@ -151,6 +151,7 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
+    cursor: pointer;
 }
 
 
@@ -279,8 +280,13 @@
     font-weight: 600;
     text-decoration: none;
     color: #008702;
-    border-radius: 10px;
+    border-radius: 15px;
     font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
 }
 
 .btn-deletar {
@@ -296,4 +302,5 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
+    cursor: pointer;
 }

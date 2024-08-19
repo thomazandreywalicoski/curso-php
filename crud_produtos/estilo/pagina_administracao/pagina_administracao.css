@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+.titulo-painel-administracao {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
 .container-produtos-cadastrados {
     display: flex;
     flex-direction: column;
@@ -68,9 +75,12 @@
     color: black;
 }
 
+.titulo-tabela {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin: 10px 0px 20px 0px;
 
-
-
+}
 
 table {
     background-color: white;
@@ -92,6 +102,13 @@ p {
     padding: 10px 8px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
+}
+
+.aviso-nenhum-produto-cadastrado {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: 600;
+    padding-top: 20px;
 }
 
 .corpo-tabela:nth-child(even) {
