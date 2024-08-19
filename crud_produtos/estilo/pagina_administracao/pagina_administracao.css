@@ -4,36 +4,70 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+}
+
 .titulo-painel-administracao {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 20px;
+    width: 100%;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.titulo-painel-administracao svg {
+    transform: rotate(90deg);
 }
 
 .container-produtos-cadastrados {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    max-width: 1280px;
+    width: 100%;
+    padding: 20px;
 }
 
 .painel-administracao {
     display: flex;
     margin-bottom: 10px;
     align-items: center;
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.painel-administracao-cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .btn-cadastrar {
-    display: inline-block;
-    background-color: rgb(0, 255, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: rgb(72, 206, 72);
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     border-radius: 10px;
     text-decoration: none;
-    color: black;
+    color: #ffffff;
     cursor: pointer;  
     margin-right: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .pesquisar-produto-cadastrado {
@@ -42,8 +76,10 @@
     justify-content: center;
     gap: 5px;
     border: 1px solid #ccc;
-    padding: 5px 10px;
+    padding: 9px 10px;
     border-radius: 10px;
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .pesquisar-produto-cadastrado input {
@@ -62,17 +98,18 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
-    background-color: #ccc;
-    padding: 8px;
+    background-color: #35aeff;
+    padding: 9px;
     border-radius: 10px;
     text-decoration: none;
     margin-left: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .atualizar-tabela p {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .titulo-tabela {
@@ -82,8 +119,17 @@
 
 }
 
+.tabela-produtos-cadastrados {
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+}
+
 table {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 p {
@@ -91,7 +137,9 @@ p {
 }
 
 .cabecalho-tabela {
-    background-color: #94c0ff;
+    background-color: #35AEFF;
+    border-radius: 50px;
+    color: #fff;
 }
 
 .informacao-tabela {
@@ -108,11 +156,20 @@ p {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     font-weight: 600;
-    padding-top: 20px;
+    padding: 20px 0px;
 }
 
 .corpo-tabela:nth-child(even) {
-    background-color:#77b0ff6e;
+    background-color:#cfe9ff;
+}
+
+.corpo-tabela:nth-child(even):hover {
+    background-color: #0294f5;
+}
+
+tr:hover {
+    background-color: #0294f5;
+    color: #fff;
 }
 
 .dado-produto {
@@ -146,18 +203,18 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ffd889;
+    background-color: #ffb300;
     padding: 5px;
     border-radius: 8px;
-    border: 1px solid #ffaa00;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .deletar-produto {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ff9696;
+    background-color: #ff0000;
     padding: 5px;
     border-radius: 8px;
-    border: 1px solid red;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
