@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,6 +9,13 @@
 </head>
 <body>
 
+    
+
+
+
+    
+
+
     <div class="fundo-modal">
         
         <div class="modal-cadastrar-produto">
@@ -20,55 +24,11 @@
                 </svg>
             </div>
 
-            <?php
-                if(count($_POST) > 0) {
-                    include_once('conexao.php');
-                    $erro = false;
-                    $nome = $_POST['nome'];
-                    $categoria = $_POST['categoria'];
-                    $quantidade = $_POST['quantidade'];
-                    $preco = $_POST['preco'];
-                    $validade = $_POST['validade'];
-                    $estoque = $_POST['estoque'];
-                    $tipo_formulario = $_POST['tipo_formulario'];
 
-                    if(empty($nome)) {
-                        $erro = "Preencha o nome!";
-                    } else if(empty($quantidade)) {
-                        $erro = "Preecha a quantidade do produto!";
-                    }
-        
-                    if(!empty($preco)) {
-                        $preco = str_replace(",",".",$preco);
-        
-                    } else if(empty($preco)) {
-                        $erro = "Preecha o preço do produto!";
-                    }
-                    if(!empty($validade)) {
-                        $data_digitada = explode('/', $validade);
-                        if(count($data_digitada) == 3) {
-                            $validade = implode('-', array_reverse($data_digitada));
-                            // array_reverse = Inverte a data de 20/10/2010 para 2010/10/20
-                            // explode = Traforma a data em 2010, 10, 20
-                            // implode = para adiconar o '-' 2010-10-20
-                        } else {
-                            $erro = "A data deve seguir o padrão dia/mês/ano";
-                        }
-                    }
-
-                    if($tipo_formulario == 'cadastrar'){
-                        $sql_code = "INSERT INTO produtos (nome, categoria, quantidade, preco, validade, estoque) VALUES ('$nome', '$categoria', '$quantidade', '$preco', '$validade', '$estoque')";
-                        $deu_certo = $mysqli->query($sql_code) or die($mysqli->error);
-                        if($deu_certo) {
-                            echo "Produto cadastrado com sucesso!";
-                            unset($_POST); // Limpa o formulário se o produto foi cadastrado
-                            header('Refresh: 0');
-                        }
-                    }
-                }
-            ?>
             
-            <form method="POST" action="" class="formulario-cadastro">
+
+                   
+            <form enctype="multipart/form-data" method="POST" action="" class="formulario-cadastro">
                 <input type="hidden" name="tipo_formulario" value="cadastrar">
                 <div class="header-formulario-cadastrar-produto">
                     <div class="titulo-formulario-cadastrar-produto">
@@ -79,7 +39,7 @@
                     <p>Preencha todos os dados do formulário abaixo</p>
                 </div>
                 <div class="formulario-dados">
-                    <input required value="<?php if(isset($_POST['nome'])) echo $_POST['nome'] ?>" name="nome" type="text" id="nome-input" class="input-formulario">
+                    <input value="<?php if(isset($_POST['nome'])) echo $_POST['nome'] ?>" name="nome" type="text" id="nome-input" class="input-formulario">
                     <label for="nome-input">Nome</label>
                 </div>
                 <div class="formulario-dados">
@@ -93,11 +53,11 @@
                     </div>
                 </div>
                 <div class="formulario-dados">
-                    <input required value="<?php if(isset($_POST['quantidade'])) echo $_POST['quantidade'] ?>" name="quantidade" type="text" id="quantidade-input" class="input-formulario">
+                    <input value="<?php if(isset($_POST['quantidade'])) echo $_POST['quantidade'] ?>" name="quantidade" type="text" id="quantidade-input" class="input-formulario">
                     <label for="quantidade-input">Quantidade</label>
                 </div>
                 <div class="formulario-dados">
-                    <input required value="<?php if(isset($_POST['preco'])) echo $_POST['preco'] ?>" name="preco" type="text" id="preco-input" class="input-formulario">
+                    <input value="<?php if(isset($_POST['preco'])) echo $_POST['preco'] ?>" name="preco" type="text" id="preco-input" class="input-formulario">
                     <label for="preco-input">Preço</label>
                 </div>
                 <div class="formulario-dados-img">
@@ -105,30 +65,132 @@
                     <input type="file" id="imagem-input">
                 </div>
                 <div class="formulario-dados">
-                    <input required value="<?php if(isset($_POST['validade'])) echo $_POST['validade'] ?>" name="validade" type="text" id="validade-input" class="input-formulario">
+                    <input value="<?php if(isset($_POST['validade'])) echo $_POST['validade'] ?>" name="validade" type="text" id="validade-input" class="input-formulario">
                     <label for="validade-input">Validade</label>
                 </div>
                 <div class="formulario-dados">
-                    <input required value="<?php if(isset($_POST['estoque'])) echo $_POST['estoque'] ?>" name="estoque" type="number" id="estoque-input" class="input-formulario">
+                    <input value="<?php if(isset($_POST['estoque'])) echo $_POST['estoque'] ?>" name="estoque" type="number" id="estoque-input" class="input-formulario">
                     <label for="estoque-input">Estoque</label>
                 </div>
                 <div class="btn-formulario-salvar-c">
-                    <button class="btn-formulario-salvar" type="submit">
+                    <button class="btn-formulario-salvar" type="submit" name="cadastrar" id="cadastrar">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#008702"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
                         </svg>
                         <p>Cadastrar</p>
                     </button>
                 </div>
-            </form>
 
-            
+
+                <?php
+
+                $aviso_erro = false;
+                $aviso_sucesso = false;
+
+
+                if(count($_POST) > 0) {
+
+                    include_once('conexao.php');
+
+                    
+
+                    $nome = $_POST['nome'];
+                    $categoria = $_POST['categoria'];
+                    $quantidade = $_POST['quantidade'];
+                    $preco = $_POST['preco'];
+                    $validade = $_POST['validade'];
+                    $estoque = $_POST['estoque'];
+                    $tipo_formulario = $_POST['tipo_formulario'];
+
+                    if(empty($nome)) {
+
+                        $aviso_erro = 'Preencha o nome!';                 
+
+                        
+                    } else if(empty($quantidade)) {
+
+                        $aviso_erro = 'Preecha a quantidade do produto!';  
+                        
+                    } else if(empty($preco)) {
+
+                        $aviso_erro = 'Preecha o preço do produto!';
+                        
+                    }
+
+                    if(!empty($preco)) {
+                        $preco = str_replace(",",".",$preco);
+
+                    } 
+
+                    if(!empty($validade)) {
+                        $data_digitada = explode('/', $validade);
+                        if(count($data_digitada) == 3) {
+                            $validade = implode('-', array_reverse($data_digitada));
+                            // array_reverse = Inverte a data de 20/10/2010 para 2010/10/20
+                            // explode = Traforma a data em 2010, 10, 20
+                            // implode = para adiconar o '-' 2010-10-20
+                        } else {
+
+                            $aviso_erro = 'A data deve seguir o padrão dia/mês/ano';
+                    
+                        }
+                    }
+
+                    
+
+                    if($tipo_formulario == 'cadastrar' && $aviso_erro == false){
+                        $sql_code = "INSERT INTO produtos (nome, categoria, quantidade, preco, validade, estoque) VALUES ('$nome', '$categoria', '$quantidade', '$preco', '$validade', '$estoque')";
+                        $deu_certo = $mysqli->query($sql_code) or die($mysqli->error);
+
+                        if($deu_certo) {
+
+                            $aviso_sucesso = 'Produto cadastrado com sucesso!';
+                        
+                           
+                        }
+                    }
+
+                }
+                ?>
+                
+
+            </form>   
         
         </div>
     </div>
 
 
     
+    
+    
+    <?php
 
+   
+    if(isset($_POST['cadastrar'])) {
+        
+
+        include_once('conexao.php'); ?>
+
+
+        <div id="modal-aviso" class="fundo-modal-aviso">
+            <div class="modal-aviso">
+                <div onclick="fecharAviso()" class="btn-fechar-modal-aviso">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0000">
+                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                    </svg>
+                </div>
+
+                <p class="aviso-erro"> <?php echo $aviso_erro ?> </p>
+                <p class="aviso-sucesso"> <?php echo $aviso_sucesso ?> </p>
+
+            </div>
+        </div>
+        <?php
+    }
+    
+    ?>
+     
+
+    
     
 
     <div class="container-produtos-cadastrados">
@@ -188,7 +250,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                                     <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Zm140-360q25 0 42.5-17.5T400-620q0-25-17.5-42.5T340-680q-25 0-42.5 17.5T280-620q0 25 17.5 42.5T340-560Z"/>
                                 </svg>
-                                <p>Imagem</p>
+                                <p>Img</p>
                             </div>
                         </th>
                         <th class="coluna-tabela">
@@ -529,17 +591,14 @@
 
 
 
+        </div>
+    </div>
+
 
 
     
 
-
-
-
-
-        </div>
-    </div>
-
+    
     
 
 <script src="script/abrircadastrarprodutos.js"></script>

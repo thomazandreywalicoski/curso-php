@@ -109,3 +109,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
+
+// MODAL AVISOS
+
+function fecharAviso() {
+    
+    let fecharModalAvisos = document.querySelector('.fundo-modal-aviso')
+
+    fecharModalAvisos.style.display = 'none';
+    
+    localStorage.setItem('modalAviso', 'false');
+
+    const url = new URL(window.location);
+    url.search = ''; // Remove parâmetros de consulta
+    url.hash = '';   // Remove o fragmento da URL (hash)
+    window.history.replaceState({}, document.title, url.toString());
+    window.location.reload();
+}
+
