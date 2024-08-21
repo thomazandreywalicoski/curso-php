@@ -144,8 +144,7 @@
                         if($deu_certo) {
 
                             $aviso_sucesso = 'Produto cadastrado com sucesso!';
-                        
-                           
+                               
                         }
                     }
 
@@ -165,7 +164,7 @@
     <?php
 
    
-    if(isset($_POST['cadastrar'])) {
+    if(isset($_POST['cadastrar']) && $aviso_erro) {
         
 
         include_once('conexao.php'); ?>
@@ -180,6 +179,26 @@
                 </div>
 
                 <p class="aviso-erro"> <?php echo $aviso_erro ?> </p>
+
+            </div>
+        </div>
+        <?php
+    }
+
+    if(isset($_POST['cadastrar']) && $aviso_sucesso) {
+        
+
+        include_once('conexao.php'); ?>
+
+
+        <div id="modal-aviso" class="fundo-modal-aviso">
+            <div class="modal-aviso">
+                <div onclick="fecharAviso()" class="btn-fechar-modal-aviso">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0000">
+                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                    </svg>
+                </div>
+
                 <p class="aviso-sucesso"> <?php echo $aviso_sucesso ?> </p>
 
             </div>
@@ -421,55 +440,69 @@
 
                     <?php
 
-                        include_once('conexao.php');
-                        $id = intval($_GET['id']);
-                        
-                        if(count($_POST) > 0) {
-                            
-                            $erro = false;
-                            $nome = $_POST['nome'];
-                            $categoria = $_POST['categoria'];
-                            $quantidade = $_POST['quantidade'];
-                            $preco = $_POST['preco'];
-                            $validade = $_POST['validade'];
-                            $estoque = $_POST['estoque'];
-                            $tipo_formulario = $_POST['tipo_formulario'];
+                    $aviso_erro = false;
+                    $aviso_sucesso = false;
 
-                            if(empty($nome)) {
-                                $erro = "Preencha o nome!";
-                            } else if(empty($quantidade)) {
-                                $erro = "Preecha a quantidade do produto!";
-                            }
-                
-                            if(!empty($preco)) {
-                                $preco = str_replace(",",".",$preco);
-                
-                            } else if(empty($preco)) {
-                                $erro = "Preecha o preço do produto!";
-                            }
-                            if(!empty($validade)) {
-                                $data_digitada = explode('/', $validade);
-                                if(count($data_digitada) == 3) {
-                                    $validade = implode('-', array_reverse($data_digitada));
-                                    // array_reverse = Inverte a data de 20/10/2010 para 2010/10/20
-                                    // explode = Traforma a data em 2010, 10, 20
-                                    // implode = para adiconar o '-' 2010-10-20
-                                } else {
-                                    $erro = "A data deve seguir o padrão dia/mês/ano";
-                                }
-                            }
-                            if($tipo_formulario == 'editar') {
-                                $sql_code = "UPDATE produtos SET nome = '$nome', categoria = '$categoria', quantidade = '$quantidade', preco = '$preco', validade = '$validade', estoque = '$estoque' WHERE id = '$id'";
-                                
-                                $deu_certo = $mysqli->query($sql_code) or die($mysqli->error);
-                                if($deu_certo) {
-                                    echo "Produto atualizado com sucesso!";
-                                    unset($_POST); // Limpa o formulário se o produto foi cadastrado
-                                    header('Refresh: 0');
-                                    exit;
-                                }
+                    include_once('conexao.php');
+                    $id = intval($_GET['id']);
+
+
+                    if(count($_POST) > 0) {
+
+                        $nome = $_POST['nome'];
+                        $categoria = $_POST['categoria'];
+                        $quantidade = $_POST['quantidade'];
+                        $preco = $_POST['preco'];
+                        $validade = $_POST['validade'];
+                        $estoque = $_POST['estoque'];
+                        $tipo_formulario = $_POST['tipo_formulario'];
+
+                        if(empty($nome)) {
+
+                            $aviso_erro = 'O nome não pode ser vazio!';                 
+
+                            
+                        } else if(empty($quantidade)) {
+
+                            $aviso_erro = 'Preecha a quantidade do produto!';  
+                            
+                        } else if(empty($preco)) {
+
+                            $aviso_erro = 'O preço é obrigatório!';
+                            
+                        }
+
+                        if(!empty($preco)) {
+                            $preco = str_replace(",",".",$preco);
+
+                        } 
+
+                        if(!empty($validade)) {
+                            $data_digitada = explode('/', $validade);
+                            if(count($data_digitada) == 3) {
+                                $validade = implode('-', array_reverse($data_digitada));
+                                // array_reverse = Inverte a data de 20/10/2010 para 2010/10/20
+                                // explode = Traforma a data em 2010, 10, 20
+                                // implode = para adiconar o '-' 2010-10-20
+                            } else {
+
+                                $aviso_erro = 'A data deve seguir o padrão dia/mês/ano';
+                        
                             }
                         }
+                       
+                        if($tipo_formulario == 'editar' && $aviso_erro == false) {
+                            $sql_code = "UPDATE produtos SET nome = '$nome', categoria = '$categoria', quantidade = '$quantidade', preco = '$preco', validade = '$validade', estoque = '$estoque' WHERE id = '$id'";
+                            
+                            $deu_certo = $mysqli->query($sql_code) or die($mysqli->error);
+
+                            if($deu_certo) {
+
+                                $aviso_sucesso = 'Produto atualizado com sucesso!';
+                                
+                            }
+                        }
+                    }
 
                     
                     $sql_produto = "SELECT * FROM produtos WHERE id = '$id'";
@@ -489,7 +522,7 @@
                             <p>Edite todos os dados necessários do formulário</p>
                         </div>
                         <div class="formulario-dados">
-                            <input required value="<?php echo $produto['nome'] ?>" name="nome" type="text" id="nome-input-editar" class="input-formulario">
+                            <input value="<?php echo $produto['nome'] ?>" name="nome" type="text" id="nome-input-editar" class="input-formulario">
                             <label for="nome-input-editar">Nome</label>
                         </div>
                         <div class="formulario-dados">
@@ -503,11 +536,11 @@
                             </div>
                         </div>
                         <div class="formulario-dados">
-                            <input required value="<?php echo $produto['quantidade'] ?>" name="quantidade" type="text" id="quantidade-input-editar" class="input-formulario">
+                            <input value="<?php echo $produto['quantidade'] ?>" name="quantidade" type="text" id="quantidade-input-editar" class="input-formulario">
                             <label for="quantidade-input-editar">Quantidade</label>
                         </div>
                         <div class="formulario-dados">
-                            <input required value="<?php echo $produto['preco'] ?>" name="preco" type="text" id="preco-input-editar" class="input-formulario">
+                            <input value="<?php echo $produto['preco'] ?>" name="preco" type="text" id="preco-input-editar" class="input-formulario">
                             <label for="preco-input-editar">Preço</label>
                         </div>
                         <div class="formulario-dados-img">
@@ -515,15 +548,15 @@
                             <input type="file" id="imagem-input-editar">
                         </div>
                         <div class="formulario-dados">
-                            <input required value="<?php echo formatar_data($produto['validade']) ?>" name="validade" type="text" id="validade-input-editar" class="input-formulario">
+                            <input value="<?php echo formatar_data($produto['validade']) ?>" name="validade" type="text" id="validade-input-editar" class="input-formulario">
                             <label for="validade-input-editar">Validade</label>
                         </div>
                         <div class="formulario-dados">
-                            <input required value="<?php echo $produto['estoque'] ?>" name="estoque" type="number" id="estoque-input-editar" class="input-formulario">
+                            <input value="<?php echo $produto['estoque'] ?>" name="estoque" type="number" id="estoque-input-editar" class="input-formulario">
                             <label for="estoque-input-editar">Estoque</label>
                         </div>
                         <div class="btn-formulario-salvar-c">
-                            <button id="salvar-edicao" class="btn-formulario-salvar" type="submit">
+                            <button id="salvar-edicao" class="btn-formulario-salvar" type="submit" name="editar">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#008702"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
                                 </svg>
                                 <p>Salvar</p>
@@ -535,6 +568,60 @@
                 
                 </div>
             </div>
+
+
+            
+
+            <?php
+
+   
+                if(isset($_POST['editar']) && $aviso_erro) {
+                    
+
+                    include_once('conexao.php'); ?>
+
+
+                    <div id="modal-aviso" class="fundo-modal-aviso">
+                        <div class="modal-aviso">
+                            <div onclick="fecharAviso()" class="btn-fechar-modal-aviso">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0000">
+                                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                                </svg>
+                            </div>
+
+                            <p class="aviso-erro"> <?php echo $aviso_erro ?> </p>
+
+                        </div>
+                    </div>
+                    <?php
+                }
+
+                if(isset($_POST['editar']) && $aviso_sucesso) {
+                    
+
+                    include_once('conexao.php'); ?>
+
+
+                    <div id="modal-aviso" class="fundo-modal-aviso">
+                        <div class="modal-aviso">
+                            <div onclick="fecharAviso()" class="btn-fechar-modal-aviso">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0000">
+                                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                                </svg>
+                            </div>
+
+                            <p class="aviso-sucesso"> <?php echo $aviso_sucesso ?> </p>
+
+                        </div>
+                    </div>
+                    <?php
+                }
+
+            ?>
+
+
+
+
 
 
 
@@ -556,7 +643,13 @@
 
                         if($tipo_formulario == 'deletar') {
                             $sql_code = "DELETE FROM produtos WHERE id = '$id'";
-                            $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+                            $deu_certo = $mysqli->query($sql_code) or die($mysqli->error);
+                        
+                            if($deu_certo) {
+
+                                $aviso_sucesso = 'Produto deletado com sucesso!';
+                                
+                            }
                         }
                     }
                     
@@ -594,8 +687,30 @@
         </div>
     </div>
 
+    <?php 
+
+        if(isset($_POST['deletar']) && $aviso_sucesso) {
+                        
+
+            include_once('conexao.php'); ?>
 
 
+            <div id="modal-aviso" class="fundo-modal-aviso">
+                <div class="modal-aviso">
+                    <div onclick="fecharAviso()" class="btn-fechar-modal-aviso">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0000">
+                            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                        </svg>
+                    </div>
+
+                    <p class="aviso-sucesso"> <?php echo $aviso_sucesso ?> </p>
+
+                </div>
+            </div>
+            <?php
+        }
+
+    ?>
     
 
     

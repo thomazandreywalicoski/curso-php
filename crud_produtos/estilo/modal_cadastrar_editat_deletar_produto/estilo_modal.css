@@ -325,29 +325,34 @@
 }
 
 .modal-aviso {
-    background-color: #fff700;
+    background-color: #ffffff;
     position: relative;
     display: flex; 
     justify-content: center;
     flex-direction: column;
     border-radius: 20px;
-    padding: 40px 60px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .aviso-sucesso {
-   
-    color: rgb(0, 0, 0);
+    background-color: #b9ffba;
+    color: #189100;
     font-weight: 600;
+    padding: 40px 60px;
+    border-radius: 20px;
+    border: 2px solid #22ff00;
     
     
 
 }
 
 .aviso-erro {
-   
-    color: rgb(0, 0, 0);
+    background-color: #ffb3b3;
+    color: #ad0000;
     font-weight: 600;
+    padding: 40px 60px;
+    border-radius: 20px;
+    border: 2px solid #ff0000;
     
     
 }
