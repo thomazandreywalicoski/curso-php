@@ -1,3 +1,9 @@
+/*---------------------------------------------------------------------------------*/
+/*                FUNCÃO ABRIR E FECHAR MODAL DE CADASTRAR PRODUTOS                */
+/*---------------------------------------------------------------------------------*/
+
+// Abrir modal de cadastrar produtos
+
 function abrirCadastrarProdutos() {
     
     let abrirModalCadastrarProduto = document.querySelector('.fundo-modal')
@@ -5,8 +11,10 @@ function abrirCadastrarProdutos() {
     abrirModalCadastrarProduto.style.display = 'flex';
 }
 
+// Fechar modal de cadastrar produtos
+
 function fecharCadastrarProdutos() {
-    
+
     let abrirModalCadastrarProduto = document.querySelector('.fundo-modal')
 
     abrirModalCadastrarProduto.style.display = 'none';
@@ -14,41 +22,35 @@ function fecharCadastrarProdutos() {
 }
 
 
-/*
-function abrirDeletarProdutos() {
-    
-    let abrirModalDeletarProduto = document.querySelector('.fundo-modal-deletar')
-
-    abrirModalDeletarProduto.style.display = 'flex';
-}
-
-function fecharDeletarProdutos() {
-    
-    let abrirModalDeletarProduto = document.querySelector('.fundo-modal-deletar')
-
-    abrirModalDeletarProduto.style.display = 'none';
-    
-}
-
-*/
+/*---------------------------------------------------------------------------------*/
+/*            FUNCÃO ABRIR E FECHAR MODAL DE EDITAR E DELETAR PRODUTOS             */
+/*---------------------------------------------------------------------------------*/
 
 
 document.addEventListener("DOMContentLoaded", function() {
+
+    // EDITAR PRODUTOS
+
     const abrirModalEditarProduto = document.getElementById('modal-editar');
     
     // Verificar o estado do modal no localStorage
+
     if (localStorage.getItem('modalOpen') === 'true') {
         abrirModalEditarProduto.style.display = 'flex';
     }
 
-    // Abrir o modal
+    // Abrir o modal de editar produtos
+
     abrirEditarProdutos = function() {
+
         abrirModalEditarProduto.style.display = 'flex';
         localStorage.setItem('modalOpen', 'true');
     }
  
-    // Fechar o modal
+    // Fechar o modal de editar produtos
+
     fecharEditarProdutos = function() {
+
         abrirModalEditarProduto.style.display = 'none';
         localStorage.setItem('modalOpen', 'false');
 
@@ -64,24 +66,28 @@ document.addEventListener("DOMContentLoaded", function() {
         
     });
     
-    
-
+    // DELETAR PRODUTOS
 
     const abrirModalDeletarProduto = document.getElementById('modal-deletar');
     
     // Verificar o estado do modal no localStorage
+
     if (localStorage.getItem('modalDeletar') === 'true') {
         abrirModalDeletarProduto.style.display = 'flex';
     }
 
-    // Abrir o modal
+    // Abrir o modal de deletar produtos
+
     abrirDeletarProdutos = function() {
+
         abrirModalDeletarProduto.style.display = 'flex';
         localStorage.setItem('modalDeletar', 'true');
     }
  
-    // Fechar o modal
+    // Fechar o modal de deletar produtos
+
     fecharDeletarProdutos = function() {
+
         abrirModalDeletarProduto.style.display = 'none';
         localStorage.setItem('modalDeletar', 'false');
 
@@ -92,6 +98,8 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.reload();
     }
 
+    // BOTÃO DE NAO DELETAR PRODUTO
+
     const naoDeletar = document.getElementById('nao-deletar');
    
         naoDeletar.addEventListener('click', function() {
@@ -100,8 +108,10 @@ document.addEventListener("DOMContentLoaded", function() {
         
         });
     
+    // BOTÃO DE DELETAR PRODUTO
 
     document.getElementById('deletar-produto').addEventListener('click', function() {
+
         localStorage.removeItem('modalDeletar'); // Remove o item do localStorage
         window.location.reload();
         
@@ -109,8 +119,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-
-// MODAL AVISOS
+/*---------------------------------------------------------------------------------*/
+/*             FUNCÃO MENSAGEM DE AVISOS AO EDITAR E DELETAR PRODUTOS              */
+/*---------------------------------------------------------------------------------*/
 
 function fecharAviso() {
     
