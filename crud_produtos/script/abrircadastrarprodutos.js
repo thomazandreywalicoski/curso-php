@@ -117,6 +117,52 @@ document.addEventListener("DOMContentLoaded", function() {
         
     });
 
+
+    /*---------------------------------------------------------------------------------*/
+    /*                MOSTAR E OCUTAR BOTÃO PESQUISA E APAGAR PESQUISA                 */
+    /*---------------------------------------------------------------------------------*/
+
+    const botaoPesquisar = document.getElementById('botao-pesquisar');
+    const botaoApagarPesquisa = document.getElementById('apagar-pesquisa');
+    const campoPesquisa = document.getElementById('pesquisa');
+
+    // Função para atualizar a visibilidade dos botões
+    function atualizarVisibilidadeBotoes() {
+
+        if (campoPesquisa.value.trim() !== '') {
+            botaoPesquisar.style.display = 'none';
+            botaoApagarPesquisa.style.display = 'block';
+        } else {
+            botaoPesquisar.style.display = 'block';
+            botaoApagarPesquisa.style.display = 'none';
+        }
+    }
+
+    // Carregar o valor do campo de pesquisa do localStorage ao carregar a página
+    campoPesquisa.value = localStorage.getItem('valorPesquisa') || '';
+
+    atualizarVisibilidadeBotoes(); // Atualiza a visibilidade dos botões com base no valor carregado
+
+    // Atualizar o localStorage e a visibilidade dos botões ao digitar no campo de pesquisa
+
+    campoPesquisa.addEventListener('input', () => {
+        localStorage.setItem('valorPesquisa', campoPesquisa.value);
+        botaoPesquisar.addEventListener('click', function() {
+            atualizarVisibilidadeBotoes();
+        });
+        
+    });
+
+    // Função para apagar a pesquisa
+
+    window.apagarPesquisa = function() {
+        
+        campoPesquisa.value = ''; // Limpa o campo de pesquisa
+        localStorage.removeItem('valorPesquisa'); // Remove o valor do localStorage
+        atualizarVisibilidadeBotoes(); // Atualiza a visibilidade dos botões
+        campoPesquisa.focus(); // Foca no campo de pesquisa
+    };
+
 });
 
 /*---------------------------------------------------------------------------------*/
@@ -137,4 +183,8 @@ function fecharAviso() {
     window.history.replaceState({}, document.title, url.toString());
     window.location.reload();
 }
+
+
+ 
+
 

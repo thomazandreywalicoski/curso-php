@@ -157,7 +157,6 @@
     
     <?php
 
-   
         if(isset($_POST['cadastrar']) && $aviso_erro) {
             
             include_once('conexao.php'); ?>
@@ -180,9 +179,7 @@
 
         if(isset($_POST['cadastrar']) && $aviso_sucesso) {
             
-
             include_once('conexao.php'); ?>
-
 
             <div id="modal-aviso" class="fundo-modal-aviso">
                 <div class="modal-aviso">
@@ -226,10 +223,19 @@
                 </div> <!-- .btn-cadastrar -->
 
                 <div class="pesquisar-produto-cadastrado">
-                    <input type="search" placeholder="Procurar produto cadastrado">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
-                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
-                    </svg>
+                    <form action="" class="barra-pesquisa">
+                        <input type="text" id="pesquisa" name="busca" value="<?php if(isset($_GET['busca'])) echo $_GET['busca'] ?>" placeholder="Procurar produto cadastrado">
+                        <button type="submit" id="botao-pesquisar" class="botao-de-pesquisar">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                                <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                            </svg>
+                        </button> <!-- .botao-de-pesquisar -->
+                        <a href="produtos.php" id="apagar-pesquisa" class="botao-apagar-pesquisa" onclick="apagarPesquisa()">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                            </svg>
+                        </a> <!-- .botao-apagar-pesquisa -->
+                    </form> <!-- .barra-pesquisa -->
                 </div> <!-- .pesquisar-produto-cadastrado -->
 
             </div> <!-- .painel-administracao-cadastro -->
@@ -349,102 +355,204 @@
 
                         include_once('conexao.php');
 
-                        $sql_produtos = "SELECT * FROM produtos";
-                        $query_produtos = $mysqli->query($sql_produtos) or die($mysqli->error);
+                        if(!isset($_GET['busca']) || $_GET['busca'] == "") {
 
-                        $num_produtos = $query_produtos->num_rows; // Verifica quantos produtos tem cadastrados
+                            $sql_produtos = "SELECT * FROM produtos";
+                            $query_produtos = $mysqli->query($sql_produtos) or die($mysqli->error);
 
-                        ?>
+                            $num_produtos = $query_produtos->num_rows; // Verifica quantos produtos tem cadastrados
 
-                        <?php
+                            ?>
 
-                        if($num_produtos == 0) { ?>
-                            <tr>
-                                <td colspan="8" class="aviso-nenhum-produto-cadastrado">Nenhum produto cadastrado até o momento</td>
-                            </tr>
+                            <?php
 
-                        <?php
+                            if($num_produtos == 0) { ?>
+                                <tr>
+                                    <td colspan="8" class="aviso-nenhum-produto-cadastrado">Nenhum produto cadastrado até o momento</td>
+                                </tr>
 
-                        } else { 
-                            while($produto = $query_produtos->fetch_assoc()) {
+                            <?php
 
-                                $preco = "";
-                                if(!empty($produto['preco'])) {
-                                    $preco = number_format($produto['preco'], 2, ',', '.');
-                                }
+                            } else { 
+                                while($produto = $query_produtos->fetch_assoc()) {
 
-                                $validade = "Não Informado";
-                                if(!empty($produto['validade'])) {
-                                    $validade = implode('/', array_reverse(explode('-',$produto['validade'])));  
-                                } ?>
+                                    $preco = "";
+                                    if(!empty($produto['preco'])) {
+                                        $preco = number_format($produto['preco'], 2, ',', '.');
+                                    }
 
-                                <tr class="corpo-tabela">
+                                    $validade = "Não Informado";
+                                    if(!empty($produto['validade'])) {
+                                        $validade = implode('/', array_reverse(explode('-',$produto['validade'])));  
+                                    } ?>
+                                    
                                 
-                                    <div class="dados-produto">
 
-                                        <td class="dado-produto dado-produto-centralizado">
-                                            <?php echo $produto['id'] ?>
-                                        </td>
+                                    <tr class="corpo-tabela">
+                                    
+                                        <div class="dados-produto">
 
-                                        <td class="dado-produto dado-produto-centralizado">
-                                            <!--<?php echo $produto['imagem'] ?>-->
-                                        </td>
+                                            <td class="dado-produto dado-produto-centralizado">
+                                                <?php echo $produto['id'] ?>
+                                            </td>
 
-                                        <td class="dado-produto">
-                                            <?php echo $produto['nome'] ?>
-                                        </td>
+                                            <td class="dado-produto dado-produto-centralizado">
+                                                <!--<?php echo $produto['imagem'] ?>-->
+                                            </td>
 
-                                        <td class="dado-produto">
-                                            <?php echo $produto['categoria'] ?>
-                                        </td>
+                                            <td class="dado-produto">
+                                                <?php echo $produto['nome'] ?>
+                                            </td>
 
-                                        <td class="dado-produto">
-                                            <?php echo $produto['quantidade'] ?>
-                                        </td>
+                                            <td class="dado-produto">
+                                                <?php echo $produto['categoria'] ?>
+                                            </td>
 
-                                        <td class="dado-produto">
-                                            <?php echo "R$" . $preco ?>
-                                        </td>
+                                            <td class="dado-produto">
+                                                <?php echo $produto['quantidade'] ?>
+                                            </td>
 
-                                        <td class="dado-produto dado-produto-centralizado">
-                                            <?php echo $validade ?>
-                                        </td>
+                                            <td class="dado-produto">
+                                                <?php echo "R$" . $preco ?>
+                                            </td>
 
-                                        <td class="dado-produto dado-produto-centralizado">
-                                            <?php echo $produto['estoque'] ?>
-                                        </td>
+                                            <td class="dado-produto dado-produto-centralizado">
+                                                <?php echo $validade ?>
+                                            </td>
 
-                                        <td class="dado-produto dado-produto-centralizado">
-                                            
-                                            <div class="acoes-tabela">
-                                                <a href="produtos.php?id=<?php echo $produto['id'] ?>#modal">
-                                                    <div id="abrirModalDiv" onclick="abrirEditarProdutos()" class="editar-produto" >
-                                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-                                                            <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/>
-                                                        </svg>
-                                                    </div> <!-- .editar-produto -->
-                                                </a>                                             
-                                                    
-                                                <a href="produtos.php?id=<?php echo $produto['id'] ?>#modal"> 
-                                                    <div class="deletar-produto" onclick="abrirDeletarProdutos()">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-                                                            <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
-                                                        </svg>
-                                                    </div> <!-- .deletar-produto -->
-                                                </a>
+                                            <td class="dado-produto dado-produto-centralizado">
+                                                <?php echo $produto['estoque'] ?>
+                                            </td>
 
-                                            </div> <!-- .acoes-tabela -->
+                                            <td class="dado-produto dado-produto-centralizado">
+                                                
+                                                <div class="acoes-tabela">
+                                                    <a href="produtos.php?id=<?php echo $produto['id'] ?>#modal">
+                                                        <div id="abrirModalDiv" onclick="abrirEditarProdutos()" class="editar-produto" >
+                                                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                                                                <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/>
+                                                            </svg>
+                                                        </div> <!-- .editar-produto -->
+                                                    </a>                                             
+                                                        
+                                                    <a href="produtos.php?id=<?php echo $produto['id'] ?>#modal"> 
+                                                        <div class="deletar-produto" onclick="abrirDeletarProdutos()">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                                                                <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                                                            </svg>
+                                                        </div> <!-- .deletar-produto -->
+                                                    </a>
 
-                                        </td>
+                                                </div> <!-- .acoes-tabela -->
 
-                                    </div> <!-- .dados-produto -->
+                                            </td>
 
-                                </tr> <!-- .corpo-tabela -->
+                                        </div> <!-- .dados-produto -->
 
-                                <?php 
+                                    </tr> <!-- .corpo-tabela -->
+
+                                    <?php 
+                                }
                             }
 
-                        } ?>  
+                        //--------------------------------------------------------------------------------------------------//
+                        //                        EXIBE OS PRODUTOS CORESPONDENTES A PESQUISA                               //
+                        //--------------------------------------------------------------------------------------------------//
+                            
+                        }   else {
+                                $pesquisa = $mysqli->real_escape_string($_GET['busca']);
+                                $sql_code = "SELECT * FROM produtos WHERE id LIKE '%$pesquisa%' OR nome LIKE '%$pesquisa%' OR categoria LIKE '%$pesquisa%' OR quantidade LIKE '%$pesquisa%' OR preco LIKE '%$pesquisa%' OR validade LIKE '%$pesquisa%' OR estoque LIKE '%$pesquisa%'";
+
+                                $sql_query = $mysqli->query($sql_code) or die("Erro ao consultar " . $mysqli->error);
+
+                                if($sql_query->num_rows == 0) { ?>
+
+                                    <tr>
+                                        <td colspan="8" class="aviso-nenhum-produto-cadastrado">Nenhum produto encontrado</td>
+                                    </tr>
+
+                                    <?php
+                                } else {
+                                    while($dados_encontrados = $sql_query->fetch_assoc()) {
+
+                                        $preco_encontrado = "";
+                                        if(!empty($dados_encontrados['preco'])) {
+                                            $preco_encontrado = number_format($dados_encontrados['preco'], 2, ',', '.');
+                                        }
+
+                                        $validade_encontrada = "Não Informado";
+                                        if(!empty($dados_encontrados['validade'])) {
+                                            $validade_encontrada = implode('/', array_reverse(explode('-',$dados_encontrados['validade'])));  
+                                        } ?>
+
+                                        <tr class="corpo-tabela">
+                                            
+                                            <div class="dados-produto">
+
+                                                <td class="dado-produto dado-produto-centralizado">
+                                                    <?php echo $dados_encontrados['id'] ?>
+                                                </td>
+
+                                                <td class="dado-produto dado-produto-centralizado">
+                                                    <!--<?php echo $dados_encontrados['imagem'] ?>-->
+                                                </td>
+
+                                                <td class="dado-produto">
+                                                    <?php echo $dados_encontrados['nome'] ?>
+                                                </td>
+
+                                                <td class="dado-produto">
+                                                    <?php echo $dados_encontrados['categoria'] ?>
+                                                </td>
+
+                                                <td class="dado-produto">
+                                                    <?php echo $dados_encontrados['quantidade'] ?>
+                                                </td>
+
+                                                <td class="dado-produto">
+                                                    <?php echo "R$" . $preco_encontrado ?>
+                                                </td>
+
+                                                <td class="dado-produto dado-produto-centralizado">
+                                                    <?php echo $validade_encontrada ?>
+                                                </td>
+
+                                                <td class="dado-produto dado-produto-centralizado">
+                                                    <?php echo $dados_encontrados['estoque'] ?>
+                                                </td>
+
+                                                <td class="dado-produto dado-produto-centralizado">
+                                                    
+                                                    <div class="acoes-tabela">
+                                                        <a href="produtos.php?id=<?php echo $dados_encontrados['id'] ?>#modal">
+                                                            <div id="abrirModalDiv" onclick="abrirEditarProdutos()" class="editar-produto" >
+                                                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                                                                    <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/>
+                                                                </svg>
+                                                            </div> <!-- .editar-produto -->
+                                                        </a>                                             
+                                                            
+                                                        <a href="produtos.php?id=<?php echo $dados_encontrados['id'] ?>#modal"> 
+                                                            <div class="deletar-produto" onclick="abrirDeletarProdutos()">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                                                                    <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                                                                </svg>
+                                                            </div> <!-- .deletar-produto -->
+                                                        </a>
+
+                                                    </div> <!-- .acoes-tabela -->
+
+                                                </td>
+
+                                            </div> <!-- .dados-produto -->
+
+                                        </tr> <!-- .corpo-tabela -->
+
+                                        <?php
+                                    }
+                                }
+
+                            } ?>
 
                 </tbody>
             </table>

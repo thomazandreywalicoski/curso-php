@@ -81,7 +81,7 @@ body {
     justify-content: center;
     gap: 5px;
     border: 1px solid #ccc;
-    padding: 9px 10px;
+    padding: 8px 10px;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -93,9 +93,23 @@ body {
     width: 350px;
 }
 
-.pesquisar-produto-cadastrado svg {
+.barra-pesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.botao-de-pesquisar {
+    background-color: #fff;
+    border: none;
     cursor: pointer;
 }
+
+.botao-apagar-pesquisa {
+    display: none
+}
+
+
 
 
 .atualizar-tabela {
