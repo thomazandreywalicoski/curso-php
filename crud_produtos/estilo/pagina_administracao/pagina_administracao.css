@@ -250,8 +250,7 @@ tr:hover {
 .paginas-produtos {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 5px;
+    justify-content: space-between;
 }
 
 .pagina-produtos-atual {
@@ -263,6 +262,7 @@ tr:hover {
     color: #fff;
     width: 30px;
     height: 30px;
+    margin: 0px 5px;;
 }
 
 .paginas-anterior-posterior {
@@ -275,4 +275,18 @@ tr:hover {
     width: 30px;
     height: 30px;
     text-decoration: none;
+    margin: 0px 5px;
+}
+
+.mudar-pagina {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    border-radius: 5px;
+    color: #000000;
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+    margin: 0px 5px;
 }
