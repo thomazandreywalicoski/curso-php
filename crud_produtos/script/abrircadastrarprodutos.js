@@ -1,4 +1,47 @@
 /*---------------------------------------------------------------------------------*/
+/*                FUNCÃO ATUALIZAR A URL NA PÁGINA SELECIONADA                     */
+/*---------------------------------------------------------------------------------*/
+
+function manterParametroPagina() {
+    // Cria uma nova URL com a URL atual
+    const urlAtual = new URL(window.location.href);
+    
+    // Extrai o valor do parâmetro 'pagina'
+    const paginaAtual = urlAtual.searchParams.get('pagina');
+    
+    // Remove todos os parâmetros de consulta exceto 'pagina'
+    const params = new URLSearchParams();
+    if (paginaAtual !== null) {
+        params.set('pagina', paginaAtual);
+    }
+
+    // Atualiza a URL com o parâmetro 'pagina' e remove o hash
+    urlAtual.search = params.toString(); // Define os parâmetros de consulta
+    urlAtual.hash = ''; // Remove o fragmento da URL (hash)
+
+    // Atualiza a URL na barra de endereço
+    window.history.replaceState({}, document.title, urlAtual.toString());
+
+    // Recarrega a página com a nova URL
+    window.location.href = urlAtual.toString();
+}
+
+
+
+/*---------------------------------------------------------------------------------*/
+/*                     FUNCÃO PARA TRAVAR O FUNDO DOS MODAIS                       */
+/*---------------------------------------------------------------------------------*/
+
+function travarFundoModal() {
+
+    document.body.style.position = 'fixed';
+    document.body.style.top = '0';
+    document.body.style.width = '100%';
+    document.body.style.height = '100%';
+    document.body.style.overflow = 'hidden';
+}
+
+/*---------------------------------------------------------------------------------*/
 /*                FUNCÃO ABRIR E FECHAR MODAL DE CADASTRAR PRODUTOS                */
 /*---------------------------------------------------------------------------------*/
 
@@ -9,6 +52,7 @@ function abrirCadastrarProdutos() {
     let abrirModalCadastrarProduto = document.querySelector('.fundo-modal')
 
     abrirModalCadastrarProduto.style.display = 'flex';
+    travarFundoModal()   
 }
 
 // Fechar modal de cadastrar produtos
@@ -18,7 +62,8 @@ function fecharCadastrarProdutos() {
     let abrirModalCadastrarProduto = document.querySelector('.fundo-modal')
 
     abrirModalCadastrarProduto.style.display = 'none';
-    window.location.reload();
+    manterParametroPagina()
+    apagarPesquisa();
 }
 
 
@@ -37,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (localStorage.getItem('modalOpen') === 'true') {
         abrirModalEditarProduto.style.display = 'flex';
+        travarFundoModal()
     }
 
     // Abrir o modal de editar produtos
@@ -54,15 +100,13 @@ document.addEventListener("DOMContentLoaded", function() {
         abrirModalEditarProduto.style.display = 'none';
         localStorage.setItem('modalOpen', 'false');
 
-        const url = new URL(window.location);
-        url.search = ''; // Remove parâmetros de consulta
-        url.hash = '';   // Remove o fragmento da URL (hash)
-        window.history.replaceState({}, document.title, url.toString());
-        window.location.reload();
+        manterParametroPagina()
+        apagarPesquisa();
     }
 
     document.getElementById('salvar-edicao').addEventListener('click', function() {
         localStorage.removeItem('modalOpen'); // Remove o item do localStorage
+        apagarPesquisa();
         
     });
     
@@ -74,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (localStorage.getItem('modalDeletar') === 'true') {
         abrirModalDeletarProduto.style.display = 'flex';
+        travarFundoModal()
     }
 
     // Abrir o modal de deletar produtos
@@ -81,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
     abrirDeletarProdutos = function() {
 
         abrirModalDeletarProduto.style.display = 'flex';
-        localStorage.setItem('modalDeletar', 'true');
+        localStorage.setItem('modalDeletar', 'true'); 
     }
  
     // Fechar o modal de deletar produtos
@@ -91,11 +136,8 @@ document.addEventListener("DOMContentLoaded", function() {
         abrirModalDeletarProduto.style.display = 'none';
         localStorage.setItem('modalDeletar', 'false');
 
-        const url = new URL(window.location);
-        url.search = ''; // Remove parâmetros de consulta
-        url.hash = '';   // Remove o fragmento da URL (hash)
-        window.history.replaceState({}, document.title, url.toString());
-        window.location.reload();
+        manterParametroPagina()
+        apagarPesquisa();
     }
 
     // BOTÃO DE NAO DELETAR PRODUTO
@@ -105,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function() {
         naoDeletar.addEventListener('click', function() {
             
             fecharDeletarProdutos(); // Fecha o modal
+            apagarPesquisa();
         
         });
     
@@ -113,7 +156,8 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('deletar-produto').addEventListener('click', function() {
 
         localStorage.removeItem('modalDeletar'); // Remove o item do localStorage
-        window.location.reload();
+
+        apagarPesquisa();
         
     });
 
@@ -177,11 +221,7 @@ function fecharAviso() {
     
     localStorage.setItem('modalAviso', 'false');
 
-    const url = new URL(window.location);
-    url.search = ''; // Remove parâmetros de consulta
-    url.hash = '';   // Remove o fragmento da URL (hash)
-    window.history.replaceState({}, document.title, url.toString());
-    window.location.reload();
+    manterParametroPagina()
 }
 
 

@@ -203,6 +203,23 @@
 <!-------------------------------------------------------------------------------------------------->
 <!--                  PAINEL DE ADMINISTRAÇÃO E TABELA DE PRODUTOS CADASTRADOS                    -->
 <!-------------------------------------------------------------------------------------------------->  
+
+    <?php
+        include_once('conexao.php');
+
+        $sql_produtos_quantidade_query = "SELECT COUNT(*) as produtos_cadastrados FROM produtos";
+        $sql_produtos_quantidade_query_exec = $mysqli->query($sql_produtos_quantidade_query) or die($mysqli->error);
+
+        $sql_quantidade_produtos_cadastrados = $sql_produtos_quantidade_query_exec->fetch_assoc();
+        $quantidade_produtos_cadastrados = $sql_quantidade_produtos_cadastrados['produtos_cadastrados'];
+
+        $pagina_atual = $_GET['pagina'] ? intval($_GET['pagina']) : 1;
+        $quantidade_produtos_por_pagina = 10;
+        $offset = ($pagina_atual - 1) * $quantidade_produtos_por_pagina;
+
+        $numero_pagina = ceil($quantidade_produtos_cadastrados / $quantidade_produtos_por_pagina);
+
+    ?>
     
 
     <div class="container-produtos-cadastrados">
@@ -224,13 +241,14 @@
 
                 <div class="pesquisar-produto-cadastrado">
                     <form action="" class="barra-pesquisa">
+                        <input type="hidden" id="pagina" name="pagina" value="<?php echo isset($_GET['pagina']) ? htmlspecialchars($_GET['pagina']) : '1'; ?>">
                         <input type="text" id="pesquisa" name="busca" value="<?php if(isset($_GET['busca'])) echo $_GET['busca'] ?>" placeholder="Procurar produto cadastrado">
                         <button type="submit" id="botao-pesquisar" class="botao-de-pesquisar">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
                                 <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
                             </svg>
                         </button> <!-- .botao-de-pesquisar -->
-                        <a href="produtos.php" id="apagar-pesquisa" class="botao-apagar-pesquisa" onclick="apagarPesquisa()">
+                        <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>" id="apagar-pesquisa" class="botao-apagar-pesquisa" onclick="apagarPesquisa()">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
                                 <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
                             </svg>
@@ -241,7 +259,7 @@
             </div> <!-- .painel-administracao-cadastro -->
 
             <div>
-                <a id="atualizar" href="produtos.php" class="atualizar-tabela">
+                <a id="atualizar" href="produtos.php?pagina=1" class="atualizar-tabela">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                         <path d="M204-318q-22-38-33-78t-11-82q0-134 93-228t227-94h7l-64-64 56-56 160 160-160 160-56-56 64-64h-7q-100 0-170 70.5T240-478q0 26 6 51t18 49l-60 60ZM481-40 321-200l160-160 56 56-64 64h7q100 0 170-70.5T720-482q0-26-6-51t-18-49l60-60q22 38 33 78t11 82q0 134-93 228t-227 94h-7l64 64-56 56Z"/>
                     </svg>
@@ -252,7 +270,7 @@
         </div> <!-- .painel-administracao -->
 
         <div class="titulo-tabela">
-            <h1>Produtos cadastrados</h1>
+            <h1><?php echo $quantidade_produtos_cadastrados ?> Produtos cadastrados</h1>
         </div> <!-- .titulo-tabela -->
         
         
@@ -357,16 +375,14 @@
 
                         if(!isset($_GET['busca']) || $_GET['busca'] == "") {
 
-                            $sql_produtos = "SELECT * FROM produtos";
+                            $sql_produtos = "SELECT * FROM produtos LIMIT {$quantidade_produtos_por_pagina} OFFSET {$offset}";
                             $query_produtos = $mysqli->query($sql_produtos) or die($mysqli->error);
-
-                            $num_produtos = $query_produtos->num_rows; // Verifica quantos produtos tem cadastrados
 
                             ?>
 
                             <?php
 
-                            if($num_produtos == 0) { ?>
+                            if($quantidade_produtos_cadastrados == 0) { ?>
                                 <tr>
                                     <td colspan="8" class="aviso-nenhum-produto-cadastrado">Nenhum produto cadastrado até o momento</td>
                                 </tr>
@@ -427,7 +443,7 @@
                                             <td class="dado-produto dado-produto-centralizado">
                                                 
                                                 <div class="acoes-tabela">
-                                                    <a href="produtos.php?id=<?php echo $produto['id'] ?>#modal">
+                                                    <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&id=<?php echo $produto['id']; ?>#modal">
                                                         <div id="abrirModalDiv" onclick="abrirEditarProdutos()" class="editar-produto" >
                                                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                                                                 <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/>
@@ -435,7 +451,7 @@
                                                         </div> <!-- .editar-produto -->
                                                     </a>                                             
                                                         
-                                                    <a href="produtos.php?id=<?php echo $produto['id'] ?>#modal"> 
+                                                    <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&id=<?php echo $produto['id']; ?>#modal">
                                                         <div class="deletar-produto" onclick="abrirDeletarProdutos()">
                                                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                                                                 <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
@@ -524,7 +540,7 @@
                                                 <td class="dado-produto dado-produto-centralizado">
                                                     
                                                     <div class="acoes-tabela">
-                                                        <a href="produtos.php?id=<?php echo $dados_encontrados['id'] ?>#modal">
+                                                        <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&id=<?php echo $dados_encontrados['id']; ?>#modal">
                                                             <div id="abrirModalDiv" onclick="abrirEditarProdutos()" class="editar-produto" >
                                                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                                                                     <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/>
@@ -532,7 +548,7 @@
                                                             </div> <!-- .editar-produto -->
                                                         </a>                                             
                                                             
-                                                        <a href="produtos.php?id=<?php echo $dados_encontrados['id'] ?>#modal"> 
+                                                        <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&id=<?php echo $dados_encontrados['id']; ?>#modal"> 
                                                             <div class="deletar-produto" onclick="abrirDeletarProdutos()">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                                                                     <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
@@ -558,7 +574,40 @@
             </table>
 
         </div> <!-- .tabela-produtos-cadastrados -->
+
+
+        <!-------------------------------------------------------------------------------------------------->
+        <!--                           SELETOR DE PÁGINAS DOS PRODUTOS                                    -->
+        <!-------------------------------------------------------------------------------------------------->
+
+
+        <div class="numero-de-paginas">
+            <p>Página <?php echo $pagina_atual ?> de <?php echo $numero_pagina ?></p>
+        </div>
+        <div class="paginas-produtos">
+            
+            <?php
+                for($p = 1; $p <= $numero_pagina; $p++) {
+                    if($p === $pagina_atual) { ?>
+                        <p class="pagina-produtos-atual"><?php echo $p ?></p>
+
+                        <?php
+                    } else {
+                        echo "<a class='paginas-anterior-posterior' href='?pagina={$p}'>{$p}<a>";
+                    } 
+                }
+            ?>
+            
+        </div>
+     
+
+
+
     </div> <!-- .container-produtos-cadastrados -->
+
+
+
+    
 
 
             
