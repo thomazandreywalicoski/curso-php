@@ -1,4 +1,17 @@
 /*---------------------------------------------------------------------------------*/
+/*                FAZ O SITE ABRIR JA COM O PARÂMETRO PAGINA=1                     */
+/*---------------------------------------------------------------------------------*/
+
+window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (!urlParams.has('pagina')) {
+        urlParams.set('pagina', '1');
+        window.location.search = urlParams.toString();
+    }
+};
+
+
+/*---------------------------------------------------------------------------------*/
 /*                FUNCÃO ATUALIZAR A URL NA PÁGINA SELECIONADA                     */
 /*---------------------------------------------------------------------------------*/
 
@@ -73,6 +86,38 @@ function fecharCadastrarProdutos() {
 
 
 document.addEventListener("DOMContentLoaded", function() {
+
+    // VISUALIZAR PRODUTOS
+
+    const abrirModalVisualizarProduto = document.getElementById('modal-visualizar');
+    
+    // Verificar o estado do modal no localStorage
+
+    if (localStorage.getItem('modalVisualizar') === 'true') {
+        abrirModalVisualizarProduto.style.display = 'flex';
+        travarFundoModal()
+    }
+
+    // Abrir o modal de editar produtos
+
+    abrirVisualizarProdutos = function() {
+
+        abrirModalVisualizarProduto.style.display = 'flex';
+        localStorage.setItem('modalVisualizar', 'true');
+    }
+ 
+    // Fechar o modal de editar produtos
+
+    fecharVisualizarProdutos = function() {
+
+        abrirModalVisualizarProduto.style.display = 'none';
+        localStorage.setItem('modalVisualizar', 'false');
+
+        manterParametroPagina()
+        apagarPesquisa();
+    }
+
+
 
     // EDITAR PRODUTOS
 
