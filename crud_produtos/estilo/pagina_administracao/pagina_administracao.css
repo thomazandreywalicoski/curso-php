@@ -193,6 +193,10 @@ tr:hover {
 .dado-produto {
     padding: 8px;
     font-family: 'Ubuntu', sans-serif;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .dado-produto-centralizado {
@@ -221,7 +225,7 @@ tr:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #aeaeae;
+    background-color: rgb(145, 145, 145);
     padding: 5px;
     border-radius: 8px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;

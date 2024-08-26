@@ -280,8 +280,8 @@
                     <tr class="cabecalho-tabela">
                         <th class="coluna-tabela">
                             <div class="informacao-tabela">
-                                <svg class="icone-coluna" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-                                    <path d="M446-80q-15 0-30-6t-27-18L103-390q-12-12-17.5-26.5T80-446q0-15 5.5-30t17.5-27l352-353q11-11 26-17.5t31-6.5h287q33 0 56.5 23.5T879-800v287q0 16-6 30.5T856-457L503-104q-12 12-27 18t-30 6Zm0-80 353-354v-286H513L160-446l286 286Zm253-480q25 0 42.5-17.5T759-700q0-25-17.5-42.5T699-760q-25 0-42.5 17.5T639-700q0 25 17.5 42.5T699-640ZM480-480Z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                                    <path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70q66 0 121 33t87 87h432v240h-80v120H600v-120H488q-32 54-87 87t-121 33Zm0-80q66 0 106-40.5t48-79.5h246v120h80v-120h80v-80H434q-8-39-48-79.5T280-640q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-80q33 0 56.5-23.5T360-480q0-33-23.5-56.5T280-560q-33 0-56.5 23.5T200-480q0 33 23.5 56.5T280-400Zm0-80Z"/>
                                 </svg>
                                 <p>ID</p>
                             </div> <!-- .informacao-tabela -->
@@ -316,12 +316,13 @@
 
                         <th class="coluna-tabela">
                             <div class="informacao-tabela">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-                                    <path d="M480-400 40-640l440-240 440 240-440 240Zm0 160L63-467l84-46 333 182 333-182 84 46-417 227Zm0 160L63-307l84-46 333 182 333-182 84 46L480-80Zm0-411 273-149-273-149-273 149 273 149Zm0-149Z"/>
+                                <svg class="icone-coluna" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                                    <path d="M446-80q-15 0-30-6t-27-18L103-390q-12-12-17.5-26.5T80-446q0-15 5.5-30t17.5-27l352-353q11-11 26-17.5t31-6.5h287q33 0 56.5 23.5T879-800v287q0 16-6 30.5T856-457L503-104q-12 12-27 18t-30 6Zm0-80 353-354v-286H513L160-446l286 286Zm253-480q25 0 42.5-17.5T759-700q0-25-17.5-42.5T699-760q-25 0-42.5 17.5T639-700q0 25 17.5 42.5T699-640ZM480-480Z"/>
                                 </svg>
-                                <p>Quantidade</p>
+                                <p>Marca</p>
                             </div> <!-- .informacao-tabela -->
                         </th> <!-- .coluna-tabela -->
+                    
 
                         <th class="coluna-tabela">
                             <div class="informacao-tabela">
@@ -332,14 +333,7 @@
                             </div> <!-- .informacao-tabela -->
                         </th> <!-- .coluna-tabela -->
 
-                        <th class="coluna-tabela">
-                            <div class="informacao-tabela">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-                                    <path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/>
-                                </svg>
-                                <p>Validade</p>
-                            </div> <!-- .informacao-tabela -->
-                        </th> <!-- .coluna-tabela -->
+                       
 
                         <th class="coluna-tabela">
                             <div class="informacao-tabela">
@@ -425,16 +419,14 @@
                                             </td>
 
                                             <td class="dado-produto">
-                                                <?php echo $produto['quantidade'] ?>
+                                                
                                             </td>
 
                                             <td class="dado-produto">
                                                 <?php echo "R$" . $preco ?>
                                             </td>
 
-                                            <td class="dado-produto dado-produto-centralizado">
-                                                <?php echo $validade ?>
-                                            </td>
+                                            
 
                                             <td class="dado-produto dado-produto-centralizado">
                                                 <?php echo $produto['estoque'] ?>
@@ -550,6 +542,14 @@
                                                     
                                                     <div class="acoes-tabela">
                                                         <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&id=<?php echo $dados_encontrados['id']; ?>#modal">
+                                                            <div class="visualizar-informacoes-produto" onclick="abrirVisualizarProdutos()">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                                                                    <path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/>
+                                                                </svg>
+                                                            </div> <!-- .visualizar-informacoes-produto -->
+                                                        </a>
+
+                                                        <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&id=<?php echo $dados_encontrados['id']; ?>#modal">
                                                             <div id="abrirModalDiv" onclick="abrirEditarProdutos()" class="editar-produto" >
                                                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                                                                     <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/>
@@ -636,7 +636,7 @@
         <div class="modal-visualizar-produto">
 
             <div class="titulo-modal-visualizar-produto">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#004d81">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                     <path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/>
                 </svg>
                 <h1>Informações do produto</h1>
@@ -658,116 +658,159 @@
                 $query_visualizar_produto = $mysqli->query($sql_visualizar_produto) or die($mysqli->error);
                 $visualizar_produto = $query_visualizar_produto->fetch_assoc();
 
+                $visualizar_produto_preco = "";
+                if(!empty($visualizar_produto['preco'])) {
+                    $visualizar_produto_preco = number_format($visualizar_produto['preco'], 2, ',', '.');
+                }
+
+                $visualizar_produto_validade = "Não Informado";
+                if(!empty($visualizar_produto['validade'])) {
+                    $visualizar_produto_validade = implode('/', array_reverse(explode('-',$visualizar_produto['validade'])));  
+                }
+
+                /*
+                if(!empty($visualizar_produto['descricao'])) {
+                    $visualizar_produto_descricao = "Nenhuma descrição sobre o produto informada.";
+                } else {
+                    $visualizar_produto_descricao = $visualizar_produto['descricao'];
+                }*/
+
             ?>
 
 
 
-            <div class="modal-informações-linha-1">
-                <div class="informacoes-produtos">
-                    <div class="informacoes-produtos-tipo-dado">
-                        <svg class="icone-coluna" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
-                            <path d="M446-80q-15 0-30-6t-27-18L103-390q-12-12-17.5-26.5T80-446q0-15 5.5-30t17.5-27l352-353q11-11 26-17.5t31-6.5h287q33 0 56.5 23.5T879-800v287q0 16-6 30.5T856-457L503-104q-12 12-27 18t-30 6Zm0-80 353-354v-286H513L160-446l286 286Zm253-480q25 0 42.5-17.5T759-700q0-25-17.5-42.5T699-760q-25 0-42.5 17.5T639-700q0 25 17.5 42.5T699-640ZM480-480Z"/>
-                        </svg>
-                        <h2>ID:</h2>
-                        <p><?php echo $visualizar_produto['id'] ?></p>
+
+            <div class="modal-informacoes-linha-1-c">
+                <div class="modal-informacoes-linha-1">
+                    <div class="modal-informacoes-linha-1-divisao-1">
+                        <div class="informacoes-produtos-id">
+                            <div class="informacoes-produtos-tipo-dado">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                    <path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70q66 0 121 33t87 87h432v240h-80v120H600v-120H488q-32 54-87 87t-121 33Zm0-80q66 0 106-40.5t48-79.5h246v120h80v-120h80v-80H434q-8-39-48-79.5T280-640q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-80q33 0 56.5-23.5T360-480q0-33-23.5-56.5T280-560q-33 0-56.5 23.5T200-480q0 33 23.5 56.5T280-400Zm0-80Z"/>
+                                </svg>
+                                <h2>ID:</h2>
+                            </div>
+                            <div class="informacoes-produtos-dado">
+                                <p><?php echo $visualizar_produto['id'] ?></p>
+                            </div>
+                        </div>
+                        <div class="informacoes-produtos-preco">
+                            <div class="informacoes-produtos-tipo-dado">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                    <path d="M441-120v-86q-53-12-91.5-46T293-348l74-30q15 48 44.5 73t77.5 25q41 0 69.5-18.5T587-356q0-35-22-55.5T463-458q-86-27-118-64.5T313-614q0-65 42-101t86-41v-84h80v84q50 8 82.5 36.5T651-650l-74 32q-12-32-34-48t-60-16q-44 0-67 19.5T393-614q0 33 30 52t104 40q69 20 104.5 63.5T667-358q0 71-42 108t-104 46v84h-80Z"/>
+                                </svg>
+                                <h2>Preço:</h2>
+                            </div>
+                            <div class="informacoes-produtos-dado">
+                                <p><?php echo $visualizar_produto_preco ?></p>
+                            </div>
+                        </div>
                     </div>
-                    
+
+                    <div class="modal-informacoes-linha-1-divisao-2">
+                        <div class="informacoes-produtos-categoria">
+                            <div class="informacoes-produtos-tipo-dado">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                    <path d="M400-240v-80h160v80H400ZM240-440v-80h480v80H240ZM120-640v-80h720v80H120Z"/>
+                                </svg>
+                                <h2>Categoria:</h2>
+                            </div>
+                            <div class="informacoes-produtos-dado">
+                                <p><?php echo $visualizar_produto['categoria'] ?></p>
+                            </div>
+                        </div>
+                        <div class="informacoes-produtos-quantidade">
+                            <div class="informacoes-produtos-tipo-dado">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                    <path d="M480-400 40-640l440-240 440 240-440 240Zm0 160L63-467l84-46 333 182 333-182 84 46-417 227Zm0 160L63-307l84-46 333 182 333-182 84 46L480-80Zm0-411 273-149-273-149-273 149 273 149Zm0-149Z"/>
+                                </svg>
+                                <h2>Quantidade:</h2>
+                            </div>
+                            <div class="informacoes-produtos-dado">
+                                <p><?php echo $visualizar_produto['quantidade'] ?></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="informacoes-produtos">
+
+                <div class="informacoes-produtos-img">
                     <div class="informacoes-produtos-tipo-dado">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
                             <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Zm140-360q25 0 42.5-17.5T400-620q0-25-17.5-42.5T340-680q-25 0-42.5 17.5T280-620q0 25 17.5 42.5T340-560Z"/>
                         </svg>
                         <h2>Imagem:</h2>
-                        
                     </div>
+                    <div class="informacoes-produtos-dado-img">
+                        <img width="80px" src="https://www.proquill.com.br/admin/uploads/noticias/86_BRANCOLEJO%205%20L.png" alt="">
+                    </div>     
                 </div>
             </div>
 
-            <div class="modal-informações-linha-2">
-                <div class="informacoes-produtos">
+
+
+            <div class="modal-informações-linha-2-c">
+                <div class="informacoes-produtos-nome">
                     <div class="informacoes-produtos-tipo-dado">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
                             <path d="M160-720v-80h640v80H160Zm0 560v-240h-40v-80l40-200h640l40 200v80h-40v240h-80v-240H560v240H160Zm80-80h240v-160H240v160Zm-38-240h556-556Zm0 0h556l-24-120H226l-24 120Z"/>
                         </svg>
                         <h2>Nome do produto:</h2>
-                        
                     </div>
-                    <div class="informacoes-produtos-tipo-dado-nome">
+                    <div class="informacoes-produtos-dado">
                         <p><?php echo $visualizar_produto['nome'] ?></p>
                     </div>
-
                 </div>
-            </div>
-
-            <div class="modal-informações-linha-3">
-                <div class="informacoes-produtos">
-                    <div class="informacoes-produtos-tipo-dado">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
-                            <path d="M400-240v-80h160v80H400ZM240-440v-80h480v80H240ZM120-640v-80h720v80H120Z"/>
-                        </svg>
-                        <h2>Categoria:</h2>
-                        <p><?php echo $visualizar_produto['categoria'] ?></p>
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="modal-informações-linha-4">
-                <div class="informacoes-produtos">
-                    <div class="informacoes-produtos-tipo-dado">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
-                            <path d="M480-400 40-640l440-240 440 240-440 240Zm0 160L63-467l84-46 333 182 333-182 84 46-417 227Zm0 160L63-307l84-46 333 182 333-182 84 46L480-80Zm0-411 273-149-273-149-273 149 273 149Zm0-149Z"/>
-                        </svg>
-                        <h2>Quantidade:</h2>
-                        <p><?php echo $visualizar_produto['quantidade'] ?></p>
-                    </div>
-                    
-                </div>
-                <div class="informacoes-produtos">
-                    <div class="informacoes-produtos-tipo-dado">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
-                            <path d="M441-120v-86q-53-12-91.5-46T293-348l74-30q15 48 44.5 73t77.5 25q41 0 69.5-18.5T587-356q0-35-22-55.5T463-458q-86-27-118-64.5T313-614q0-65 42-101t86-41v-84h80v84q50 8 82.5 36.5T651-650l-74 32q-12-32-34-48t-60-16q-44 0-67 19.5T393-614q0 33 30 52t104 40q69 20 104.5 63.5T667-358q0 71-42 108t-104 46v84h-80Z"/>
-                        </svg>
-                        <h2>Preço:</h2>
-                        <p><?php echo $visualizar_produto['preco'] ?></p>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="modal-informações-linha-5">
-                <div class="informacoes-produtos">
-                    <div class="informacoes-produtos-tipo-dado">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
-                            <path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/>
-                        </svg>
-                        <h2>Validade:</h2>
-                        <p><?php echo $visualizar_produto['validade'] ?></p>
-                    </div>
-                    
-                </div>
-                <div class="informacoes-produtos">
+                <div class="informacoes-produtos-estoque">
                     <div class="informacoes-produtos-tipo-dado">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
                             <path d="M320-280q17 0 28.5-11.5T360-320q0-17-11.5-28.5T320-360q-17 0-28.5 11.5T280-320q0 17 11.5 28.5T320-280Zm0-160q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Zm0-160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm120 320h240v-80H440v80Zm0-160h240v-80H440v80Zm0-160h240v-80H440v80ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/>
                         </svg>
                         <h2>Estoque:</h2>
+                    </div>
+                    <div class="informacoes-produtos-dado">
                         <p><?php echo $visualizar_produto['estoque'] ?></p>
                     </div>
-                    
                 </div>
             </div>
 
-            <div class="modal-informações-linha-6">
-                <div class="informacoes-produtos">
+            
+            
+            <div class="modal-informações-linha-3-c">
+                <div class="informacoes-produtos-validade">
+                    <div class="informacoes-produtos-tipo-dado">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                            <path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/>
+                        </svg>
+                        <h2>Validade:</h2>
+                    </div>
+                    <div class="informacoes-produtos-dado">
+                        <p><?php echo $visualizar_produto_validade ?></p>
+                    </div>    
+                </div>
+                <div class="informacoes-produtos-marca">
+                    <div class="informacoes-produtos-tipo-dado">
+                        <svg class="icone-coluna" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                            <path d="M446-80q-15 0-30-6t-27-18L103-390q-12-12-17.5-26.5T80-446q0-15 5.5-30t17.5-27l352-353q11-11 26-17.5t31-6.5h287q33 0 56.5 23.5T879-800v287q0 16-6 30.5T856-457L503-104q-12 12-27 18t-30 6Zm0-80 353-354v-286H513L160-446l286 286Zm253-480q25 0 42.5-17.5T759-700q0-25-17.5-42.5T699-760q-25 0-42.5 17.5T639-700q0 25 17.5 42.5T699-640ZM480-480Z"/>
+                        </svg>
+                        <h2>Marca:</h2>
+                    </div>
+                    <div class="informacoes-produtos-dado">
+                        <p><?php echo $visualizar_produto_validade ?></p>
+                    </div>    
+                </div>
+            </div>
+
+
+
+            <div class="modal-informações-linha-4-c">
+                <div class="informacoes-produtos-descricao">
                     <div class="informacoes-produtos-tipo-dado">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
                             <path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/>
                         </svg>
                         <h2>Descrição do produto: </h2>
                     </div>
-                    <div class="informacoes-produtos-tipo-dado-descricao">
+                    <div class="informacoes-produtos-dado-descricao">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, ducimus eaque dolore, deserunt laboriosam culpa, fugiat ipsam illo in optio expedita temporibus aperiam. Quaerat, nemo quas? Autem aperiam incidunt nulla!</p>
                     </div>
                 </div>
