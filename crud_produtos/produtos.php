@@ -27,7 +27,7 @@
 
                 <div class="header-formulario-cadastrar-produto">
                     <div class="titulo-formulario-cadastrar-produto">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#008702">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                             <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
                         </svg>
                         <h1>Cadastrar produto</h1>
@@ -35,54 +35,144 @@
                     <p>Preencha todos os dados do formulário abaixo</p>
                 </div> <!-- .header-formulario-cadastrar-produto -->
 
-                <div class="formulario-dados">
-                    <input value="<?php if(isset($_POST['nome'])) echo $_POST['nome'] ?>" name="nome" type="text" id="nome-input" class="input-formulario">
-                    <label for="nome-input">Nome</label>
-                </div> <!-- .formulario-dados -->
+                <div class="formulario-dados-linha-1">
 
-                <div class="formulario-dados">
-                    <div class="formulario-dados-categoria">
-                        <p>Categoria</p>
-                        <select name="categoria" id="categoria-produtos">
-                            <option value="automotivo">Automotivo</option>
-                            <option value="residencial">Residencial</option>
-                            <option value="roupas">Roupas</option>
-                        </select>
-                    </div>
-                </div> <!-- .formulario-dados -->
+                    <div class="cadastro-produto-nome">
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M160-720v-80h640v80H160Zm0 560v-240h-40v-80l40-200h640l40 200v80h-40v240h-80v-240H560v240H160Zm80-80h240v-160H240v160Zm-38-240h556-556Zm0 0h556l-24-120H226l-24 120Z"/>
+                            </svg>
+                            <label>Nome</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <input value="<?php if(isset($_POST['nome'])) echo $_POST['nome'] ?>" name="nome" type="text">
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-nome -->
 
-                <div class="formulario-dados">
-                    <input value="<?php if(isset($_POST['quantidade'])) echo $_POST['quantidade'] ?>" name="quantidade" type="text" id="quantidade-input" class="input-formulario">
-                    <label for="quantidade-input">Quantidade</label>
-                </div> <!-- .formulario-dados -->
+                    <div class="cadastro-produto-preco">
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M441-120v-86q-53-12-91.5-46T293-348l74-30q15 48 44.5 73t77.5 25q41 0 69.5-18.5T587-356q0-35-22-55.5T463-458q-86-27-118-64.5T313-614q0-65 42-101t86-41v-84h80v84q50 8 82.5 36.5T651-650l-74 32q-12-32-34-48t-60-16q-44 0-67 19.5T393-614q0 33 30 52t104 40q69 20 104.5 63.5T667-358q0 71-42 108t-104 46v84h-80Z"/>
+                            </svg>
+                            <label>Preço</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <input value="<?php if(isset($_POST['preco'])) echo $_POST['preco'] ?>" name="preco" type="text">
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-preco -->
+                     
+                </div> <!-- .formulario-dados-linha-1 -->
 
-                <div class="formulario-dados">
-                    <input value="<?php if(isset($_POST['preco'])) echo $_POST['preco'] ?>" name="preco" type="text" id="preco-input" class="input-formulario">
-                    <label for="preco-input">Preço</label>
-                </div> <!-- .formulario-dados -->
 
-                <div class="formulario-dados-img">
-                    <p>Imagem</p>
-                    <input type="file" id="imagem-input">
-                </div> <!-- .formulario-dados-img -->
+                <div class="formulario-dados-linha-2">
 
-                <div class="formulario-dados">
-                    <input value="<?php if(isset($_POST['validade'])) echo $_POST['validade'] ?>" name="validade" type="text" id="validade-input" class="input-formulario">
-                    <label for="validade-input">Validade</label>
-                </div> <!-- .formulario-dados -->
+                    <div class="cadastro-produto-marca">      
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg class="icone-coluna" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M446-80q-15 0-30-6t-27-18L103-390q-12-12-17.5-26.5T80-446q0-15 5.5-30t17.5-27l352-353q11-11 26-17.5t31-6.5h287q33 0 56.5 23.5T879-800v287q0 16-6 30.5T856-457L503-104q-12 12-27 18t-30 6Zm0-80 353-354v-286H513L160-446l286 286Zm253-480q25 0 42.5-17.5T759-700q0-25-17.5-42.5T699-760q-25 0-42.5 17.5T639-700q0 25 17.5 42.5T699-640ZM480-480Z"/>
+                            </svg>
+                            <label>Marca</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <input value="" name="marca" type="text">
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-marca -->
 
-                <div class="formulario-dados">
-                    <input value="<?php if(isset($_POST['estoque'])) echo $_POST['estoque'] ?>" name="estoque" type="number" id="estoque-input" class="input-formulario">
-                    <label for="estoque-input">Estoque</label>
-                </div> <!-- .formulario-dados -->
+                    <div class="cadastro-produto-estoque">
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M320-280q17 0 28.5-11.5T360-320q0-17-11.5-28.5T320-360q-17 0-28.5 11.5T280-320q0 17 11.5 28.5T320-280Zm0-160q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Zm0-160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm120 320h240v-80H440v80Zm0-160h240v-80H440v80Zm0-160h240v-80H440v80ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/>
+                            </svg>
+                            <label>Estoque</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <input value="<?php if(isset($_POST['estoque'])) echo $_POST['estoque'] ?>" name="estoque" type="number">
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-estoque -->
+
+                    <div class="cadastro-produto-categoria">
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M400-240v-80h160v80H400ZM240-440v-80h480v80H240ZM120-640v-80h720v80H120Z"/>
+                            </svg>
+                            <label>Categoria</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <select name="categoria" id="categoria-produtos">
+                                <option value="automotivo">Automotivo</option>
+                                <option value="residencial">Residencial</option>
+                                <option value="roupas">Roupas</option>
+                            </select>
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-categoria -->
+
+                </div> <!-- .formulario-dados-linha-2 -->
+
+
+                <div class="formulario-dados-linha-3">
+
+                    <div class="cadastro-produto-quantidade">      
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M480-400 40-640l440-240 440 240-440 240Zm0 160L63-467l84-46 333 182 333-182 84 46-417 227Zm0 160L63-307l84-46 333 182 333-182 84 46L480-80Zm0-411 273-149-273-149-273 149 273 149Zm0-149Z"/>
+                            </svg>
+                            <label>Quantidade</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <input value="<?php if(isset($_POST['quantidade'])) echo $_POST['quantidade'] ?>" name="quantidade" type="text">
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-quantidade -->
+
+                    <div class="cadastro-produto-validade">      
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/>
+                            </svg>
+                            <label>Validade</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <input value="<?php if(isset($_POST['validade'])) echo $_POST['validade'] ?>" name="validade" type="text">
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-validade -->
+
+                    <div class="cadastro-produto-imagem">      
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Zm140-360q25 0 42.5-17.5T400-620q0-25-17.5-42.5T340-680q-25 0-42.5 17.5T280-620q0 25 17.5 42.5T340-560Z"/>
+                            </svg>
+                            <label>Imagem</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <input type="file" id="imagem">
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-imagem -->
+
+                </div> <!-- .formulario-dados-linha-3 -->
+
+
+                <div class="formulario-dados-linha-4">
+
+                    <div class="cadastro-produto-descricao">      
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                                <path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/>
+                            </svg>
+                            <label>Descrição do produto</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <textarea name="descricao"></textarea>
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-descricao -->
+
+                </div> <!-- .formulario-dados-linha-4 -->
 
                 <div class="btn-formulario-salvar-c">
                     <button class="btn-formulario-salvar" type="submit" name="cadastrar" id="cadastrar">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#008702">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                             <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
                         </svg>
                         <p>Cadastrar</p>
-                    </button>
+                    </button> <!-- .btn-formulario-salvar -->
                 </div> <!-- .btn-formulario-salvar-c -->
 
 
@@ -103,10 +193,12 @@
 
                         $nome = $_POST['nome'];
                         $categoria = $_POST['categoria'];
+                        $marca = $_POST['marca'];
                         $quantidade = $_POST['quantidade'];
                         $preco = $_POST['preco'];
                         $validade = $_POST['validade'];
                         $estoque = $_POST['estoque'];
+                        $descricao = $_POST['descricao'];
                         $tipo_formulario = $_POST['tipo_formulario'];
 
                         if(empty($nome)) {
@@ -134,7 +226,7 @@
                         }
 
                         if($tipo_formulario == 'cadastrar' && $aviso_erro == false){
-                            $sql_code = "INSERT INTO produtos (nome, categoria, quantidade, preco, validade, estoque) VALUES ('$nome', '$categoria', '$quantidade', '$preco', '$validade', '$estoque')";
+                            $sql_code = "INSERT INTO produtos (nome, categoria, marca, quantidade, preco, validade, estoque, descricao) VALUES ('$nome', '$categoria', '$marca', '$quantidade', '$preco', '$validade', '$estoque', '$descricao')";
                             $deu_certo = $mysqli->query($sql_code) or die($mysqli->error);
 
                             if($deu_certo) {
@@ -668,17 +760,14 @@
                     $visualizar_produto_validade = implode('/', array_reverse(explode('-',$visualizar_produto['validade'])));  
                 }
 
-                /*
-                if(!empty($visualizar_produto['descricao'])) {
+                
+                if(empty($visualizar_produto['descricao'])) {
                     $visualizar_produto_descricao = "Nenhuma descrição sobre o produto informada.";
                 } else {
                     $visualizar_produto_descricao = $visualizar_produto['descricao'];
-                }*/
+                }
 
             ?>
-
-
-
 
             <div class="modal-informacoes-linha-1-c">
                 <div class="modal-informacoes-linha-1">
@@ -689,23 +778,25 @@
                                     <path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70q66 0 121 33t87 87h432v240h-80v120H600v-120H488q-32 54-87 87t-121 33Zm0-80q66 0 106-40.5t48-79.5h246v120h80v-120h80v-80H434q-8-39-48-79.5T280-640q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-80q33 0 56.5-23.5T360-480q0-33-23.5-56.5T280-560q-33 0-56.5 23.5T200-480q0 33 23.5 56.5T280-400Zm0-80Z"/>
                                 </svg>
                                 <h2>ID:</h2>
-                            </div>
+                            </div> <!-- .informacoes-produtos-tipo-dado -->
                             <div class="informacoes-produtos-dado">
                                 <p><?php echo $visualizar_produto['id'] ?></p>
-                            </div>
-                        </div>
+                            </div> <!-- .informacoes-produtos-dado -->
+                        </div> <!-- .informacoes-produtos-id -->
+
                         <div class="informacoes-produtos-preco">
                             <div class="informacoes-produtos-tipo-dado">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
                                     <path d="M441-120v-86q-53-12-91.5-46T293-348l74-30q15 48 44.5 73t77.5 25q41 0 69.5-18.5T587-356q0-35-22-55.5T463-458q-86-27-118-64.5T313-614q0-65 42-101t86-41v-84h80v84q50 8 82.5 36.5T651-650l-74 32q-12-32-34-48t-60-16q-44 0-67 19.5T393-614q0 33 30 52t104 40q69 20 104.5 63.5T667-358q0 71-42 108t-104 46v84h-80Z"/>
                                 </svg>
                                 <h2>Preço:</h2>
-                            </div>
+                            </div> <!-- .informacoes-produtos-tipo-dado -->
                             <div class="informacoes-produtos-dado">
                                 <p><?php echo $visualizar_produto_preco ?></p>
-                            </div>
-                        </div>
-                    </div>
+                            </div> <!-- .informacoes-produtos-dado -->
+                        </div> <!-- .informacoes-produtos-preco -->
+
+                    </div> <!-- .modal-informacoes-linha-1-divisao-1 -->
 
                     <div class="modal-informacoes-linha-1-divisao-2">
                         <div class="informacoes-produtos-categoria">
@@ -714,24 +805,27 @@
                                     <path d="M400-240v-80h160v80H400ZM240-440v-80h480v80H240ZM120-640v-80h720v80H120Z"/>
                                 </svg>
                                 <h2>Categoria:</h2>
-                            </div>
+                            </div> <!-- .informacoes-produtos-tipo-dado -->
                             <div class="informacoes-produtos-dado">
                                 <p><?php echo $visualizar_produto['categoria'] ?></p>
-                            </div>
-                        </div>
+                            </div> <!-- .informacoes-produtos-dado -->
+                        </div> <!-- .informacoes-produtos-categoria -->
+
                         <div class="informacoes-produtos-quantidade">
                             <div class="informacoes-produtos-tipo-dado">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
                                     <path d="M480-400 40-640l440-240 440 240-440 240Zm0 160L63-467l84-46 333 182 333-182 84 46-417 227Zm0 160L63-307l84-46 333 182 333-182 84 46L480-80Zm0-411 273-149-273-149-273 149 273 149Zm0-149Z"/>
                                 </svg>
                                 <h2>Quantidade:</h2>
-                            </div>
+                            </div> <!-- .informacoes-produtos-tipo-dado -->
                             <div class="informacoes-produtos-dado">
                                 <p><?php echo $visualizar_produto['quantidade'] ?></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            </div> <!-- .informacoes-produtos-dado -->
+                        </div> <!-- .informacoes-produtos-quantidade -->
+
+                    </div> <!-- .modal-informacoes-linha-1-divisao-2 -->
+
+                </div> <!-- .modal-informacoes-linha-1 -->
 
                 <div class="informacoes-produtos-img">
                     <div class="informacoes-produtos-tipo-dado">
@@ -744,8 +838,7 @@
                         <img width="80px" src="https://www.proquill.com.br/admin/uploads/noticias/86_BRANCOLEJO%205%20L.png" alt="">
                     </div>     
                 </div>
-            </div>
-
+            </div> <!-- .modal-informacoes-linha-1-c -->
 
 
             <div class="modal-informações-linha-2-c">
@@ -755,25 +848,26 @@
                             <path d="M160-720v-80h640v80H160Zm0 560v-240h-40v-80l40-200h640l40 200v80h-40v240h-80v-240H560v240H160Zm80-80h240v-160H240v160Zm-38-240h556-556Zm0 0h556l-24-120H226l-24 120Z"/>
                         </svg>
                         <h2>Nome do produto:</h2>
-                    </div>
+                    </div> <!-- .informacoes-produtos-tipo-dado -->
                     <div class="informacoes-produtos-dado">
                         <p><?php echo $visualizar_produto['nome'] ?></p>
-                    </div>
-                </div>
+                    </div> <!-- .informacoes-produtos-dado -->
+                </div> <!-- .informacoes-produtos-nome -->
+
                 <div class="informacoes-produtos-estoque">
                     <div class="informacoes-produtos-tipo-dado">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
                             <path d="M320-280q17 0 28.5-11.5T360-320q0-17-11.5-28.5T320-360q-17 0-28.5 11.5T280-320q0 17 11.5 28.5T320-280Zm0-160q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Zm0-160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm120 320h240v-80H440v80Zm0-160h240v-80H440v80Zm0-160h240v-80H440v80ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/>
                         </svg>
                         <h2>Estoque:</h2>
-                    </div>
+                    </div> <!-- .informacoes-produtos-tipo-dado -->
                     <div class="informacoes-produtos-dado">
                         <p><?php echo $visualizar_produto['estoque'] ?></p>
-                    </div>
-                </div>
-            </div>
+                    </div> <!-- .informacoes-produtos-dado -->
+                </div> <!-- .informacoes-produtos-estoque -->
 
-            
+            </div> <!-- .modal-informações-linha-2-c -->
+
             
             <div class="modal-informações-linha-3-c">
                 <div class="informacoes-produtos-validade">
@@ -782,24 +876,25 @@
                             <path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/>
                         </svg>
                         <h2>Validade:</h2>
-                    </div>
+                    </div> <!-- .informacoes-produtos-tipo-dado -->
                     <div class="informacoes-produtos-dado">
                         <p><?php echo $visualizar_produto_validade ?></p>
-                    </div>    
-                </div>
+                    </div> <!-- .informacoes-produtos-dado -->
+                </div> <!-- .informacoes-produtos-validade -->
+
                 <div class="informacoes-produtos-marca">
                     <div class="informacoes-produtos-tipo-dado">
                         <svg class="icone-coluna" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
                             <path d="M446-80q-15 0-30-6t-27-18L103-390q-12-12-17.5-26.5T80-446q0-15 5.5-30t17.5-27l352-353q11-11 26-17.5t31-6.5h287q33 0 56.5 23.5T879-800v287q0 16-6 30.5T856-457L503-104q-12 12-27 18t-30 6Zm0-80 353-354v-286H513L160-446l286 286Zm253-480q25 0 42.5-17.5T759-700q0-25-17.5-42.5T699-760q-25 0-42.5 17.5T639-700q0 25 17.5 42.5T699-640ZM480-480Z"/>
                         </svg>
                         <h2>Marca:</h2>
-                    </div>
+                    </div> <!-- .informacoes-produtos-tipo-dado -->
                     <div class="informacoes-produtos-dado">
-                        <p><?php echo $visualizar_produto_validade ?></p>
-                    </div>    
-                </div>
-            </div>
+                        <p><?php echo $visualizar_produto['marca'] ?></p>
+                    </div> <!-- .informacoes-produtos-dado -->
+                </div> <!-- .informacoes-produtos-marca -->
 
+            </div> <!-- .modal-informações-linha-3-c -->
 
 
             <div class="modal-informações-linha-4-c">
@@ -809,12 +904,13 @@
                             <path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/>
                         </svg>
                         <h2>Descrição do produto: </h2>
-                    </div>
+                    </div> <!-- .informacoes-produtos-tipo-dado -->
                     <div class="informacoes-produtos-dado-descricao">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, ducimus eaque dolore, deserunt laboriosam culpa, fugiat ipsam illo in optio expedita temporibus aperiam. Quaerat, nemo quas? Autem aperiam incidunt nulla!</p>
-                    </div>
-                </div>
-            </div>
+                        <p><?php echo $visualizar_produto_descricao ?></p>
+                    </div> <!-- .informacoes-produtos-dado-descricao -->
+                </div> <!-- .informacoes-produtos-descricao -->
+
+            </div> <!-- .modal-informações-linha-4-c -->
 
         </div> <!-- .modal-visualizar-produto -->
     </div> <!-- .fundo-modal-visualiza -->
@@ -903,7 +999,7 @@
 
                 <div class="header-formulario-cadastrar-produto">
                     <div class="titulo-formulario-editar-produto">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#a39800">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                             <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/>
                         </svg>
                         <h1>Editar produto</h1>
@@ -911,50 +1007,145 @@
                     <p>Edite todos os dados necessários do formulário</p>
                 </div> <!-- .header-formulario-cadastrar-produto -->
 
-                <div class="formulario-dados">
-                    <input value="<?php echo $produto['nome'] ?>" name="nome" type="text" id="nome-input-editar" class="input-formulario">
-                    <label for="nome-input-editar">Nome</label>
-                </div> <!-- .formulario-dados -->
 
-                <div class="formulario-dados">
-                    <div class="formulario-dados-categoria">
-                        <p>Categoria</p>
-                        <select name="categoria" id="categoria-produtos">
-                            <option value="automotivo">Automotivo</option>
-                            <option value="residencial">Residencial</option>
-                            <option value="roupas">Roupas</option>
-                        </select>
-                    </div>
-                </div> <!-- .formulario-dados -->
+                
 
-                <div class="formulario-dados">
-                    <input value="<?php echo $produto['quantidade'] ?>" name="quantidade" type="text" id="quantidade-input-editar" class="input-formulario">
-                    <label for="quantidade-input-editar">Quantidade</label>
-                </div> <!-- .formulario-dados -->
+                <div class="formulario-dados-linha-1">
 
-                <div class="formulario-dados">
-                    <input value="<?php echo $produto['preco'] ?>" name="preco" type="text" id="preco-input-editar" class="input-formulario">
-                    <label for="preco-input-editar">Preço</label>
-                </div> <!-- .formulario-dados -->
+                    <div class="cadastro-produto-nome">
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M160-720v-80h640v80H160Zm0 560v-240h-40v-80l40-200h640l40 200v80h-40v240h-80v-240H560v240H160Zm80-80h240v-160H240v160Zm-38-240h556-556Zm0 0h556l-24-120H226l-24 120Z"/>
+                            </svg>
+                            <label>Nome</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <input value="<?php echo $produto['nome'] ?>" name="nome" type="text">
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-nome -->
 
-                <div class="formulario-dados-img">
-                    <p>Imagem</p>
-                    <input type="file" id="imagem-input-editar">
-                </div> <!-- .formulario-dados -->
+                    <div class="cadastro-produto-preco">
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M441-120v-86q-53-12-91.5-46T293-348l74-30q15 48 44.5 73t77.5 25q41 0 69.5-18.5T587-356q0-35-22-55.5T463-458q-86-27-118-64.5T313-614q0-65 42-101t86-41v-84h80v84q50 8 82.5 36.5T651-650l-74 32q-12-32-34-48t-60-16q-44 0-67 19.5T393-614q0 33 30 52t104 40q69 20 104.5 63.5T667-358q0 71-42 108t-104 46v84h-80Z"/>
+                            </svg>
+                            <label>Preço</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <input value="<?php echo $produto['preco'] ?>" name="preco" type="text">
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-preco -->
+                     
+                </div> <!-- .formulario-dados-linha-1 -->
 
-                <div class="formulario-dados">
-                    <input value="<?php echo formatar_data($produto['validade']) ?>" name="validade" type="text" id="validade-input-editar" class="input-formulario">
-                    <label for="validade-input-editar">Validade</label>
-                </div> <!-- .formulario-dados -->
 
-                <div class="formulario-dados">
-                    <input value="<?php echo $produto['estoque'] ?>" name="estoque" type="number" id="estoque-input-editar" class="input-formulario">
-                    <label for="estoque-input-editar">Estoque</label>
-                </div> <!-- .formulario-dados -->
+                <div class="formulario-dados-linha-2">
+
+                    <div class="cadastro-produto-marca">      
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg class="icone-coluna" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M446-80q-15 0-30-6t-27-18L103-390q-12-12-17.5-26.5T80-446q0-15 5.5-30t17.5-27l352-353q11-11 26-17.5t31-6.5h287q33 0 56.5 23.5T879-800v287q0 16-6 30.5T856-457L503-104q-12 12-27 18t-30 6Zm0-80 353-354v-286H513L160-446l286 286Zm253-480q25 0 42.5-17.5T759-700q0-25-17.5-42.5T699-760q-25 0-42.5 17.5T639-700q0 25 17.5 42.5T699-640ZM480-480Z"/>
+                            </svg>
+                            <label>Marca</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <input value="" name="marca" type="text">
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-marca -->
+
+                    <div class="cadastro-produto-estoque">
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M320-280q17 0 28.5-11.5T360-320q0-17-11.5-28.5T320-360q-17 0-28.5 11.5T280-320q0 17 11.5 28.5T320-280Zm0-160q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Zm0-160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm120 320h240v-80H440v80Zm0-160h240v-80H440v80Zm0-160h240v-80H440v80ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/>
+                            </svg>
+                            <label>Estoque</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <input value="<?php echo $produto['estoque'] ?>" name="estoque" type="number">
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-estoque -->
+
+                    <div class="cadastro-produto-categoria">
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M400-240v-80h160v80H400ZM240-440v-80h480v80H240ZM120-640v-80h720v80H120Z"/>
+                            </svg>
+                            <label>Categoria</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <select name="categoria" id="categoria-produtos">
+                                <option value="automotivo">Automotivo</option>
+                                <option value="residencial">Residencial</option>
+                                <option value="roupas">Roupas</option>
+                            </select>
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-categoria -->
+
+                </div> <!-- .formulario-dados-linha-2 -->
+
+
+                <div class="formulario-dados-linha-3">
+
+                    <div class="cadastro-produto-quantidade">      
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M480-400 40-640l440-240 440 240-440 240Zm0 160L63-467l84-46 333 182 333-182 84 46-417 227Zm0 160L63-307l84-46 333 182 333-182 84 46L480-80Zm0-411 273-149-273-149-273 149 273 149Zm0-149Z"/>
+                            </svg>
+                            <label>Quantidade</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <input value="<?php echo $produto['quantidade'] ?>" name="quantidade" type="text">
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-quantidade -->
+
+                    <div class="cadastro-produto-validade">      
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/>
+                            </svg>
+                            <label>Validade</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <input value="<?php echo formatar_data($produto['validade']) ?>" name="validade" type="text">
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-validade -->
+
+                    <div class="cadastro-produto-imagem">      
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                                <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Zm140-360q25 0 42.5-17.5T400-620q0-25-17.5-42.5T340-680q-25 0-42.5 17.5T280-620q0 25 17.5 42.5T340-560Z"/>
+                            </svg>
+                            <label>Imagem</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <input type="file" id="imagem">
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-imagem -->
+
+                </div> <!-- .formulario-dados-linha-3 -->
+
+
+                <div class="formulario-dados-linha-4">
+
+                    <div class="cadastro-produto-descricao">      
+                        <div class="cadastro-produto-tipo-dado">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                                <path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/>
+                            </svg>
+                            <label>Descrição do produto</label>
+                        </div> <!-- .cadastro-produto-tipo-dado -->
+                        <div class="cadastro-produto-dado">
+                            <textarea name="descricao" id="descricao-input"></textarea>
+                        </div> <!-- .cadastro-produto-dado -->
+                    </div> <!-- .cadastro-produto-descricao -->
+
+                </div> <!-- .formulario-dados-linha-4 -->
+
+
 
                 <div class="btn-formulario-salvar-c">
                     <button id="salvar-edicao" class="btn-formulario-salvar" type="submit" name="editar">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#008702">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                             <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
                         </svg>
                         <p>Salvar</p>

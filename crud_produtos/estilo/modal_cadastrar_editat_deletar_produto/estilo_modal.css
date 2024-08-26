@@ -15,6 +15,8 @@
 }
 
 .modal-cadastrar-produto {
+    max-width: 600px;
+    width: 100%;
     background-color: #ffffff;
     position: relative;
     display: flex; 
@@ -58,6 +60,7 @@
 .formulario-cadastro {
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 .titulo-formulario-cadastrar-produto {
@@ -65,14 +68,14 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
-    background-color: rgba(0, 255, 0, 0.51);
-    border-radius: 20px;
+    background-color: #48ce48;
+    border-radius: 10px;
 }
 
 .titulo-formulario-cadastrar-produto h1 {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #008702;
+    color: #ffffff;
     font-size: 25px;
     padding:10px; 
 }
@@ -80,56 +83,97 @@
 .header-formulario-cadastrar-produto p {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    margin-bottom: 25px;
-}
-
-.formulario-dados {
-    position: relative;
-    margin: 10px 0px;
-}
-
-.formulario-dados label {
-    position: absolute;
-    left: 0;
-    bottom: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    transition: all 0.2s;
-    cursor: text;
-}
-
-.formulario-cadastro .formulario-dados .input-formulario:focus ~ label,
-.formulario-cadastro .formulario-dados .input-formulario:valid ~ label {
-    transform: translateY(-22px);
-    font-size: 14px ;
-    color: #008702;
+    margin-bottom: 10px;
 }
 
 
-.formulario-dados-categoria {
+
+.formulario-dados-linha-1 {
+    width: 100%;
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
-.formulario-dados-categoria p {
-    font-family: Arial, Helvetica, sans-serif;
+.cadastro-produto-nome {
+    width: 70%;
 }
 
-.formulario-dados-img {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 8px 0px;
+.cadastro-produto-preco {
+    width: 30%;
 }
 
-.formulario-dados-img p {
-    margin-bottom: 8px;
+.cadastro-produto-tipo-dado {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.input-formulario {
+.cadastro-produto-tipo-dado svg {
+    width: 20px;
+    height: 20px;
+}
+
+.cadastro-produto-dado input {
     width: 100%;
-    border: none;
-    border-bottom: 1px solid #005d00;
-    padding: 5px;
-    background-color: #ffffff;
+    padding: 2px 5px;
 }
+
+
+.formulario-dados-linha-2 {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.cadastro-produto-marca {
+    width: 50%;
+}
+
+.cadastro-produto-estoque {
+    width: 20%;
+}
+
+.cadastro-produto-categoria {
+    width: 30%;
+}
+
+.cadastro-produto-dado select {
+    width: 100%;
+}
+
+
+.formulario-dados-linha-3 {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.cadastro-produto-quantidade {
+    width: 30%;
+}
+
+.cadastro-produto-imagem {
+    width: 40%;
+}
+
+.cadastro-produto-validade {
+    width: 30%;
+}
+
+
+.formulario-dados-linha-4 {
+    width: 100%;
+}
+
+.cadastro-produto-dado textarea {
+    width: 100%;
+    resize: none;
+    padding: 2px 5px;
+}
+
 
 
 .btn-formulario-salvar-c {
@@ -139,13 +183,13 @@
 }
 
 .btn-formulario-salvar {
-    background-color: #00ff048b;
-    color: #008702;
+    background-color: #48ce48;
+    color: #ffffff;
     padding: 8px 30px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     font-size: 18px;
     display: flex;
     align-items: center;
@@ -338,9 +382,6 @@
 }
 
 
-
-
-
 .informacoes-produtos-dado-descricao {
     background-color: #e4e4e4;
     padding: 10px;
@@ -400,16 +441,16 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
-    background-color: rgba(255, 230, 0, 0.574);
-    border-radius: 20px;
+    background-color: #e1bf00;
+    border-radius: 10px;
 }
 
 .titulo-formulario-editar-produto h1 {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #a39800;
+    color: #ffffff;
     font-size: 25px;
-    padding:10px; 
+    padding: 10px; 
 }
 
 /* MODAL DELETAR */
