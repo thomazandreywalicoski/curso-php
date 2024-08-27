@@ -15,29 +15,55 @@ window.onload = function() {
 /*                FUNCÃO ATUALIZAR A URL NA PÁGINA SELECIONADA                     */
 /*---------------------------------------------------------------------------------*/
 
+// Função para manter os parâmetros 'pagina' e 'busca', remover 'id' e o fragmento
 function manterParametroPagina() {
     // Cria uma nova URL com a URL atual
     const urlAtual = new URL(window.location.href);
-    
-    // Extrai o valor do parâmetro 'pagina'
+
+    // Extrai os valores dos parâmetros 'pagina' e 'busca'
     const paginaAtual = urlAtual.searchParams.get('pagina');
-    
-    // Remove todos os parâmetros de consulta exceto 'pagina'
+    const buscaAtual = urlAtual.searchParams.get('busca');
+
+    // Cria um novo conjunto de parâmetros de consulta
     const params = new URLSearchParams();
+
+    // Adiciona 'pagina' e 'busca' aos parâmetros de consulta, se existirem
     if (paginaAtual !== null) {
         params.set('pagina', paginaAtual);
     }
+    if (buscaAtual !== null) {
+        params.set('busca', buscaAtual);
+    }
 
-    // Atualiza a URL com o parâmetro 'pagina' e remove o hash
+    // Atualiza a URL com os parâmetros de consulta e remove o hash
     urlAtual.search = params.toString(); // Define os parâmetros de consulta
     urlAtual.hash = ''; // Remove o fragmento da URL (hash)
+
+    // Remove o parâmetro 'id', se existir
+    urlAtual.searchParams.delete('id');
 
     // Atualiza a URL na barra de endereço
     window.history.replaceState({}, document.title, urlAtual.toString());
 
-    // Recarrega a página com a nova URL
+    // Recarrega a página para atualizar o produto
     window.location.href = urlAtual.toString();
 }
+
+// Preenche a caixa de pesquisa com o valor do parâmetro 'busca', se existir
+function preencheCaixaPesquisa() {
+    const urlAtual = new URL(window.location.href);
+    const buscaAtual = urlAtual.searchParams.get('busca');
+    const pesquisa = document.getElementById('pesquisa');
+    if (buscaAtual !== null) {
+        pesquisa.value = buscaAtual;
+    }
+}
+
+// Ao carregar a página, preenche a caixa de pesquisa com o valor do parâmetro 'busca', se existir
+window.addEventListener('DOMContentLoaded', (event) => {
+    preencheCaixaPesquisa();
+});
+
 
 
 
@@ -65,7 +91,8 @@ function abrirCadastrarProdutos() {
     let abrirModalCadastrarProduto = document.querySelector('.fundo-modal')
 
     abrirModalCadastrarProduto.style.display = 'flex';
-    travarFundoModal()   
+    travarFundoModal()
+    apagarPesquisa()
 }
 
 // Fechar modal de cadastrar produtos
@@ -76,7 +103,7 @@ function fecharCadastrarProdutos() {
 
     abrirModalCadastrarProduto.style.display = 'none';
     manterParametroPagina()
-    apagarPesquisa();
+   
 }
 
 
@@ -98,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
         travarFundoModal()
     }
 
-    // Abrir o modal de editar produtos
+    // Abrir o modal de visualizar produtos
 
     abrirVisualizarProdutos = function() {
 
@@ -106,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('modalVisualizar', 'true');
     }
  
-    // Fechar o modal de editar produtos
+    // Fechar o modal de visualizar produtos
 
     fecharVisualizarProdutos = function() {
 
@@ -114,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('modalVisualizar', 'false');
 
         manterParametroPagina()
-        apagarPesquisa();
+        
     }
 
 
@@ -144,14 +171,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         abrirModalEditarProduto.style.display = 'none';
         localStorage.setItem('modalOpen', 'false');
-
         manterParametroPagina()
-        apagarPesquisa();
+        
     }
 
     document.getElementById('salvar-edicao').addEventListener('click', function() {
         localStorage.removeItem('modalOpen'); // Remove o item do localStorage
-        apagarPesquisa();
+        
         
     });
     
@@ -182,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('modalDeletar', 'false');
 
         manterParametroPagina()
-        apagarPesquisa();
+        
     }
 
     // BOTÃO DE NAO DELETAR PRODUTO
@@ -192,7 +218,8 @@ document.addEventListener("DOMContentLoaded", function() {
         naoDeletar.addEventListener('click', function() {
             
             fecharDeletarProdutos(); // Fecha o modal
-            apagarPesquisa();
+            manterParametroPagina()
+           
         
         });
     
@@ -202,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         localStorage.removeItem('modalDeletar'); // Remove o item do localStorage
 
-        apagarPesquisa();
+       
         
     });
 
@@ -245,14 +272,28 @@ document.addEventListener("DOMContentLoaded", function() {
     // Função para apagar a pesquisa
 
     window.apagarPesquisa = function() {
+        const campoPesquisa = document.getElementById('pesquisa');
         
-        campoPesquisa.value = ''; // Limpa o campo de pesquisa
-        localStorage.removeItem('valorPesquisa'); // Remove o valor do localStorage
-        atualizarVisibilidadeBotoes(); // Atualiza a visibilidade dos botões
-        campoPesquisa.focus(); // Foca no campo de pesquisa
+        // Limpa o campo de pesquisa
+        campoPesquisa.value = '';
+    
+        // Remove o valor do localStorage
+        localStorage.removeItem('valorPesquisa');
+    
+        // Cria uma nova URL com a URL atual
+        const urlAtual = new URL(window.location.href);
+    
+        // Remove o parâmetro 'busca'
+        urlAtual.searchParams.delete('busca');
+    
+        // Atualiza a URL na barra de endereço sem recarregar a página
+        window.history.replaceState({}, document.title, urlAtual.toString());
+    
+        // Atualiza a visibilidade dos botões (exemplo)
+        atualizarVisibilidadeBotoes();
     };
-
 });
+
 
 /*---------------------------------------------------------------------------------*/
 /*             FUNCÃO MENSAGEM DE AVISOS AO EDITAR E DELETAR PRODUTOS              */
@@ -270,6 +311,51 @@ function fecharAviso() {
 }
 
 
+/*---------------------------------------------------------------------------------*/
+/*                    FUNCÃO PARA MOSTRAR E OCUTAR PAGINAÇÃO                       */
+/*---------------------------------------------------------------------------------*/
+
+
+// Função para esconder a paginação
+function esconderPaginacao() {
+    let numeroDePaginas = document.querySelector('.numero-de-paginas');
+    let paginasProdutos = document.querySelector('.paginas-produtos');
+
+    if (numeroDePaginas) {
+        numeroDePaginas.style.display = 'none';
+    }
+    if (paginasProdutos) {
+        paginasProdutos.style.display = 'none';
+    }
+}
+
+// Função para mostrar a paginação
+function mostrarPaginacao() {
+    let numeroDePaginas = document.querySelector('.numero-de-paginas');
+    let paginasProdutos = document.querySelector('.paginas-produtos');
+
+    if (numeroDePaginas) {
+        numeroDePaginas.style.display = 'flex';
+    }
+    if (paginasProdutos) {
+        paginasProdutos.style.display = 'flex';
+    }
+}
+
+// Função para verificar o parâmetro 'busca' e ocultar a paginação se necessário
+function verificarParametroBusca() {
+    const urlAtual = new URL(window.location.href);
+    const buscaAtual = urlAtual.searchParams.get('busca');
+
+    if (buscaAtual) {
+        esconderPaginacao();
+    } else {
+        mostrarPaginacao();
+    }
+}
+
+// Inicializa a verificação do parâmetro 'busca' ao carregar a página
+window.addEventListener('DOMContentLoaded', verificarParametroBusca);
  
 
 

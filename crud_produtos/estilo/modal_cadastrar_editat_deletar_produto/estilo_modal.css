@@ -336,7 +336,7 @@
 }
 
 .informacoes-produtos-dado {
-    background-color: #e4e4e4;
+    background-color: #cbecff;
     padding: 5px;
     border-radius: 5px;
 }
@@ -345,7 +345,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #e4e4e4;
+    background-color: #cbecff;
     padding: 10px 0px;
     border-radius: 5px;
     height: 80%;
@@ -383,7 +383,7 @@
 
 
 .informacoes-produtos-dado-descricao {
-    background-color: #e4e4e4;
+    background-color: #cbecff;
     padding: 10px;
     height: 80px;
     border-radius: 10px;
@@ -496,14 +496,14 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
-    background-color: rgba(255, 0, 0, 0.574);
-    border-radius: 20px;
+    background-color: #ff0000;
+    border-radius: 10px;
 }
 
 .titulo-formulario-deletar-produto h1 {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #a30000;
+    color: #ffffff;
     font-size: 25px;
     padding:10px; 
 }
@@ -513,17 +513,17 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    gap: 10px;
+    gap: 20px;
 }
 
 .btn-nao-deletar {
-    background-color: #00ff048b;
+    background-color: #48ce48;
     padding: 8px 30px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     text-decoration: none;
-    color: #008702;
-    border-radius: 15px;
+    color: #ffffff;
+    border-radius: 10px;
     font-size: 18px;
     display: flex;
     align-items: center;
@@ -533,13 +533,13 @@
 }
 
 .btn-deletar {
-    background-color:  rgba(255, 0, 0, 0.574);
-    color: #a30000;
+    background-color:  #ff0000;
+    color: #ffffff;
     padding: 8px 30px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     font-size: 18px;
     display: flex;
     align-items: center;

@@ -45,7 +45,7 @@
                             <label>Nome</label>
                         </div> <!-- .cadastro-produto-tipo-dado -->
                         <div class="cadastro-produto-dado">
-                            <input value="<?php if(isset($_POST['nome'])) echo $_POST['nome'] ?>" name="nome" type="text">
+                            <input value="<?php if(isset($_POST['nome'])) echo $_POST['nome']; ?>" name="nome" type="text">
                         </div> <!-- .cadastro-produto-dado -->
                     </div> <!-- .cadastro-produto-nome -->
 
@@ -57,7 +57,7 @@
                             <label>Preço</label>
                         </div> <!-- .cadastro-produto-tipo-dado -->
                         <div class="cadastro-produto-dado">
-                            <input value="<?php if(isset($_POST['preco'])) echo $_POST['preco'] ?>" name="preco" type="text">
+                            <input value="<?php if(isset($_POST['preco'])) echo $_POST['preco']; ?>" name="preco" type="text">
                         </div> <!-- .cadastro-produto-dado -->
                     </div> <!-- .cadastro-produto-preco -->
                      
@@ -86,7 +86,7 @@
                             <label>Estoque</label>
                         </div> <!-- .cadastro-produto-tipo-dado -->
                         <div class="cadastro-produto-dado">
-                            <input value="<?php if(isset($_POST['estoque'])) echo $_POST['estoque'] ?>" name="estoque" type="number">
+                            <input value="<?php if(isset($_POST['estoque'])) echo $_POST['estoque']; ?>" name="estoque" type="number">
                         </div> <!-- .cadastro-produto-dado -->
                     </div> <!-- .cadastro-produto-estoque -->
 
@@ -119,7 +119,7 @@
                             <label>Quantidade</label>
                         </div> <!-- .cadastro-produto-tipo-dado -->
                         <div class="cadastro-produto-dado">
-                            <input value="<?php if(isset($_POST['quantidade'])) echo $_POST['quantidade'] ?>" name="quantidade" type="text">
+                            <input value="<?php if(isset($_POST['quantidade'])) echo $_POST['quantidade']; ?>" name="quantidade" type="text">
                         </div> <!-- .cadastro-produto-dado -->
                     </div> <!-- .cadastro-produto-quantidade -->
 
@@ -131,7 +131,7 @@
                             <label>Validade</label>
                         </div> <!-- .cadastro-produto-tipo-dado -->
                         <div class="cadastro-produto-dado">
-                            <input value="<?php if(isset($_POST['validade'])) echo $_POST['validade'] ?>" name="validade" type="text">
+                            <input value="<?php if(isset($_POST['validade'])) echo $_POST['validade']; ?>" name="validade" type="text">
                         </div> <!-- .cadastro-produto-dado -->
                     </div> <!-- .cadastro-produto-validade -->
 
@@ -203,11 +203,13 @@
 
                         if(empty($nome)) {
                             $aviso_erro = 'Preencha o nome!';                    
-                        } else if(empty($quantidade)) {
-                            $aviso_erro = 'Preecha a quantidade do produto!';     
                         } else if(empty($preco)) {
                             $aviso_erro = 'Preecha o preço do produto!';   
-                        }
+                        } else if(empty($marca)) {
+                            $aviso_erro = 'Preecha a marca do produto!';   
+                        } else if(empty($quantidade)) {
+                            $aviso_erro = 'Preecha a quantidade do produto!';     
+                        } 
 
                         if(!empty($preco)) {
                             $preco = str_replace(",",".",$preco);
@@ -261,7 +263,7 @@
                         </svg>
                     </div>
 
-                    <p class="aviso-erro"> <?php echo $aviso_erro ?> </p>
+                    <p class="aviso-erro"> <?php echo $aviso_erro; ?> </p>
 
                 </div> <!-- modal-aviso -->
             </div> <!-- .fundo-modal-aviso -->
@@ -281,7 +283,7 @@
                         </svg>
                     </div>
 
-                    <p class="aviso-sucesso"> <?php echo $aviso_sucesso ?> </p>
+                    <p class="aviso-sucesso"> <?php echo $aviso_sucesso; ?> </p>
 
                 </div> <!-- modal-aviso -->
             </div> <!-- .fundo-modal-aviso -->
@@ -334,8 +336,8 @@
                 <div class="pesquisar-produto-cadastrado">
                     <form action="" class="barra-pesquisa">
                         <input type="hidden" id="pagina" name="pagina" value="<?php echo isset($_GET['pagina']) ? htmlspecialchars($_GET['pagina']) : '1'; ?>">
-                        <input type="text" id="pesquisa" name="busca" value="<?php if(isset($_GET['busca'])) echo $_GET['busca'] ?>" placeholder="Procurar produto cadastrado">
-                        <button type="submit" id="botao-pesquisar" class="botao-de-pesquisar">
+                        <input type="text" id="pesquisa" name="busca" value="<?php if(isset($_GET['busca'])) echo $_GET['busca']; ?>" placeholder="Procurar produto cadastrado">
+                        <button type="submit" id="botao-pesquisar" class="botao-de-pesquisar" onclick="esconderPaginacao()">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
                                 <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
                             </svg>
@@ -351,7 +353,7 @@
             </div> <!-- .painel-administracao-cadastro -->
 
             <div>
-                <a id="atualizar" href="produtos.php?pagina=1" class="atualizar-tabela">
+                <a id="atualizar" href="produtos.php?pagina=1" class="atualizar-tabela" onclick="apagarPesquisa()">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                         <path d="M204-318q-22-38-33-78t-11-82q0-134 93-228t227-94h7l-64-64 56-56 160 160-160 160-56-56 64-64h-7q-100 0-170 70.5T240-478q0 26 6 51t18 49l-60 60ZM481-40 321-200l160-160 56 56-64 64h7q100 0 170-70.5T720-482q0-26-6-51t-18-49l60-60q22 38 33 78t11 82q0 134-93 228t-227 94h-7l64 64-56 56Z"/>
                     </svg>
@@ -495,33 +497,33 @@
                                         <div class="dados-produto">
 
                                             <td class="dado-produto dado-produto-centralizado">
-                                                <?php echo $produto['id'] ?>
+                                                <?php echo $produto['id']; ?>
                                             </td>
 
                                             <td class="dado-produto dado-produto-centralizado">
-                                                <!--<?php echo $produto['imagem'] ?>-->
+                                                <!--<?php echo $produto['imagem']; ?>-->
                                             </td>
 
                                             <td class="dado-produto">
-                                                <?php echo $produto['nome'] ?>
+                                                <?php echo $produto['nome']; ?>
                                             </td>
 
                                             <td class="dado-produto">
-                                                <?php echo $produto['categoria'] ?>
+                                                <?php echo $produto['categoria']; ?>
                                             </td>
 
                                             <td class="dado-produto">
-                                                
+                                                <?php echo $produto['marca']; ?>
                                             </td>
 
                                             <td class="dado-produto">
-                                                <?php echo "R$" . $preco ?>
+                                                <?php echo "R$" . $preco; ?>
                                             </td>
 
                                             
 
                                             <td class="dado-produto dado-produto-centralizado">
-                                                <?php echo $produto['estoque'] ?>
+                                                <?php echo $produto['estoque']; ?>
                                             </td>
 
                                             <td class="dado-produto dado-produto-centralizado">
@@ -599,41 +601,37 @@
                                             <div class="dados-produto">
 
                                                 <td class="dado-produto dado-produto-centralizado">
-                                                    <?php echo $dados_encontrados['id'] ?>
+                                                    <?php echo $dados_encontrados['id']; ?>
                                                 </td>
 
                                                 <td class="dado-produto dado-produto-centralizado">
-                                                    <!--<?php echo $dados_encontrados['imagem'] ?>-->
+                                                    <!--<?php echo $dados_encontrados['imagem']; ?>-->
                                                 </td>
 
                                                 <td class="dado-produto">
-                                                    <?php echo $dados_encontrados['nome'] ?>
+                                                    <?php echo $dados_encontrados['nome']; ?>
                                                 </td>
 
                                                 <td class="dado-produto">
-                                                    <?php echo $dados_encontrados['categoria'] ?>
+                                                    <?php echo $dados_encontrados['categoria']; ?>
                                                 </td>
 
                                                 <td class="dado-produto">
-                                                    <?php echo $dados_encontrados['quantidade'] ?>
+                                                    <?php echo $dados_encontrados['marca']; ?>
                                                 </td>
 
                                                 <td class="dado-produto">
-                                                    <?php echo "R$" . $preco_encontrado ?>
+                                                    <?php echo "R$" . $preco_encontrado; ?>
                                                 </td>
 
                                                 <td class="dado-produto dado-produto-centralizado">
-                                                    <?php echo $validade_encontrada ?>
-                                                </td>
-
-                                                <td class="dado-produto dado-produto-centralizado">
-                                                    <?php echo $dados_encontrados['estoque'] ?>
+                                                    <?php echo $dados_encontrados['estoque']; ?>
                                                 </td>
 
                                                 <td class="dado-produto dado-produto-centralizado">
                                                     
                                                     <div class="acoes-tabela">
-                                                        <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&id=<?php echo $dados_encontrados['id']; ?>#modal">
+                                                        <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&busca=<?php echo $pesquisa; ?>&id=<?php echo $dados_encontrados['id']; ?>#modal">
                                                             <div class="visualizar-informacoes-produto" onclick="abrirVisualizarProdutos()">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                                                                     <path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/>
@@ -641,7 +639,7 @@
                                                             </div> <!-- .visualizar-informacoes-produto -->
                                                         </a>
 
-                                                        <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&id=<?php echo $dados_encontrados['id']; ?>#modal">
+                                                        <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&busca=<?php echo $pesquisa; ?>&id=<?php echo $dados_encontrados['id']; ?>#modal">
                                                             <div id="abrirModalDiv" onclick="abrirEditarProdutos()" class="editar-produto" >
                                                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                                                                     <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/>
@@ -649,7 +647,7 @@
                                                             </div> <!-- .editar-produto -->
                                                         </a>                                             
                                                             
-                                                        <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&id=<?php echo $dados_encontrados['id']; ?>#modal"> 
+                                                        <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&busca=<?php echo $pesquisa; ?>&id=<?php echo $dados_encontrados['id']; ?>#modal"> 
                                                             <div class="deletar-produto" onclick="abrirDeletarProdutos()">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                                                                     <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
@@ -683,7 +681,7 @@
 
 
         <div class="numero-de-paginas">
-            <p>Página <?php echo $pagina_atual ?> de <?php echo $numero_pagina ?></p>
+            <p>Página <?php echo $pagina_atual; ?> de <?php echo $numero_pagina; ?></p>
         </div>
         <div class="paginas-produtos">
 
@@ -696,7 +694,7 @@
             <?php
                 for($p = 1; $p <= $numero_pagina; $p++) {
                     if($p === $pagina_atual) { ?>
-                        <p class="pagina-produtos-atual"><?php echo $p ?></p>
+                        <p class="pagina-produtos-atual"><?php echo $p; ?></p>
 
                         <?php
                     } else {
@@ -705,7 +703,7 @@
                 }
             ?>
 
-            <a class="mudar-pagina" href="?pagina=<?php echo $numero_pagina ?>">
+            <a class="mudar-pagina" href="?pagina=<?php echo $numero_pagina; ?>">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
                     <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
                 </svg>
@@ -780,7 +778,7 @@
                                 <h2>ID:</h2>
                             </div> <!-- .informacoes-produtos-tipo-dado -->
                             <div class="informacoes-produtos-dado">
-                                <p><?php echo $visualizar_produto['id'] ?></p>
+                                <p><?php echo $visualizar_produto['id']; ?></p>
                             </div> <!-- .informacoes-produtos-dado -->
                         </div> <!-- .informacoes-produtos-id -->
 
@@ -792,7 +790,7 @@
                                 <h2>Preço:</h2>
                             </div> <!-- .informacoes-produtos-tipo-dado -->
                             <div class="informacoes-produtos-dado">
-                                <p><?php echo $visualizar_produto_preco ?></p>
+                                <p><?php echo $visualizar_produto_preco; ?></p>
                             </div> <!-- .informacoes-produtos-dado -->
                         </div> <!-- .informacoes-produtos-preco -->
 
@@ -807,7 +805,7 @@
                                 <h2>Categoria:</h2>
                             </div> <!-- .informacoes-produtos-tipo-dado -->
                             <div class="informacoes-produtos-dado">
-                                <p><?php echo $visualizar_produto['categoria'] ?></p>
+                                <p><?php echo $visualizar_produto['categoria']; ?></p>
                             </div> <!-- .informacoes-produtos-dado -->
                         </div> <!-- .informacoes-produtos-categoria -->
 
@@ -819,7 +817,7 @@
                                 <h2>Quantidade:</h2>
                             </div> <!-- .informacoes-produtos-tipo-dado -->
                             <div class="informacoes-produtos-dado">
-                                <p><?php echo $visualizar_produto['quantidade'] ?></p>
+                                <p><?php echo $visualizar_produto['quantidade']; ?></p>
                             </div> <!-- .informacoes-produtos-dado -->
                         </div> <!-- .informacoes-produtos-quantidade -->
 
@@ -850,7 +848,7 @@
                         <h2>Nome do produto:</h2>
                     </div> <!-- .informacoes-produtos-tipo-dado -->
                     <div class="informacoes-produtos-dado">
-                        <p><?php echo $visualizar_produto['nome'] ?></p>
+                        <p><?php echo $visualizar_produto['nome']; ?></p>
                     </div> <!-- .informacoes-produtos-dado -->
                 </div> <!-- .informacoes-produtos-nome -->
 
@@ -862,7 +860,7 @@
                         <h2>Estoque:</h2>
                     </div> <!-- .informacoes-produtos-tipo-dado -->
                     <div class="informacoes-produtos-dado">
-                        <p><?php echo $visualizar_produto['estoque'] ?></p>
+                        <p><?php echo $visualizar_produto['estoque']; ?></p>
                     </div> <!-- .informacoes-produtos-dado -->
                 </div> <!-- .informacoes-produtos-estoque -->
 
@@ -878,7 +876,7 @@
                         <h2>Validade:</h2>
                     </div> <!-- .informacoes-produtos-tipo-dado -->
                     <div class="informacoes-produtos-dado">
-                        <p><?php echo $visualizar_produto_validade ?></p>
+                        <p><?php echo $visualizar_produto_validade; ?></p>
                     </div> <!-- .informacoes-produtos-dado -->
                 </div> <!-- .informacoes-produtos-validade -->
 
@@ -890,7 +888,7 @@
                         <h2>Marca:</h2>
                     </div> <!-- .informacoes-produtos-tipo-dado -->
                     <div class="informacoes-produtos-dado">
-                        <p><?php echo $visualizar_produto['marca'] ?></p>
+                        <p><?php echo $visualizar_produto['marca']; ?></p>
                     </div> <!-- .informacoes-produtos-dado -->
                 </div> <!-- .informacoes-produtos-marca -->
 
@@ -906,7 +904,7 @@
                         <h2>Descrição do produto: </h2>
                     </div> <!-- .informacoes-produtos-tipo-dado -->
                     <div class="informacoes-produtos-dado-descricao">
-                        <p><?php echo $visualizar_produto_descricao ?></p>
+                        <p><?php echo $visualizar_produto_descricao; ?></p>
                     </div> <!-- .informacoes-produtos-dado-descricao -->
                 </div> <!-- .informacoes-produtos-descricao -->
 
@@ -947,20 +945,24 @@
 
                     $nome = $_POST['nome'];
                     $categoria = $_POST['categoria'];
+                    $marca = $_POST['marca'];
                     $quantidade = $_POST['quantidade'];
                     $preco = $_POST['preco'];
                     $validade = $_POST['validade'];
                     $estoque = $_POST['estoque'];
+                    $descricao = $_POST['descricao'];
                     $tipo_formulario = $_POST['tipo_formulario'];
 
                     if(empty($nome)) {
                         $aviso_erro = 'O nome não pode ser vazio!';                    
-                    } else if(empty($quantidade)) {
-                        $aviso_erro = 'Preecha a quantidade do produto!';     
                     } else if(empty($preco)) {
                         $aviso_erro = 'O preço é obrigatório!';    
-                    }
-
+                    } else if(empty($marca)) {
+                        $aviso_erro = 'A marca é obrigatória!';    
+                    } else if(empty($quantidade)) {
+                        $aviso_erro = 'Preecha a quantidade do produto!';  
+                    }   
+                    
                     if(!empty($preco)) {
                         $preco = str_replace(",",".",$preco);
                     } 
@@ -978,7 +980,7 @@
                     }
                 
                     if($tipo_formulario == 'editar' && $aviso_erro == false) {
-                        $sql_code = "UPDATE produtos SET nome = '$nome', categoria = '$categoria', quantidade = '$quantidade', preco = '$preco', validade = '$validade', estoque = '$estoque' WHERE id = '$id'";
+                        $sql_code = "UPDATE produtos SET nome = '$nome', categoria = '$categoria', marca = '$marca', quantidade = '$quantidade', preco = '$preco', validade = '$validade', estoque = '$estoque', descricao = '$descricao' WHERE id = '$id'";
                         
                         $deu_certo = $mysqli->query($sql_code) or die($mysqli->error);
 
@@ -1008,8 +1010,6 @@
                 </div> <!-- .header-formulario-cadastrar-produto -->
 
 
-                
-
                 <div class="formulario-dados-linha-1">
 
                     <div class="cadastro-produto-nome">
@@ -1020,7 +1020,7 @@
                             <label>Nome</label>
                         </div> <!-- .cadastro-produto-tipo-dado -->
                         <div class="cadastro-produto-dado">
-                            <input value="<?php echo $produto['nome'] ?>" name="nome" type="text">
+                            <input value="<?php echo $produto['nome']; ?>" name="nome" type="text">
                         </div> <!-- .cadastro-produto-dado -->
                     </div> <!-- .cadastro-produto-nome -->
 
@@ -1032,7 +1032,7 @@
                             <label>Preço</label>
                         </div> <!-- .cadastro-produto-tipo-dado -->
                         <div class="cadastro-produto-dado">
-                            <input value="<?php echo $produto['preco'] ?>" name="preco" type="text">
+                            <input value="<?php echo $produto['preco']; ?>" name="preco" type="text">
                         </div> <!-- .cadastro-produto-dado -->
                     </div> <!-- .cadastro-produto-preco -->
                      
@@ -1049,7 +1049,7 @@
                             <label>Marca</label>
                         </div> <!-- .cadastro-produto-tipo-dado -->
                         <div class="cadastro-produto-dado">
-                            <input value="" name="marca" type="text">
+                            <input value="<?php echo $produto['marca']; ?>" name="marca" type="text">
                         </div> <!-- .cadastro-produto-dado -->
                     </div> <!-- .cadastro-produto-marca -->
 
@@ -1061,7 +1061,7 @@
                             <label>Estoque</label>
                         </div> <!-- .cadastro-produto-tipo-dado -->
                         <div class="cadastro-produto-dado">
-                            <input value="<?php echo $produto['estoque'] ?>" name="estoque" type="number">
+                            <input value="<?php echo $produto['estoque']; ?>" name="estoque" type="number">
                         </div> <!-- .cadastro-produto-dado -->
                     </div> <!-- .cadastro-produto-estoque -->
 
@@ -1074,9 +1074,9 @@
                         </div> <!-- .cadastro-produto-tipo-dado -->
                         <div class="cadastro-produto-dado">
                             <select name="categoria" id="categoria-produtos">
-                                <option value="automotivo">Automotivo</option>
-                                <option value="residencial">Residencial</option>
-                                <option value="roupas">Roupas</option>
+                                <option value="automotivo" <?php if($produto['categoria'] == 'automotivo') echo 'selected'; ?>>Automotivo</option>
+                                <option value="residencial" <?php if($produto['categoria'] == 'residencial') echo 'selected'; ?>>Residencial</option>
+                                <option value="roupas" <?php if($produto['categoria'] == 'roupas') echo 'selected'; ?>>Roupas</option>
                             </select>
                         </div> <!-- .cadastro-produto-dado -->
                     </div> <!-- .cadastro-produto-categoria -->
@@ -1094,7 +1094,7 @@
                             <label>Quantidade</label>
                         </div> <!-- .cadastro-produto-tipo-dado -->
                         <div class="cadastro-produto-dado">
-                            <input value="<?php echo $produto['quantidade'] ?>" name="quantidade" type="text">
+                            <input value="<?php echo $produto['quantidade']; ?>" name="quantidade" type="text">
                         </div> <!-- .cadastro-produto-dado -->
                     </div> <!-- .cadastro-produto-quantidade -->
 
@@ -1106,7 +1106,7 @@
                             <label>Validade</label>
                         </div> <!-- .cadastro-produto-tipo-dado -->
                         <div class="cadastro-produto-dado">
-                            <input value="<?php echo formatar_data($produto['validade']) ?>" name="validade" type="text">
+                            <input value="<?php echo formatar_data($produto['validade']); ?>" name="validade" type="text">
                         </div> <!-- .cadastro-produto-dado -->
                     </div> <!-- .cadastro-produto-validade -->
 
@@ -1135,7 +1135,7 @@
                             <label>Descrição do produto</label>
                         </div> <!-- .cadastro-produto-tipo-dado -->
                         <div class="cadastro-produto-dado">
-                            <textarea name="descricao" id="descricao-input"></textarea>
+                            <textarea name="descricao"><?php echo $produto['descricao'] ?? ''; ?></textarea>
                         </div> <!-- .cadastro-produto-dado -->
                     </div> <!-- .cadastro-produto-descricao -->
 
@@ -1245,7 +1245,7 @@
                 <input type="hidden" name="tipo_formulario" value="deletar">
                 <div class="header-formulario-cadastrar-produto">
                     <div class="titulo-formulario-deletar-produto">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#a30000">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                             <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
                         </svg>
                         <h1>Deletar produto</h1>
@@ -1254,15 +1254,15 @@
                 </div> <!-- .header-formulario-cadastrar-produto -->
 
                 <div class="btn-deletar-c">
-                    <a id="nao-deletar" href="produtos.php" class="btn-nao-deletar">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#008702">
+                    <a id="nao-deletar" href="#" class="btn-nao-deletar">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                             <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
                         </svg>
                         <p>Não</p>
                     </a> <!-- .btn-nao-deletar -->
 
                     <button id="deletar-produto" name="deletar" value="1" class="btn-deletar" type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#a30000">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                             <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
                         </svg>
                         <p>Sim</p>
