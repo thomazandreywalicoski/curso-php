@@ -13,7 +13,6 @@
 <!--                                   MODAL CADASTRAR PRODUTO                                    -->
 <!-------------------------------------------------------------------------------------------------->
 
-
     <div class="fundo-modal">  
         <div class="modal-cadastrar-produto">
             <div onclick="fecharCadastrarProdutos()" class="btn-fechar-modal-cadastrar-produto">
@@ -143,7 +142,7 @@
                             <label>Imagem</label>
                         </div> <!-- .cadastro-produto-tipo-dado -->
                         <div class="cadastro-produto-dado">
-                            <input type="file" id="imagem">
+                            <input type="file" name="imagem">
                         </div> <!-- .cadastro-produto-dado -->
                     </div> <!-- .cadastro-produto-imagem -->
 
@@ -192,6 +191,7 @@
                         include_once('conexao.php');
 
                         $nome = $_POST['nome'];
+                        $imagem = $_FILES['imagem'];
                         $categoria = $_POST['categoria'];
                         $marca = $_POST['marca'];
                         $quantidade = $_POST['quantidade'];
@@ -203,6 +203,28 @@
 
                         if(empty($nome)) {
                             $aviso_erro = 'Preencha o nome!';                    
+                        } else if(isset($imagem)) {
+                            if($imagem['error'] !== UPLOAD_ERR_OK) {
+                                $aviso_erro = 'Falha ao enviar a imagem!';
+                            }
+
+                            if($imagem['size'] > 1048576) {
+                                $aviso_erro = 'Imagem muito grande! Máx: 1MB';
+                            }
+
+                            $pasta_armazenamento_imagem = "imagens_produtos/";
+                            $nome_imagem = $imagem['name'];
+                            $novo_nome_imagem = uniqid();
+
+                            $extencao = strtolower(pathinfo($nome_imagem, PATHINFO_EXTENSION));
+
+                            if($extencao != "jpg" && $extencao != "png") {
+                                $aviso_erro = 'Imagem não aceita! Somente imagens .jpg e .png';
+                            }
+
+                            $caminho_imagem = $pasta_armazenamento_imagem . $novo_nome_imagem . "." . $extencao;
+                            $imagem_enviada = move_uploaded_file($imagem['tmp_name'], $caminho_imagem);
+
                         } else if(empty($preco)) {
                             $aviso_erro = 'Preecha o preço do produto!';   
                         } else if(empty($marca)) {
@@ -227,8 +249,10 @@
                             }
                         }
 
+                        
+
                         if($tipo_formulario == 'cadastrar' && $aviso_erro == false){
-                            $sql_code = "INSERT INTO produtos (nome, categoria, marca, quantidade, preco, validade, estoque, descricao) VALUES ('$nome', '$categoria', '$marca', '$quantidade', '$preco', '$validade', '$estoque', '$descricao')";
+                            $sql_code = "INSERT INTO produtos (imagem, nome, categoria, marca, quantidade, preco, validade, estoque, descricao) VALUES ('$caminho_imagem', '$nome', '$categoria', '$marca', '$quantidade', '$preco', '$validade', '$estoque', '$descricao')";
                             $deu_certo = $mysqli->query($sql_code) or die($mysqli->error);
 
                             if($deu_certo) {
@@ -501,7 +525,7 @@
                                             </td>
 
                                             <td class="dado-produto dado-produto-centralizado">
-                                                <!--<?php echo $produto['imagem']; ?>-->
+                                                <img src="<?php echo $produto['imagem']; ?>" alt="Imagem produto" class="imagem-produto"> 
                                             </td>
 
                                             <td class="dado-produto">
@@ -519,8 +543,6 @@
                                             <td class="dado-produto">
                                                 <?php echo "R$" . $preco; ?>
                                             </td>
-
-                                            
 
                                             <td class="dado-produto dado-produto-centralizado">
                                                 <?php echo $produto['estoque']; ?>
@@ -605,7 +627,7 @@
                                                 </td>
 
                                                 <td class="dado-produto dado-produto-centralizado">
-                                                    <!--<?php echo $dados_encontrados['imagem']; ?>-->
+                                                    <?php echo $dados_encontrados['imagem']; ?>
                                                 </td>
 
                                                 <td class="dado-produto">
@@ -833,7 +855,7 @@
                         <h2>Imagem:</h2>
                     </div>
                     <div class="informacoes-produtos-dado-img">
-                        <img width="80px" src="https://www.proquill.com.br/admin/uploads/noticias/86_BRANCOLEJO%205%20L.png" alt="">
+                        <img width="80px" src="<?php echo $visualizar_produto['imagem']; ?>" alt="Imagem produto">
                     </div>     
                 </div>
             </div> <!-- .modal-informacoes-linha-1-c -->

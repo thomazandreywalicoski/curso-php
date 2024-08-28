@@ -351,6 +351,13 @@
     height: 80%;
 }
 
+.informacoes-produtos-dado-img img {
+    max-width: 80px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+}
+
 
 .modal-informações-linha-2-c {
     width: 100%;

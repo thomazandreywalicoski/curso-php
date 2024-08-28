@@ -199,6 +199,13 @@ tr:hover {
     text-overflow: ellipsis;
 }
 
+.imagem-produto {
+    max-width: 60px;
+    max-height: 40px;
+    width: auto;
+    height: auto;
+}
+
 .dado-produto-centralizado {
     text-align: center;
 }
