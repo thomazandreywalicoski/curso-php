@@ -108,11 +108,43 @@ function fecharCadastrarProdutos() {
 
 
 /*---------------------------------------------------------------------------------*/
-/*            FUNCÃO ABRIR E FECHAR MODAL DE EDITAR E DELETAR PRODUTOS             */
+/*   FUNCÃO ABRIR E FECHAR MODAL LUCROS, VISUALIZAR, EDITAR E DELETAR PRODUTOS     */
 /*---------------------------------------------------------------------------------*/
 
 
 document.addEventListener("DOMContentLoaded", function() {
+
+    // VISUALIZAR LUCROS PRODUTOS
+
+    const abrirModalLucrosProduto = document.getElementById('modal-lucro');
+    
+    // Verificar o estado do modal no localStorage
+
+    if (localStorage.getItem('modalLucros') === 'true') {
+        abrirModalLucrosProduto.style.display = 'flex';
+        travarFundoModal()
+    }
+
+    // Abrir o modal de visualizar produtos
+
+    abrirVisualizarLucrosProdutos = function() {
+
+        abrirModalLucrosProduto.style.display = 'flex';
+        localStorage.setItem('modalLucros', 'true');
+    }
+ 
+    // Fechar o modal de visualizar produtos
+
+    fecharVisualizarLucrosProdutos = function() {
+
+        abrirModalLucrosProduto.style.display = 'none';
+        localStorage.setItem('modalLucros', 'false');
+
+        manterParametroPagina()
+        
+    }
+
+
 
     // VISUALIZAR PRODUTOS
 
@@ -358,4 +390,25 @@ function verificarParametroBusca() {
 window.addEventListener('DOMContentLoaded', verificarParametroBusca);
  
 
+/*---------------------------------------------------------------------------------*/
+/*                         FUNCÃO CONTADOR DE ESTOQUE                              */
+/*---------------------------------------------------------------------------------*/
 
+
+function atualizarEstoque(acao) {
+    // Obtém o valor atual do estoque
+    let estoqueAtual = parseInt(document.getElementById('estoqueAtual').textContent);
+
+    // Atualiza o estoque com base na ação
+    if (acao === 'adicionar') {
+        estoqueAtual++;
+    } else if (acao === 'remover') {
+        estoqueAtual--;
+    }
+
+    // Atualiza o valor exibido do estoque
+    document.getElementById('estoqueAtual').textContent = estoqueAtual;
+
+    // Atualiza o campo oculto do estoque no formulário
+    document.getElementById('estoque').value = estoqueAtual;
+}

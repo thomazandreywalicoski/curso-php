@@ -553,6 +553,14 @@
                                                 <div class="acoes-tabela">
 
                                                     <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&id=<?php echo $produto['id']; ?>#modal">
+                                                        <div class="visualizar-lucro-produto" onclick="abrirVisualizarLucrosProdutos()">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                                                            <path d="M560-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM280-320q-33 0-56.5-23.5T200-400v-320q0-33 23.5-56.5T280-800h560q33 0 56.5 23.5T920-720v320q0 33-23.5 56.5T840-320H280Zm80-80h400q0-33 23.5-56.5T840-480v-160q-33 0-56.5-23.5T760-720H360q0 33-23.5 56.5T280-640v160q33 0 56.5 23.5T360-400Zm440 240H120q-33 0-56.5-23.5T40-240v-440h80v440h680v80ZM280-400v-320 320Z"/>
+                                                        </svg>
+                                                        </div> <!-- .visualizar-lucro-produto -->
+                                                    </a>
+
+                                                    <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&id=<?php echo $produto['id']; ?>#modal">
                                                         <div class="visualizar-informacoes-produto" onclick="abrirVisualizarProdutos()">
                                                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                                                                 <path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/>
@@ -561,7 +569,7 @@
                                                     </a>
 
                                                     <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&id=<?php echo $produto['id']; ?>#modal">
-                                                        <div onclick="abrirEditarProdutos()" class="editar-produto" >
+                                                        <div onclick="abrirEditarProdutos()" class="editar-produto">
                                                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                                                                 <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/>
                                                             </svg>
@@ -1000,6 +1008,15 @@
                             $aviso_erro = 'A data deve seguir o padrão dia/mês/ano';
                         }
                     }
+
+                    // Atualiza o estoque com base na ação do formulário
+                    if (isset($_POST['acao_estoque'])) {
+                        if ($_POST['acao_estoque'] == 'adicionar') {
+                            $estoque++;
+                        } elseif ($_POST['acao_estoque'] == 'remover') {
+                            $estoque--;
+                        }
+                    }
                 
                     if($tipo_formulario == 'editar' && $aviso_erro == false) {
                         $sql_code = "UPDATE produtos SET nome = '$nome', categoria = '$categoria', marca = '$marca', quantidade = '$quantidade', preco = '$preco', validade = '$validade', estoque = '$estoque', descricao = '$descricao' WHERE id = '$id'";
@@ -1082,8 +1099,17 @@
                             </svg>
                             <label>Estoque</label>
                         </div> <!-- .cadastro-produto-tipo-dado -->
-                        <div class="cadastro-produto-dado">
-                            <input value="<?php echo $produto['estoque']; ?>" name="estoque" type="number">
+                        <div class="cadastro-produto-dado-estoque">
+
+                            <!-- Campo oculto para armazenar o valor do estoque -->
+                            <input type="hidden" id="estoque" name="estoque" value="<?php echo $produto['estoque']; ?>">
+                            <!-- Campo oculto para a ação de estoque -->
+                            <input type="hidden" id="acaoEstoque" name="acao_estoque" value="">
+                            
+                            <button class="btn-decrementar" type="button" onclick="atualizarEstoque('remover')"> - </button>
+                            <p class="visualizador-estoque" id="estoqueAtual"><?php echo $produto['estoque']; ?></p>
+                            <button class="btn-acrescentar" type="button" onclick="atualizarEstoque('adicionar')"> + </button>
+                             
                         </div> <!-- .cadastro-produto-dado -->
                     </div> <!-- .cadastro-produto-estoque -->
 
@@ -1323,6 +1349,74 @@
         }
 
     ?>
+
+
+
+
+
+
+    <div class="fundo-modal-lucro" id="modal-lucro">
+        <div class="modal-lucro">
+
+            <div onclick="fecharVisualizarLucrosProdutos()" class="btn-fechar-modal-lucro">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0000">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+
+            <div class="titulo-modal-lucro">
+                <h1>Lucros e despesas</h1>
+            </div>
+
+            <div class="informacoes-produto-modal-lucro">
+                <div class="informacoes-nome-produto">
+                    <p class="tipo-informacoes-produto-dados">Produto</p>
+                    <p class="informacoes-produto-dados">Shampoo Automotivo</p>
+                </div>
+                <div class="informacoes-estoque-produto">
+                    <p class="tipo-informacoes-produto-dados">Em estoque</p>
+                    <p class="informacoes-produto-dados">20</p>
+                </div>
+            </div>
+
+            <div class="informacoes-custo-modal-lucro">
+                <div class="informacoes-valor-fornecedor">
+                    <p class="tipo-informacoes-produto-dados">Valor fornecedor</p>
+                    <p class="informacoes-produto-dados">R$10.50</p>
+                </div>
+                <div class="informacoes-valor-vendido">
+                    <p class="tipo-informacoes-produto-dados">Valor vendido</p>
+                    <p class="informacoes-produto-dados">R$15.90</p>
+                </div>
+            </div>
+
+            <div class="informacoes-principais-modal-lucro">
+                <div class="informacoes-vendas">
+                    <p class="tipo-informacoes-produto-dados">Vendas</p>
+                    <p class="informacoes-produto-dados">50</p>
+                </div>
+                <div class="informacoes-despesas">
+                    <p class="tipo-informacoes-produto-dados">Custo total compra</p>
+                    <p class="informacoes-produto-dados-custo">R$1050</p>
+                </div>
+                <div class="informacoes-lucro">
+                    <p class="tipo-informacoes-produto-dados">Lucro total</p>
+                    <p class="informacoes-produto-dados-lucro">R$1390</p>
+                </div>
+            </div>
+
+            
+
+            
+
+        </div>
+    </div>
+
+
+
+
+
+
      
 
 <script src="script/abrircadastrarprodutos.js"></script>
