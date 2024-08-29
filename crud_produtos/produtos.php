@@ -627,7 +627,7 @@
                                                 </td>
 
                                                 <td class="dado-produto dado-produto-centralizado">
-                                                    <?php echo $dados_encontrados['imagem']; ?>
+                                                    <img src="<?php echo $dados_encontrados['imagem']; ?>" alt="Imagem produto" class="imagem-produto">
                                                 </td>
 
                                                 <td class="dado-produto">
