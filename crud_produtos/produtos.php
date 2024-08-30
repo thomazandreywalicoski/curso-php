@@ -1322,7 +1322,7 @@
     </div> <!-- .fundo-modal-deletar -->
 
     <!-------------------------------------------------------------------------------------------------->
-    <!--                MENSAGEM DE ERRO OU SUCESSO AO DELETAR PRODUTOS                  -->
+    <!--                        MENSAGEM DE ERRO OU SUCESSO AO DELETAR PRODUTOS                       -->
     <!-------------------------------------------------------------------------------------------------->
 
         
@@ -1352,19 +1352,43 @@
 
 
 
-
-
+    <!-------------------------------------------------------------------------------------------------->
+    <!--                                  MODAL LUCROS E DESPESAS                                     -->
+    <!-------------------------------------------------------------------------------------------------->
 
 
     <?php
 
         include_once('conexao.php');
 
-        $id = intval($_GET['id']);
+        $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
 
         $sql_saldo = "SELECT * FROM produtos WHERE id = '$id'";
         $query_saldo = $mysqli->query($sql_saldo) or die($mysqli->error);
         $saldo = $query_saldo->fetch_assoc();
+
+
+        $preco = $saldo['preco'];
+        $lucro = 0;
+        $preco_fornecedor = 5.00;
+        $quantidade_vendido = 5;
+
+        $lucro = ($preco - $preco_fornecedor) * $quantidade_vendido;
+
+
+
+
+        $total_venda = 0;
+
+        $total_venda = $preco * $quantidade_vendido;
+
+        
+
+
+        $total_compra = 0;
+
+        $total_compra = $preco_fornecedor * $quantidade_vendido;
 
     ?>
 
@@ -1380,6 +1404,27 @@
             <div class="titulo-modal-lucro">
                 <h1>Lucros e despesas</h1>
             </div>
+
+            <div class="informacoes-principais-modal-lucro">
+                <div class="informacoes-vendas">
+                    <p class="tipo-informacoes-produto-dados">Total vendas</p>
+                    <p class="informacoes-produto-dados-quantidade-vendas">50</p>
+                </div>
+                <div class="informacoes-despesas">
+                    <p class="tipo-informacoes-produto-dados">Valor total compra</p>
+                    <p class="informacoes-produto-dados-custo"><?php echo "R$ $total_compra"; ?></p>
+                </div>
+                <div class="informacoes-despesas">
+                    <p class="tipo-informacoes-produto-dados">Valor total venda</p>
+                    <p class="informacoes-produto-dados-valor-venda"><?php echo "R$ $total_venda"; ?></p>
+                </div>
+                <div class="informacoes-lucro">
+                    <p class="tipo-informacoes-produto-dados">Lucro total</p>
+                    <p class="informacoes-produto-dados-lucro"><?php echo "R$ $lucro"; ?></p>
+                </div>
+            </div>
+
+            <hr>
 
             <div class="informacoes-produto-modal-lucro">
                 <div class="informacoes-nome-produto">
@@ -1398,50 +1443,27 @@
                 <p>Informar venda</p>
             </div>
 
-            <div class="informacoes-custo-modal-lucro">
-                <div class="informacoes-valor-fornecedor">
-                    <p class="tipo-informacoes-produto-dados">Valor fornecedor</p>
-                    <input type="text" class="informacoes-produto-dados-input"></input>
+            <form action="" method="POST" name="lucro" class="formulario-modal-lucro">
+            <input type="hidden" name="tipo_formulario" value="lucro">
+                <div class="informacoes-custo-modal-lucro">
+                    <div class="informacoes-valor-fornecedor">
+                        <p class="tipo-informacoes-produto-dados">Valor fornecedor</p>
+                        <input type="text" class="informacoes-produto-dados-input"></input>
+                    </div>
+                    <div class="informacoes-valor-vendido">
+                        <p class="tipo-informacoes-produto-dados">Valor venda</p>
+                        <input type="text" value="<?php echo $saldo['preco']; ?>" class="informacoes-produto-dados-input"></input>
+                    </div>
+                    <div class="informacoes-quantidade-vendido">
+                        <p class="tipo-informacoes-produto-dados">Qntd vendido</p>
+                        <input type="text" class="informacoes-produto-dados-input"></input>
+                    </div>
                 </div>
-                <div class="informacoes-valor-vendido">
-                    <p class="tipo-informacoes-produto-dados">Valor venda</p>
-                    <input type="text" class="informacoes-produto-dados-input"></input>
+                <div class="btn-registrar-venda-c">
+                    <button class="btn-cancelar-venda" type="button">Cancelar</button>
+                    <button class="btn-registrar-venda" type="submit">Registrar venda</button>
                 </div>
-                <div class="informacoes-quantidade-vendido">
-                    <p class="tipo-informacoes-produto-dados">Qntd vendido</p>
-                    <input type="text" class="informacoes-produto-dados-input"></input>
-                </div>
-            </div>
-
-            <div class="btn-registrar-venda-c">
-                <button class="btn-cancelar-venda" type="button">Cancelar</button>
-                <button class="btn-registrar-venda" type="submit">Registrar venda</button>
-            </div>
-
-            <hr>
-
-            <div class="informacoes-principais-modal-lucro">
-                <div class="informacoes-vendas">
-                    <p class="tipo-informacoes-produto-dados">Total vendas</p>
-                    <p class="informacoes-produto-dados-quantidade-vendas">50</p>
-                </div>
-                <div class="informacoes-despesas">
-                    <p class="tipo-informacoes-produto-dados">Valor total compra</p>
-                    <p class="informacoes-produto-dados-custo">R$1050</p>
-                </div>
-                <div class="informacoes-despesas">
-                    <p class="tipo-informacoes-produto-dados">Valor total venda</p>
-                    <p class="informacoes-produto-dados-valor-venda">R$1500</p>
-                </div>
-                <div class="informacoes-lucro">
-                    <p class="tipo-informacoes-produto-dados">Lucro total</p>
-                    <p class="informacoes-produto-dados-lucro">R$250</p>
-                </div>
-            </div>
-
-            
-
-            
+            </form>
 
         </div>
     </div>
