@@ -747,6 +747,18 @@
     width: 30%;
 }
 
+.informar-venda {
+    width: 100%;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+}
 
 .informacoes-custo-modal-lucro {
     width: 100%;
@@ -756,11 +768,42 @@
 }
 
 .informacoes-valor-fornecedor {
-    width: 50%;
+    width: 40%;
 }
 
 .informacoes-valor-vendido {
-    width: 50%;
+    width: 40%;
+}
+
+.informacoes-quantidade-vendido {
+    width: 20%;
+}
+
+.btn-registrar-venda-c {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.btn-registrar-venda {
+    background-color: #48ce48;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-cancelar-venda {
+    background-color: #ff0000;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 
@@ -790,9 +833,26 @@
 
 .informacoes-produto-dados {
     background-color: #22ff0041;
-    padding: 5px 10px;
+    padding: 8px 10px;
     border-radius: 5px;
     font-weight: 500;
+    font-size: 14px;
+}
+
+.informacoes-produto-dados-input {
+    width: 100%;
+}
+
+.informacoes-produto-dados-quantidade-vendas {
+    background-color: #ffb700;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .informacoes-produto-dados-custo {
@@ -801,8 +861,23 @@
     border-radius: 5px;
     color: #fff;
     font-weight: 600;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.informacoes-produto-dados-valor-venda {
+    background-color: #009dff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .informacoes-produto-dados-lucro {
     background-color: #22ff00;
@@ -810,4 +885,12 @@
     border-radius: 5px;
     color: #fff;
     font-weight: 600;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+hr {
+    margin: 10px 0px;
 }
