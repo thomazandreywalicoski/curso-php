@@ -1256,7 +1256,7 @@
     ?>
 
 <!-------------------------------------------------------------------------------------------------->
-<!--                                   MODAL DELETAR PRODUTO                                    -->
+<!--                                   MODAL DELETAR PRODUTO                                      -->
 <!-------------------------------------------------------------------------------------------------->
 
 
@@ -1359,38 +1359,75 @@
 
     <?php
 
-        include_once('conexao.php');
+        $aviso_erro = false;
+        $aviso_sucesso = false;
+        $quantidade_total_venda = 0;
+        $valor_total_compra = 0;
+        $valor_total_venda = 0;
+        $valor_total_lucro = 0;
 
+        include_once('conexao.php');
+        
         $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
+        if (count($_POST) > 0 && isset($_POST['tipo_formulario']) && $_POST['tipo_formulario'] === 'lucro') {
+            $preco = $_POST['preco'];
+            $quantidade_vendido = $_POST['quantidade_vendido'];
+            $preco_fornecedor = $_POST['preco_fornecedor'];
+            $tipo_formulario = $_POST['tipo_formulario'];
+            $estoque_vendido = $_POST['estoque'];
+            
+            if (empty($preco_fornecedor)) {
+                $aviso_erro = 'Preencha o valor do fornecedor por unidade!'; 
+            } else if (empty($preco)) {
+                $aviso_erro = 'Preencha o valor de venda por unidade!'; 
+            } else if ($quantidade_vendido <= 0) {
+                $aviso_erro = 'Preencha a quantidade vendida!';
+            } else if ($quantidade_vendido > $estoque_vendido) {
+                $aviso_erro = "Você não possui esse N° de produtos disponível em estoque!";
+            }
+
+           
+            if (!$aviso_erro) {
+
+                // Obtém os dados atuais do produto para somar
+                $sql_saldo = "SELECT estoque, quantidade_total_venda, valor_total_compra, valor_total_venda, valor_total_lucro FROM produtos WHERE id = '$id'";
+                $query_saldo = $mysqli->query($sql_saldo) or die($mysqli->error);
+                $saldo = $query_saldo->fetch_assoc();
+                        
+                // Calcula valores incrementais
+                $total_venda_momento = $quantidade_vendido;
+
+                $valor_total_compra_momento = $preco_fornecedor * $quantidade_vendido;
+                $valor_total_venda_momento = $preco * $quantidade_vendido;
+                $valor_total_lucro_momento = ($preco - $preco_fornecedor) * $quantidade_vendido;
+
+
+                // Atualiza valores acumulando com os existentes
+                $quantidade_total_venda = $saldo['quantidade_total_venda'] + $total_venda_momento;
+                $valor_total_compra = $saldo['valor_total_compra'] + $valor_total_compra_momento;
+                $valor_total_venda = $saldo['valor_total_venda'] + $valor_total_venda_momento;
+                $valor_total_lucro = $saldo['valor_total_lucro'] + $valor_total_lucro_momento;
+                $estoque = $saldo['estoque'] - $total_venda_momento; // Atualiza o estoque
+
+
+                
+                $sql_registrar_venda = "UPDATE produtos SET estoque = '$estoque', quantidade_total_venda = '$quantidade_total_venda', valor_total_compra = '$valor_total_compra', valor_total_venda = '$valor_total_venda', valor_total_lucro = '$valor_total_lucro' WHERE id = '$id'";
+
+                $venda_registrada = $mysqli->query($sql_registrar_venda) or die($mysqli->error);
+
+                if ($venda_registrada) {
+                    $aviso_sucesso = 'Venda registrada com sucesso!';  
+                }
+            }
+        }
 
         $sql_saldo = "SELECT * FROM produtos WHERE id = '$id'";
         $query_saldo = $mysqli->query($sql_saldo) or die($mysqli->error);
         $saldo = $query_saldo->fetch_assoc();
 
-
-        $preco = $saldo['preco'];
-        $lucro = 0;
-        $preco_fornecedor = 5.00;
-        $quantidade_vendido = 5;
-
-        $lucro = ($preco - $preco_fornecedor) * $quantidade_vendido;
-
-
-
-
-        $total_venda = 0;
-
-        $total_venda = $preco * $quantidade_vendido;
-
-        
-
-
-        $total_compra = 0;
-
-        $total_compra = $preco_fornecedor * $quantidade_vendido;
-
     ?>
+
 
     <div class="fundo-modal-lucro" id="modal-lucro">
         <div class="modal-lucro">
@@ -1408,19 +1445,19 @@
             <div class="informacoes-principais-modal-lucro">
                 <div class="informacoes-vendas">
                     <p class="tipo-informacoes-produto-dados">Total vendas</p>
-                    <p class="informacoes-produto-dados-quantidade-vendas">50</p>
+                    <p class="informacoes-produto-dados-quantidade-vendas"><?php echo htmlspecialchars($saldo['quantidade_total_venda']); ?></p>
                 </div>
                 <div class="informacoes-despesas">
                     <p class="tipo-informacoes-produto-dados">Valor total compra</p>
-                    <p class="informacoes-produto-dados-custo"><?php echo "R$ $total_compra"; ?></p>
+                    <p class="informacoes-produto-dados-custo"><?php echo "R$" .  htmlspecialchars($saldo['valor_total_compra']); ?></p>
                 </div>
                 <div class="informacoes-despesas">
                     <p class="tipo-informacoes-produto-dados">Valor total venda</p>
-                    <p class="informacoes-produto-dados-valor-venda"><?php echo "R$ $total_venda"; ?></p>
+                    <p class="informacoes-produto-dados-valor-venda"><?php echo "R$" . htmlspecialchars($saldo['valor_total_venda']); ?></p>
                 </div>
                 <div class="informacoes-lucro">
                     <p class="tipo-informacoes-produto-dados">Lucro total</p>
-                    <p class="informacoes-produto-dados-lucro"><?php echo "R$ $lucro"; ?></p>
+                    <p class="informacoes-produto-dados-lucro"><?php echo "R$" . htmlspecialchars($saldo['valor_total_lucro']); ?></p>
                 </div>
             </div>
 
@@ -1429,11 +1466,11 @@
             <div class="informacoes-produto-modal-lucro">
                 <div class="informacoes-nome-produto">
                     <p class="tipo-informacoes-produto-dados">Produto</p>
-                    <p class="informacoes-produto-dados"><?php echo $saldo['nome']; ?></p>
+                    <p class="informacoes-produto-dados"><?php echo htmlspecialchars($saldo['nome']); ?></p>
                 </div>
                 <div class="informacoes-estoque-produto">
                     <p class="tipo-informacoes-produto-dados">Em estoque</p>
-                    <p class="informacoes-produto-dados"><?php echo $saldo['estoque']; ?></p>
+                    <p class="informacoes-produto-dados"><?php echo htmlspecialchars($saldo['estoque']); ?></p>
                 </div>
             </div>
 
@@ -1443,25 +1480,26 @@
                 <p>Informar venda</p>
             </div>
 
-            <form action="" method="POST" name="lucro" class="formulario-modal-lucro">
-            <input type="hidden" name="tipo_formulario" value="lucro">
+            <form action="" method="post" id="lucro" name="lucro" class="formulario-modal-lucro">
+                <input type="hidden" name="tipo_formulario" value="lucro">
+                <input type="hidden" name="estoque" value="<?php echo htmlspecialchars($saldo['estoque']); ?>">
                 <div class="informacoes-custo-modal-lucro">
                     <div class="informacoes-valor-fornecedor">
                         <p class="tipo-informacoes-produto-dados">Valor fornecedor</p>
-                        <input type="text" class="informacoes-produto-dados-input"></input>
+                        <input type="number" value="<?php echo htmlspecialchars($saldo['preco_fornecedor']); ?>" name="preco_fornecedor" class="informacoes-produto-dados-input">
                     </div>
                     <div class="informacoes-valor-vendido">
                         <p class="tipo-informacoes-produto-dados">Valor venda</p>
-                        <input type="text" value="<?php echo $saldo['preco']; ?>" class="informacoes-produto-dados-input"></input>
+                        <input type="number" value="<?php echo htmlspecialchars($saldo['preco']); ?>" name="preco" class="informacoes-produto-dados-input">
                     </div>
                     <div class="informacoes-quantidade-vendido">
                         <p class="tipo-informacoes-produto-dados">Qntd vendido</p>
-                        <input type="text" class="informacoes-produto-dados-input"></input>
+                        <input type="number" value="<?php echo htmlspecialchars($quantidade_vendido ?? 0); ?>" name="quantidade_vendido" class="informacoes-produto-dados-input">
                     </div>
                 </div>
                 <div class="btn-registrar-venda-c">
-                    <button class="btn-cancelar-venda" type="button">Cancelar</button>
-                    <button class="btn-registrar-venda" type="submit">Registrar venda</button>
+                    <a href="#" class="btn-cancelar-venda" type="button">Cancelar</a>
+                    <button class="btn-registrar-venda" type="submit" id="registrar-venda">Registrar venda</button>
                 </div>
             </form>
 
@@ -1469,7 +1507,51 @@
     </div>
 
 
+    <!-------------------------------------------------------------------------------------------------->
+    <!--                   MENSAGEM DE ERRO OU SUCESSO FORMULÁRIO DE REGISTRAR VENDAS                 -->
+    <!-------------------------------------------------------------------------------------------------->
+    
+    
+    <?php
 
+        if (isset($_POST['tipo_formulario']) && $_POST['tipo_formulario'] === 'lucro') {
+            if ($aviso_erro) { ?>
+
+                <div id="modal-aviso" class="fundo-modal-aviso">
+                    <div class="modal-aviso">
+                        <div onclick="fecharAviso()" class="btn-fechar-modal-aviso">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0000">
+                                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                            </svg>
+                        </div>
+
+                        <p class="aviso-erro"> <?php echo $aviso_erro; ?> </p>
+
+                    </div> <!-- modal-aviso -->
+                </div> <!-- .fundo-modal-aviso -->
+
+                <?php
+            }
+
+            if ($aviso_sucesso) { ?>
+
+                <div id="modal-aviso" class="fundo-modal-aviso">
+                    <div class="modal-aviso">
+                        <div onclick="fecharAviso()" class="btn-fechar-modal-aviso">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0000">
+                                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                            </svg>
+                        </div>
+
+                        <p class="aviso-sucesso"> <?php echo $aviso_sucesso; ?> </p>
+
+                    </div> <!-- modal-aviso -->
+                </div> <!-- .fundo-modal-aviso -->
+
+                <?php
+            }
+        }
+    ?>
 
 
 

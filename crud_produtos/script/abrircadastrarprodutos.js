@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
         travarFundoModal()
     }
 
-    // Abrir o modal de visualizar produtos
+    // Abrir o modal de lucros
 
     abrirVisualizarLucrosProdutos = function() {
 
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('modalLucros', 'true');
     }
  
-    // Fechar o modal de visualizar produtos
+    // Fechar o modal de lucros
 
     fecharVisualizarLucrosProdutos = function() {
 
@@ -143,6 +143,12 @@ document.addEventListener("DOMContentLoaded", function() {
         manterParametroPagina()
         
     }
+
+    document.getElementById('registrar-venda').addEventListener('click', function() {
+        localStorage.removeItem('modalLucros'); // Remove o item do localStorage
+        
+        
+    });
 
 
 
