@@ -144,11 +144,24 @@ document.addEventListener("DOMContentLoaded", function() {
         
     }
 
+    // BOTÃO REGISTRAR VENDA
+
     document.getElementById('registrar-venda').addEventListener('click', function() {
+
         localStorage.removeItem('modalLucros'); // Remove o item do localStorage
         
-        
     });
+
+    // BOTÃO DE CANCELAR REGISTRAR VENDA
+
+    const cancelarVenda = document.getElementById('cancelar-venda');
+   
+    cancelarVenda.addEventListener('click', function() {
+         
+    fecharVisualizarLucrosProdutos(); // Fecha o modal
+    manterParametroPagina();
+          
+});
 
 
 
@@ -218,6 +231,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         
     });
+
     
     // DELETAR PRODUTOS
 

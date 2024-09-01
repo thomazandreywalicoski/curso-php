@@ -798,6 +798,7 @@
     background-color: #48ce48;
     padding: 8px 20px;
     border: none;
+    font-size: 13px;
     border-radius: 5px;
     color: #fff;
     font-weight: 600;
@@ -807,7 +808,8 @@
 .btn-cancelar-venda {
     background-color: #ff0000;
     padding: 8px 20px;
-    border: none;
+    font-size: 13px;
+    text-decoration: none;
     border-radius: 5px;
     color: #fff;
     font-weight: 600;

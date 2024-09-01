@@ -8,6 +8,121 @@
     <title>Painel de Administração</title>  
 </head>
 <body>
+
+
+    <?php
+
+        include_once('conexao.php');
+
+        // Inicializa variáveis para armazenar os totais
+        $total_quantidade_vendida = 0;
+        $total_valor_compra = 0;
+        $total_valor_venda = 0;
+        $total_valor_lucro = 0;
+
+        // Consulta para obter o total de todos os produtos
+        $sql_total = "SELECT SUM(quantidade_total_venda) AS total_quantidade_vendida, SUM(valor_total_compra) AS total_valor_compra, SUM(valor_total_venda) AS total_valor_venda, SUM(valor_total_lucro) AS total_valor_lucro FROM produtos";
+
+        $query_total = $mysqli->query($sql_total) or die($mysqli->error);
+
+        // Verifica se a consulta retornou resultados
+        if ($query_total->num_rows > 0) {
+            $total = $query_total->fetch_assoc();
+            $total_quantidade_vendida = $total['total_quantidade_vendida'];
+            $total_valor_compra = $total['total_valor_compra'];
+            $total_valor_venda = $total['total_valor_venda'];
+            $total_valor_lucro = $total['total_valor_lucro'];
+        } else {
+            // Se não houver resultados, os totais permanecem como 0
+            $total_quantidade_vendida = 0;
+            $total_valor_compra = 0;
+            $total_valor_venda = 0;
+            $total_valor_lucro = 0;
+        }             
+
+    ?>
+
+
+    <div class="dashboard-c">
+        <div class="dashboard">
+
+            <div class="dashboard-titulo">
+                <h1>Dashboard</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                    <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
+                </svg>
+            </div>
+
+            <div class="dashboard-resultados-c">
+
+                <div class="estatisticas-c-1">
+                    <div class="estatisticas-total-vendas">
+                        <div class="estatisticas-titulo-resultado-c">
+                            <p class="estatisticas-titulo">Total vendas</p>
+                            <p class="estatisticas-resultado"><?php echo number_format($total_quantidade_vendida, 0, ',', '.'); ?></p> 
+                        </div>
+                        <div class="estatisticas-img">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#b07e00">
+                                <path d="M160-720v-80h640v80H160Zm0 560v-240h-40v-80l40-200h640l40 200v80h-40v240h-80v-240H560v240H160Zm80-80h240v-160H240v160Zm-38-240h556-556Zm0 0h556l-24-120H226l-24 120Z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="estatisticas-valor-total-compras">
+                        <div class="estatisticas-titulo-resultado-c">
+                            <p class="estatisticas-titulo">Valor total compra</p>
+                            <p class="estatisticas-resultado">R$<?php echo number_format($total_valor_compra, 2, ',', '.'); ?></p>
+                        </div>
+                        <div class="estatisticas-img">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#9a0000">
+                                <path d="M560-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM280-320q-33 0-56.5-23.5T200-400v-320q0-33 23.5-56.5T280-800h560q33 0 56.5 23.5T920-720v320q0 33-23.5 56.5T840-320H280Zm80-80h400q0-33 23.5-56.5T840-480v-160q-33 0-56.5-23.5T760-720H360q0 33-23.5 56.5T280-640v160q33 0 56.5 23.5T360-400Zm440 240H120q-33 0-56.5-23.5T40-240v-440h80v440h680v80ZM280-400v-320 320Z"/>
+                            </svg>
+                        </div>                      
+                    </div>
+                </div>
+
+                <div class="estatisticas-c-2">
+                    <div class="estatisticas-valor-total-vendas">
+                        <div class="estatisticas-titulo-resultado-c">
+                            <p class="estatisticas-titulo">Valor total venda</p>
+                            <p class="estatisticas-resultado">R$<?php echo number_format($total_valor_venda, 2, ',', '.'); ?></p>
+                        </div>
+                        <div class="estatisticas-img">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#0068a9">
+                                <path d="M200-80q-33 0-56.5-23.5T120-160v-480q0-33 23.5-56.5T200-720h80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720h80q33 0 56.5 23.5T840-640v480q0 33-23.5 56.5T760-80H200Zm0-80h560v-480H200v480Zm280-240q83 0 141.5-58.5T680-600h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85h-80q0 83 58.5 141.5T480-400ZM360-720h240q0-50-35-85t-85-35q-50 0-85 35t-35 85ZM200-160v-480 480Z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="estatisticas-valor-total-lucros">
+                        <div class="estatisticas-titulo-resultado-c">
+                            <p class="estatisticas-titulo">Lucro total</p>
+                            <p class="estatisticas-resultado">R$<?php echo number_format($total_valor_lucro, 2, ',', '.'); ?></p>
+                        </div>
+                        <div class="estatisticas-img">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#008800">
+                                <path d="M441-120v-86q-53-12-91.5-46T293-348l74-30q15 48 44.5 73t77.5 25q41 0 69.5-18.5T587-356q0-35-22-55.5T463-458q-86-27-118-64.5T313-614q0-65 42-101t86-41v-84h80v84q50 8 82.5 36.5T651-650l-74 32q-12-32-34-48t-60-16q-44 0-67 19.5T393-614q0 33 30 52t104 40q69 20 104.5 63.5T667-358q0 71-42 108t-104 46v84h-80Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
     
 <!-------------------------------------------------------------------------------------------------->
 <!--                                   MODAL CADASTRAR PRODUTO                                    -->
@@ -345,7 +460,8 @@
         <div class="titulo-painel-administracao">
             <h1>Painel de Administração</h1>
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
-                <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
+                <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
+            </svg>
         </div> <!-- .titulo-painel-administracao -->
 
         <div class="painel-administracao">
@@ -1498,7 +1614,7 @@
                     </div>
                 </div>
                 <div class="btn-registrar-venda-c">
-                    <a href="#" class="btn-cancelar-venda" type="button">Cancelar</a>
+                    <a href="#" id="cancelar-venda" class="btn-cancelar-venda" type="button">Cancelar</a>
                     <button class="btn-registrar-venda" type="submit" id="registrar-venda">Registrar venda</button>
                 </div>
             </form>

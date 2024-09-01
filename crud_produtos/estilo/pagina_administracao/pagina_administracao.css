@@ -11,9 +11,155 @@
 
 body {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 }
+
+
+
+/* DASHBOARD */
+
+.dashboard-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1280px;
+    width: 100%;
+}
+
+.dashboard {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px; 
+}
+
+.dashboard-titulo {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dashboard-titulo svg {
+    transform: rotate(90deg);
+}
+
+.dashboard-resultados-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+}
+
+.estatisticas-c-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    gap: 20px;
+}
+
+.estatisticas-c-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    gap: 20px;
+}
+
+.estatisticas-total-vendas {
+    width: 50%;
+    height: 80px;
+    padding: 10px;
+    background-color: #ffb700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.estatisticas-valor-total-compras {
+    width: 50%;
+    height: 80px;
+    padding: 10px;
+    background-color: #ff0000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.estatisticas-valor-total-vendas {
+    width: 50%;
+    height: 80px;
+    padding: 10px;
+    background-color: #009DFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.estatisticas-valor-total-lucros {
+    width: 50%;
+    height: 80px;
+    padding: 10px;
+    background-color: #48ce48;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.estatisticas-titulo-resultado-c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.estatisticas-titulo {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.estatisticas-resultado {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 5px;
+}
+
+.estatisticas-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.estatisticas-img svg {
+    width: 70px;
+    height: auto;
+}
+
+
+
+
+
+
+/* PAINEL ADMINISTRAÇÃO */
 
 .titulo-painel-administracao {
     font-family: 'Ubuntu', sans-serif;
