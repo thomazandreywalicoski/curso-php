@@ -10,6 +10,11 @@
 <body>
 
 
+    <!-------------------------------------------------------------------------------------------------->
+    <!--                                         DASHBOARD                                            -->
+    <!-------------------------------------------------------------------------------------------------->
+
+
     <?php
 
         include_once('conexao.php');
@@ -42,7 +47,6 @@
 
     ?>
 
-
     <div class="dashboard-c">
         <div class="dashboard">
 
@@ -51,7 +55,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
                     <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
                 </svg>
-            </div>
+            </div> <!-- .dashboard-titulo -->
 
             <div class="dashboard-resultados-c">
 
@@ -60,68 +64,57 @@
                         <div class="estatisticas-titulo-resultado-c">
                             <p class="estatisticas-titulo">Total vendas</p>
                             <p class="estatisticas-resultado"><?php echo number_format($total_quantidade_vendida, 0, ',', '.'); ?></p> 
-                        </div>
+                        </div> <!-- .estatisticas-titulo-resultado-c -->
                         <div class="estatisticas-img">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#b07e00">
                                 <path d="M160-720v-80h640v80H160Zm0 560v-240h-40v-80l40-200h640l40 200v80h-40v240h-80v-240H560v240H160Zm80-80h240v-160H240v160Zm-38-240h556-556Zm0 0h556l-24-120H226l-24 120Z"/>
                             </svg>
-                        </div>
-                    </div>
+                        </div> <!-- .estatisticas-img -->
+                    </div> <!-- .estatisticas-total-vendas -->
 
                     <div class="estatisticas-valor-total-compras">
                         <div class="estatisticas-titulo-resultado-c">
                             <p class="estatisticas-titulo">Valor total compra</p>
                             <p class="estatisticas-resultado">R$<?php echo number_format($total_valor_compra, 2, ',', '.'); ?></p>
-                        </div>
+                        </div> <!-- .estatisticas-titulo-resultado-c -->
                         <div class="estatisticas-img">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#9a0000">
                                 <path d="M560-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM280-320q-33 0-56.5-23.5T200-400v-320q0-33 23.5-56.5T280-800h560q33 0 56.5 23.5T920-720v320q0 33-23.5 56.5T840-320H280Zm80-80h400q0-33 23.5-56.5T840-480v-160q-33 0-56.5-23.5T760-720H360q0 33-23.5 56.5T280-640v160q33 0 56.5 23.5T360-400Zm440 240H120q-33 0-56.5-23.5T40-240v-440h80v440h680v80ZM280-400v-320 320Z"/>
                             </svg>
-                        </div>                      
-                    </div>
-                </div>
+                        </div> <!-- .estatisticas-img -->                  
+                    </div> <!-- .estatisticas-valor-total-compras -->
+                </div> <!-- .estatisticas-c-1 -->
 
                 <div class="estatisticas-c-2">
                     <div class="estatisticas-valor-total-vendas">
                         <div class="estatisticas-titulo-resultado-c">
                             <p class="estatisticas-titulo">Valor total venda</p>
                             <p class="estatisticas-resultado">R$<?php echo number_format($total_valor_venda, 2, ',', '.'); ?></p>
-                        </div>
+                        </div> <!-- .estatisticas-titulo-resultado-c -->
                         <div class="estatisticas-img">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#0068a9">
                                 <path d="M200-80q-33 0-56.5-23.5T120-160v-480q0-33 23.5-56.5T200-720h80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720h80q33 0 56.5 23.5T840-640v480q0 33-23.5 56.5T760-80H200Zm0-80h560v-480H200v480Zm280-240q83 0 141.5-58.5T680-600h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85h-80q0 83 58.5 141.5T480-400ZM360-720h240q0-50-35-85t-85-35q-50 0-85 35t-35 85ZM200-160v-480 480Z"/>
                             </svg>
-                        </div>
-                    </div>
+                        </div> <!-- .estatisticas-img -->
+                    </div> <!-- .estatisticas-valor-total-vendas -->
 
                     <div class="estatisticas-valor-total-lucros">
                         <div class="estatisticas-titulo-resultado-c">
                             <p class="estatisticas-titulo">Lucro total</p>
                             <p class="estatisticas-resultado">R$<?php echo number_format($total_valor_lucro, 2, ',', '.'); ?></p>
-                        </div>
+                        </div> <!-- .estatisticas-titulo-resultado-c -->
                         <div class="estatisticas-img">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#008800">
                                 <path d="M441-120v-86q-53-12-91.5-46T293-348l74-30q15 48 44.5 73t77.5 25q41 0 69.5-18.5T587-356q0-35-22-55.5T463-458q-86-27-118-64.5T313-614q0-65 42-101t86-41v-84h80v84q50 8 82.5 36.5T651-650l-74 32q-12-32-34-48t-60-16q-44 0-67 19.5T393-614q0 33 30 52t104 40q69 20 104.5 63.5T667-358q0 71-42 108t-104 46v84h-80Z"/>
                             </svg>
-                        </div>
-                    </div>
-                </div>
+                        </div> <!-- .estatisticas-img -->
+                    </div> <!-- .estatisticas-valor-total-lucros -->
+                </div> <!-- .estatisticas-c-2 -->
 
-            </div>
+            </div> <!-- .dashboard-resultados-c -->
 
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
+        </div> <!-- .dashboard -->
+    </div> <!-- .dashboard-c -->
 
     
 <!-------------------------------------------------------------------------------------------------->
@@ -777,6 +770,15 @@
                                                 <td class="dado-produto dado-produto-centralizado">
                                                     
                                                     <div class="acoes-tabela">
+
+                                                        <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&busca=<?php echo $pesquisa; ?>&id=<?php echo $dados_encontrados['id']; ?>#modal">
+                                                            <div class="visualizar-lucro-produto" onclick="abrirVisualizarLucrosProdutos()">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                                                                <path d="M560-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM280-320q-33 0-56.5-23.5T200-400v-320q0-33 23.5-56.5T280-800h560q33 0 56.5 23.5T920-720v320q0 33-23.5 56.5T840-320H280Zm80-80h400q0-33 23.5-56.5T840-480v-160q-33 0-56.5-23.5T760-720H360q0 33-23.5 56.5T280-640v160q33 0 56.5 23.5T360-400Zm440 240H120q-33 0-56.5-23.5T40-240v-440h80v440h680v80ZM280-400v-320 320Z"/>
+                                                            </svg>
+                                                            </div> <!-- .visualizar-lucro-produto -->
+                                                        </a>
+
                                                         <a href="produtos.php?pagina=<?php echo $pagina_atual; ?>&busca=<?php echo $pesquisa; ?>&id=<?php echo $dados_encontrados['id']; ?>#modal">
                                                             <div class="visualizar-informacoes-produto" onclick="abrirVisualizarProdutos()">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
@@ -824,44 +826,46 @@
         <!-------------------------------------------------------------------------------------------------->
         <!--                           SELETOR DE PÁGINAS DOS PRODUTOS                                    -->
         <!-------------------------------------------------------------------------------------------------->
+        <?php
 
+        if($numero_pagina > 1) { ?>
 
-        <div class="numero-de-paginas">
-            <p>Página <?php echo $pagina_atual; ?> de <?php echo $numero_pagina; ?></p>
-        </div>
-        <div class="paginas-produtos">
+            <div class="numero-de-paginas">
+                <p>Página <?php echo $pagina_atual; ?> de <?php echo $numero_pagina; ?></p>
+            </div>
+            <div class="paginas-produtos">
 
-            <a class="mudar-pagina" href="?pagina=1">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
-                    <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/>
-                </svg>
-            </a>
-            
-            <?php
-                for($p = 1; $p <= $numero_pagina; $p++) {
-                    if($p === $pagina_atual) { ?>
-                        <p class="pagina-produtos-atual"><?php echo $p; ?></p>
+                <a class="mudar-pagina" href="?pagina=1">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                        <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/>
+                    </svg>
+                </a>
+                
+                <?php
+                    for($p = 1; $p <= $numero_pagina; $p++) {
+                        if($p === $pagina_atual) { ?>
+                            <p class="pagina-produtos-atual"><?php echo $p; ?></p>
 
-                        <?php
-                    } else {
-                        echo "<a class='paginas-anterior-posterior' href='?pagina={$p}'>{$p}<a>";
-                    } 
-                }
-            ?>
+                            <?php
+                        } else {
+                            echo "<a class='paginas-anterior-posterior' href='?pagina={$p}'>{$p}<a>";
+                        } 
+                    }
+                ?>
 
-            <a class="mudar-pagina" href="?pagina=<?php echo $numero_pagina; ?>">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
-                    <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
-                </svg>
-            </a>
-            
-        </div>
-     
+                <a class="mudar-pagina" href="?pagina=<?php echo $numero_pagina; ?>">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                        <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
+                    </svg>
+                </a>
+                
+            </div>
 
+        <?php
 
+        } ?>
 
     </div> <!-- .container-produtos-cadastrados -->
-
 
 
 <!-------------------------------------------------------------------------------------------------->
