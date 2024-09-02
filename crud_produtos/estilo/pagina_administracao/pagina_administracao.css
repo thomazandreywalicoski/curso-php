@@ -16,6 +16,96 @@ body {
     flex-direction: column;
 }
 
+/* MENU E PERFIL USUÁRIO */
+
+.menu-administrador-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1280px;
+    width: 100%;
+    padding: 20px;
+}
+
+.menu-administrador {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #35AEFF;
+    border-radius: 15px;
+}
+
+
+.menu-opcoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.menu-opcoes-opcao-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: #ffb300;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.menu-opcoes-opcao-1 svg {
+    width: 20px;
+}
+
+
+.menu-opcoes-opcao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.menu-opcoes-opcao svg {
+    width: 20px;
+}
+
+.menu-opcoes-opcao p {
+    color: #fff;
+    font-weight: 600;
+}
+
+.perfil-usuario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.perfil-usuario-nome {
+    font-weight: 600;
+    color: #fff;
+}
+
+.perfil-usuario-img {
+    background-color: #009DFF;
+    border: 2px solid #ffb300;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+.perfil-usuario-img img {
+    width: 20px;
+}
+
 
 /* DASHBOARD */
 
