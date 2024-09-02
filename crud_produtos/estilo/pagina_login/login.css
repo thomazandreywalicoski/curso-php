@@ -1,0 +1,100 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.login-c {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0E2A47;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='570' height='380' preserveAspectRatio='none' viewBox='0 0 570 380'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1463%26quot%3b)' fill='none'%3e%3crect width='570' height='380' x='0' y='0' fill='rgba(0%2c 156%2c 255%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c223.602C42.599%2c224.265%2c84.037%2c209.548%2c119.359%2c185.726C154.187%2c162.238%2c180.294%2c128.519%2c197.685%2c90.28C215.057%2c52.083%2c225.47%2c9.952%2c218.089%2c-31.356C210.832%2c-71.968%2c185.884%2c-106.562%2c157.212%2c-136.225C129.663%2c-164.726%2c95.36%2c-184.215%2c57.876%2c-197.106C18.977%2c-210.483%2c-22.186%2c-221.408%2c-62.15%2c-211.663C-103.009%2c-201.7%2c-138.593%2c-175.692%2c-164.809%2c-142.807C-190.406%2c-110.698%2c-210.326%2c-70.723%2c-207.145%2c-29.783C-204.144%2c8.843%2c-163.616%2c32.145%2c-148.445%2c67.793C-132.657%2c104.891%2c-144.807%2c152.858%2c-116.996%2c182.049C-87.859%2c212.632%2c-42.236%2c222.945%2c0%2c223.602' fill='%230073bd'%3e%3c/path%3e%3cpath d='M570 591.962C609.606 589.477 645.23 570.446 678.164 548.307 710.545 526.54 741.395 501.166 757.7570000000001 465.746 774.157 430.245 765.602 390.314 769.139 351.368 773.934 298.567 817.8820000000001 235.342 782.245 196.088 746.281 156.473 678.237 198.166 625.02 192.62 584.382 188.385 548.374 164.946 507.594 167.463 459.444 170.435 403.408 171.814 371.791 208.251 340.173 244.689 355.451 300.454 350.551 348.448 345.884 394.164 323.902 441.877 343.70500000000004 483.345 363.45500000000004 524.704 411.425 542.619 452.745 562.452 489.831 580.2529999999999 528.944 594.538 570 591.962' fill='%2342b6ff'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1463'%3e%3crect width='570' height='380' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+    max-width: 570px;
+    width: 100%;
+    height: 380px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.formulario-login {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+
+.formulario-login-img img {
+    width: 80px;
+    margin: 20px;
+}
+
+.formulario-login-titulo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.formulario-login-descricao {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.formulario-login-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+}
+
+.formulario-login-input input {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.formulario-login-btn button {
+    background-color: #FFC012;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+
+
+
+.login-imagem-c {
+    height: 380px;
+    padding: 20px 20px 0px 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.login-imagem img {
+    width: 130px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
