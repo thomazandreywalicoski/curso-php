@@ -33,7 +33,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #35AEFF;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1280' height='60' preserveAspectRatio='none' viewBox='0 0 1280 60'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1125%26quot%3b)' fill='none'%3e%3crect width='1280' height='60' x='0' y='0' fill='rgba(0%2c 156%2c 255%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c363.013C66.593%2c368.22%2c110.86%2c295.15%2c162.288%2c252.525C207.425%2c215.114%2c254.405%2c180.478%2c282.387%2c128.962C311.734%2c74.934%2c325.593%2c14.777%2c324.819%2c-46.702C323.964%2c-114.602%2c319.929%2c-187.454%2c277.734%2c-240.658C234.973%2c-294.575%2c166.41%2c-328.037%2c97.773%2c-332.984C33.917%2c-337.586%2c-18.773%2c-290.137%2c-78.196%2c-266.31C-130.919%2c-245.17%2c-187.18%2c-236.016%2c-231.782%2c-200.841C-283.148%2c-160.331%2c-345.863%2c-115.726%2c-351.746%2c-50.573C-357.637%2c14.663%2c-299.457%2c66.262%2c-260.668%2c119.043C-228.859%2c162.326%2c-185.975%2c191.655%2c-146.758%2c228.36C-97.284%2c274.665%2c-67.557%2c357.731%2c0%2c363.013' fill='%23006fb5'%3e%3c/path%3e%3cpath d='M1280 324.881C1330.354 316.306 1376.141 300.784 1424.842 285.379 1492.7930000000001 263.885 1583.945 276.323 1622.667 216.491 1660.337 158.285 1623.638 79.282 1600.529 13.915 1580.564-42.56 1540.516-86.51499999999999 1499.961-130.598 1460.5819999999999-173.404 1424.282-225.127 1367.81-239.05200000000002 1311.985-252.81799999999998 1259.477-211.647 1202.498-203.949 1131.762-194.393 1050.762-230.75900000000001 993.271-188.453 935.451-145.905 915.0799999999999-64.252 915.106 7.536000000000001 915.131 75.365 960.56 131.538 993.408 190.882 1023.6700000000001 245.554 1042.952 314.305 1099.559 340.772 1155.386 366.874 1219.247 335.227 1280 324.881' fill='%234ab9ff'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1125'%3e%3crect width='1280' height='60' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
     border-radius: 15px;
 }
 
@@ -50,8 +50,8 @@ body {
     align-items: center;
     justify-content: center;
     gap: 5px;
-    background-color: #ffb300;
-    padding: 5px 10px;
+    border: 2px solid #ffb300;
+    padding: 3px 10px;
     border-radius: 5px;
     color: #fff;
     font-weight: 600;
@@ -91,7 +91,7 @@ body {
 }
 
 .perfil-usuario-img {
-    background-color: #009DFF;
+    background-color: #006FB5;
     border: 2px solid #ffb300;
     border-radius: 50%;
     display: flex;

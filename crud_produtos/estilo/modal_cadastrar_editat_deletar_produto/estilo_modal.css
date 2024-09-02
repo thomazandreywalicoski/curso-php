@@ -623,22 +623,21 @@
 
 .aviso-sucesso {
     background-color: #b9ffba;
-    color: #189100;
+    color: #009400;
     font-weight: 600;
-    padding: 40px 60px;
-    border-radius: 20px;
+    padding: 30px 60px;
+    border-radius: 15px;
     border: 2px solid #22ff00;
-    
-    
+      
 
 }
 
 .aviso-erro {
     background-color: #ffb3b3;
-    color: #ad0000;
+    color: #9f0000;
     font-weight: 600;
-    padding: 40px 60px;
-    border-radius: 20px;
+    padding: 30px 60px;
+    border-radius: 15px;
     border: 2px solid #ff0000;
     
     
