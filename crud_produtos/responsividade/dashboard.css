@@ -1,0 +1,338 @@
+@media (min-width: 1025px) and (max-width: 1150px) { 
+
+    .estatisticas-resultado {
+        font-size: 20px; 
+    }
+
+}
+
+@media (min-width: 801px) and (max-width: 1025px) {
+
+    .dashboard {
+        padding: 15px; 
+    }
+
+    .dashboard-titulo {
+        font-size: 12px;
+        margin-bottom: 20px;
+        gap: 10px;
+    }
+
+    .dashboard-titulo svg {
+        width: 20px;
+    }
+
+    .dashboard-resultados-c {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .estatisticas-c-1 {
+        gap: 15px;
+    }
+    
+    .estatisticas-c-2 {
+        gap: 15px;
+    }
+
+    .estatisticas-total-vendas {
+        height: 80px;
+        padding: 8px;
+    }
+    
+    .estatisticas-valor-total-compras {
+        height: 80px;
+        padding: 8px;
+    }
+    
+    .estatisticas-valor-total-vendas {
+        height: 80px;
+        padding: 8px;
+    }
+    
+    .estatisticas-valor-total-lucros {
+        height: 80px;
+        padding: 8px;
+    }
+
+    .estatisticas-titulo {
+        font-size: 10px;
+    }
+    
+    .estatisticas-resultado {
+        font-size: 16.5px; 
+        padding: 5px;
+    }
+    
+    .estatisticas-img svg {
+        width: 50px;
+        height: auto;
+    }
+
+}
+
+@media (min-width: 601px) and (max-width: 801px) {
+
+    .dashboard {
+        padding: 15px; 
+    }
+
+    .dashboard-titulo {
+        font-size: 12px;
+        margin-bottom: 20px;
+        gap: 10px;
+    }
+
+    .dashboard-titulo svg {
+        width: 20px;
+    }
+
+    .dashboard-resultados-c {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .estatisticas-c-1 {
+        width: 100%;
+        gap: 20px;
+    }
+    
+    .estatisticas-c-2 {
+        width: 100%;
+        gap: 20px;
+    }
+
+}
+
+
+@media (min-width: 481px) and (max-width: 601px) {
+
+    .dashboard {
+        padding: 10px; 
+    }
+
+    .dashboard-titulo {
+        font-size: 11px;
+        margin-bottom: 15px;
+        gap: 10px;
+    }
+
+    .dashboard-titulo svg {
+        width: 18px;
+    }
+
+    .dashboard-resultados-c {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+        border-radius: 15px;
+    }
+
+    .estatisticas-c-1 {
+        width: 100%;
+        gap: 15px;
+    }
+    
+    .estatisticas-c-2 {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .estatisticas-titulo {
+        font-size: 12px;
+    }
+    
+    .estatisticas-resultado {
+        font-size: 18px; 
+    }
+    
+    .estatisticas-img svg {
+        width: 60px;
+    }
+
+}
+
+
+@media (min-width: 431px) and (max-width: 481px) {
+
+    .dashboard {
+        padding: 10px; 
+    }
+
+    .dashboard-titulo {
+        font-size: 10px;
+        margin-bottom: 15px;
+        gap: 5px;
+    }
+
+    .dashboard-titulo svg {
+        width: 16px;
+    }
+
+    .dashboard-resultados-c {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+        border-radius: 15px;
+    }
+
+    .estatisticas-c-1 {
+        width: 100%;
+        gap: 15px;
+    }
+    
+    .estatisticas-c-2 {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .estatisticas-titulo {
+        font-size: 11px;
+    }
+    
+    .estatisticas-resultado {
+        font-size: 16px; 
+    }
+    
+    .estatisticas-img svg {
+        width: 50px;
+    }
+
+}
+
+
+@media (min-width: 376px) and (max-width: 431px) { 
+
+    .dashboard {
+        padding: 10px; 
+    }
+
+    .dashboard-titulo {
+        font-size: 8px;
+        margin-bottom: 10px;
+        gap: 5px;
+    }
+
+    .dashboard-titulo svg {
+        width: 12px;
+    }
+
+    .dashboard-resultados-c {
+        flex-direction: column;
+        padding: 12px;
+        gap: 15px;
+        border-radius: 10px;
+    }
+
+    .estatisticas-c-1 {
+        width: 100%;
+        gap: 15px;
+    }
+    
+    .estatisticas-c-2 {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .estatisticas-total-vendas {
+        height: 70px;
+        padding: 8px;
+    }
+    
+    .estatisticas-valor-total-compras {
+        height: 70px;
+        padding: 8px;
+    }
+    
+    .estatisticas-valor-total-vendas {
+        height: 70px;
+        padding: 8px;
+    }
+    
+    .estatisticas-valor-total-lucros {
+        height: 70px;
+        padding: 8px;
+    }
+
+    .estatisticas-titulo {
+        font-size: 10px;
+    }
+    
+    .estatisticas-resultado {
+        font-size: 13px; 
+    }
+    
+    .estatisticas-img svg {
+        width: 40px;
+    }
+
+}
+
+
+@media (min-width: 320px) and (max-width: 376px) { 
+
+    .dashboard {
+        padding: 10px; 
+    }
+
+    .dashboard-titulo {
+        font-size: 8px;
+        margin-bottom: 10px;
+        gap: 5px;
+    }
+
+    .dashboard-titulo svg {
+        width: 12px;
+    }
+
+    .dashboard-resultados-c {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+        border-radius: 10px;
+    }
+
+    .estatisticas-c-1 {
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .estatisticas-c-2 {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .estatisticas-total-vendas {
+        height: 60px;
+        padding: 8px;
+    }
+    
+    .estatisticas-valor-total-compras {
+        height: 60px;
+        padding: 8px;
+    }
+    
+    .estatisticas-valor-total-vendas {
+        height: 60px;
+        padding: 8px;
+    }
+    
+    .estatisticas-valor-total-lucros {
+        height: 60px;
+        padding: 8px;
+    }
+
+    .estatisticas-titulo {
+        font-size: 9px;
+    }
+    
+    .estatisticas-resultado {
+        font-size: 11.5px; 
+    }
+    
+    .estatisticas-img svg {
+        width: 30px;
+    }
+
+}

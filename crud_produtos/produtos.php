@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./estilo/pagina_administracao/pagina_administracao.css">
     <link rel="stylesheet" href="./estilo/modal_cadastrar_editat_deletar_produto/estilo_modal.css">
+    <link rel="stylesheet" href="./responsividade/dashboard.css">
+    <link rel="stylesheet" href="./responsividade/painel_de_controle.css">
     <title>Painel de Administração</title>  
 </head>
 <body>
@@ -17,26 +19,26 @@
             <div class="menu-opcoes-c">
                 <div class="menu-opcoes">
 
-                    <div class="menu-opcoes-opcao-1">
+                    <a href="#" class="menu-opcoes-opcao-1">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-                            <path d="M200-80q-33 0-56.5-23.5T120-160v-480q0-33 23.5-56.5T200-720h80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720h80q33 0 56.5 23.5T840-640v480q0 33-23.5 56.5T760-80H200Zm0-80h560v-480H200v480Zm280-240q83 0 141.5-58.5T680-600h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85h-80q0 83 58.5 141.5T480-400ZM360-720h240q0-50-35-85t-85-35q-50 0-85 35t-35 85ZM200-160v-480 480Z"/>
+                            <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
                         </svg>
-                        <p>Produtos</p>
-                    </div>
+                        <p>Início</p>
+                    </a>
                     
-                    <div class="menu-opcoes-opcao">
+                    <a href="#" class="menu-opcoes-opcao">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                             <path d="M160-80v-440H80v-240h208q-5-9-6.5-19t-1.5-21q0-50 35-85t85-35q23 0 43 8.5t37 23.5q17-16 37-24t43-8q50 0 85 35t35 85q0 11-2 20.5t-6 19.5h208v240h-80v440H160Zm400-760q-17 0-28.5 11.5T520-800q0 17 11.5 28.5T560-760q17 0 28.5-11.5T600-800q0-17-11.5-28.5T560-840Zm-200 40q0 17 11.5 28.5T400-760q17 0 28.5-11.5T440-800q0-17-11.5-28.5T400-840q-17 0-28.5 11.5T360-800ZM160-680v80h280v-80H160Zm280 520v-360H240v360h200Zm80 0h200v-360H520v360Zm280-440v-80H520v80h280Z"/>
                         </svg>
                         <p>Promoções</p>
-                    </div>
+                    </a>
 
-                    <div class="menu-opcoes-opcao">
+                    <a href="#" class="menu-opcoes-opcao">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                             <path d="M160-240v-320 320Zm0 80q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800l80 160h120l-80-160h80l80 160h120l-80-160h80l80 160h120l-80-160h120q33 0 56.5 23.5T880-720v160H160v320h320v80H160Zm400 40v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T903-340L683-120H560Zm300-263-37-37 37 37ZM620-180h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/>
                         </svg>
                         <p>Banners</p>
-                    </div>
+                    </a>
 
                 </div>
             </div>
@@ -45,9 +47,9 @@
                 <div class="perfil-usuario-nome">
                     <p>Bem Estar</p>
                 </div>
-                <div class="perfil-usuario-img">
+                <a href="#" class="perfil-usuario-img">
                     <img src="logo/logo-2.png" alt="">
-                </div>
+                </a>
             </div>
 
         </div>
@@ -514,6 +516,15 @@
                     <p>Cadastrar Produto</p>
                 </div> <!-- .btn-cadastrar -->
 
+                <!-- Botão cadastrar mobile -->
+
+                <div onclick="abrirCadastrarProdutos()" class="btn-cadastrar-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                        <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
+                    </svg>
+                    <p>Cadastrar</p>
+                </div> <!-- .btn-cadastrar-mobile -->
+
                 <div class="pesquisar-produto-cadastrado">
                     <form action="" class="barra-pesquisa">
                         <input type="hidden" id="pagina" name="pagina" value="<?php echo isset($_GET['pagina']) ? htmlspecialchars($_GET['pagina']) : '1'; ?>">
@@ -539,6 +550,14 @@
                         <path d="M204-318q-22-38-33-78t-11-82q0-134 93-228t227-94h7l-64-64 56-56 160 160-160 160-56-56 64-64h-7q-100 0-170 70.5T240-478q0 26 6 51t18 49l-60 60ZM481-40 321-200l160-160 56 56-64 64h7q100 0 170-70.5T720-482q0-26-6-51t-18-49l60-60q22 38 33 78t11 82q0 134-93 228t-227 94h-7l64 64-56 56Z"/>
                     </svg>
                     <p>Atualizar</p>
+                </a>
+
+                <!-- Botão Mobile -->
+
+                <a id="atualizar" href="produtos.php?pagina=1" class="atualizar-tabela-mobile" onclick="apagarPesquisa()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                        <path d="M204-318q-22-38-33-78t-11-82q0-134 93-228t227-94h7l-64-64 56-56 160 160-160 160-56-56 64-64h-7q-100 0-170 70.5T240-478q0 26 6 51t18 49l-60 60ZM481-40 321-200l160-160 56 56-64 64h7q100 0 170-70.5T720-482q0-26-6-51t-18-49l60-60q22 38 33 78t11 82q0 134-93 228t-227 94h-7l64 64-56 56Z"/>
+                    </svg>
                 </a>
 
             </div> 

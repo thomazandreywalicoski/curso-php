@@ -25,6 +25,7 @@ body {
     max-width: 1280px;
     width: 100%;
     padding: 20px;
+    display: none;
 }
 
 .menu-administrador {
@@ -55,6 +56,7 @@ body {
     border-radius: 5px;
     color: #fff;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .menu-opcoes-opcao-1 svg {
@@ -67,6 +69,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 5px;
+    text-decoration: none;
 }
 
 .menu-opcoes-opcao svg {
@@ -100,6 +103,7 @@ body {
     padding: 10px;
     height: 40px;
     width: 40px;
+    text-decoration: none;
 }
 
 .perfil-usuario-img img {
@@ -311,6 +315,23 @@ body {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.btn-cadastrar-mobile {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: #48ce48;
+    padding: 10px 14px 10px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;  
+    margin-right: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
 .pesquisar-produto-cadastrado {
     display: flex;
     align-items: center;
@@ -345,9 +366,6 @@ body {
     display: none
 }
 
-
-
-
 .atualizar-tabela {
     display: flex;
     align-items: center;
@@ -355,6 +373,19 @@ body {
     gap: 5px;
     background-color: #35aeff;
     padding: 10px 14px 10px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-left: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.atualizar-tabela-mobile {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: #35aeff;
+    padding: 10px;
     border-radius: 10px;
     text-decoration: none;
     margin-left: 10px;
@@ -378,6 +409,7 @@ body {
     padding: 20px;
     border-radius: 20px;
     width: 100%;
+    display: none;
 }
 
 table {
