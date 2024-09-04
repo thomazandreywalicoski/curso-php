@@ -1,0 +1,581 @@
+@media (min-width: 801px) and (max-width: 1025px) {
+
+    .tabela-produtos-cadastrados {
+        padding: 15px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 1025px;
+        overflow-x: scroll; 
+    }
+
+    .tabela-produtos-cadastrados::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .informacao-tabela {
+        gap: 5px;
+        padding: 5px 8px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .informacao-tabela svg {
+        width: 20px;   
+    }
+    
+    .dado-produto {
+        padding: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 14px;
+    }
+
+    .imagem-produto {
+        max-width: 55px;
+        max-height: 35px;
+        width: auto;
+        height: auto;
+        
+    }  
+    
+    .container-cadastrar {
+        padding: 10px;
+    }
+    
+    .acoes-tabela {
+        gap: 5px;
+    }
+    
+    .visualizar-lucro-produto {
+        padding: 5px;
+        border-radius: 8px;
+    }
+
+    .visualizar-lucro-produto svg {
+        width: 22px;
+    }
+    
+    .visualizar-informacoes-produto {
+        padding: 5px;
+        border-radius: 8px;
+    }
+
+    .visualizar-informacoes-produto svg {
+        width: 22px;
+    }
+    
+    .editar-produto {
+        padding: 5px;
+        border-radius: 8px;
+    }
+
+    .editar-produto svg {
+        width: 22px;
+    }
+    
+    .deletar-produto {
+        padding: 5px;
+        border-radius: 8px;
+    }
+
+    .deletar-produto svg {
+        width: 22px;
+    }
+
+}
+
+
+@media (min-width: 601px) and (max-width: 801px) {
+
+    .tabela-produtos-cadastrados {
+        padding: 15px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 801px;
+        overflow-x: scroll; 
+    }
+
+    .tabela-produtos-cadastrados::-webkit-scrollbar {
+        display: none;
+    }
+      
+    .cabecalho-tabela {   
+        border-radius: 10px;
+    }  
+    
+    .informacao-tabela {
+        gap: 5px;
+        padding: 5px 8px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .informacao-tabela svg {
+        width: 20px;   
+    }
+    
+    .aviso-nenhum-produto-cadastrado {
+        padding: 20px 0px;
+    }
+    
+    .dado-produto {
+        padding: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 14px;
+    }
+
+    .imagem-produto {
+        max-width: 55px;
+        max-height: 35px;
+        width: auto;
+        height: auto;
+        
+    }  
+    
+    .container-cadastrar {
+        padding: 10px;
+    }
+    
+    .acoes-tabela {
+        gap: 8px;
+    }
+    
+    .visualizar-lucro-produto {
+        padding: 5px;
+        border-radius: 8px;
+    }
+
+    .visualizar-lucro-produto svg {
+        width: 22px;
+    }
+    
+    .visualizar-informacoes-produto {
+        padding: 5px;
+        border-radius: 8px;
+    }
+
+    .visualizar-informacoes-produto svg {
+        width: 22px;
+    }
+    
+    .editar-produto {
+        padding: 5px;
+        border-radius: 8px;
+    }
+
+    .editar-produto svg {
+        width: 22px;
+    }
+    
+    .deletar-produto {
+        padding: 5px;
+        border-radius: 8px;
+    }
+
+    .deletar-produto svg {
+        width: 22px;
+    }
+
+}
+
+
+@media (min-width: 481px) and (max-width: 601px) {
+
+    .tabela-produtos-cadastrados {
+        padding: 15px;
+        border-radius: 15px;
+        width: 100%;
+        max-width: 601px;
+        overflow-x: scroll; 
+    }
+
+    .tabela-produtos-cadastrados::-webkit-scrollbar {
+        display: none;
+    }
+      
+    .cabecalho-tabela {   
+        border-radius: 10px;
+    }  
+    
+    .informacao-tabela {
+        gap: 5px;
+        padding: 5px 8px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .informacao-tabela svg {
+        width: 18px;   
+    }
+    
+    .aviso-nenhum-produto-cadastrado {
+        padding: 20px 0px;
+    }
+    
+    .dado-produto {
+        padding: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 13px;
+    }
+
+    .imagem-produto {
+        max-width: 50px;
+        max-height: 30px;
+        width: auto;
+        height: auto;
+        
+    }  
+    
+    .container-cadastrar {
+        padding: 10px;
+    }
+    
+    .acoes-tabela {
+        gap: 5px;
+    }
+    
+    .visualizar-lucro-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .visualizar-lucro-produto svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .visualizar-informacoes-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .visualizar-informacoes-produto svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .editar-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .editar-produto svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .deletar-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .deletar-produto svg {
+        width: 18px;
+        height: 18px;
+    }
+
+}
+
+
+@media (min-width: 431px) and (max-width: 481px) {
+
+    .tabela-produtos-cadastrados {
+        padding: 12px;
+        border-radius: 15px;
+        width: 100%;
+        max-width: 481px;
+        overflow-x: scroll; 
+    }
+
+    .tabela-produtos-cadastrados::-webkit-scrollbar {
+        display: none;
+    }
+      
+    .cabecalho-tabela {   
+        border-radius: 10px;
+    }  
+    
+    .informacao-tabela {
+        gap: 5px;
+        padding: 5px 8px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .informacao-tabela svg {
+        width: 16px;   
+    }
+    
+    .aviso-nenhum-produto-cadastrado {
+        padding: 20px 0px;
+    }
+    
+    .dado-produto {
+        padding: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 12px;
+    }
+
+    .imagem-produto {
+        max-width: 45px;
+        max-height: 25px;
+        width: auto;
+        height: auto;
+        
+    }  
+    
+    .container-cadastrar {
+        padding: 10px;
+    }
+    
+    .acoes-tabela {
+        gap: 5px;
+    }
+    
+    .visualizar-lucro-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .visualizar-lucro-produto svg {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .visualizar-informacoes-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .visualizar-informacoes-produto svg {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .editar-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .editar-produto svg {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .deletar-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .deletar-produto svg {
+        width: 15px;
+        height: 15px;
+    }
+
+}
+
+
+@media (min-width: 376px) and (max-width: 431px) {
+
+    .tabela-produtos-cadastrados {
+        padding: 12px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 431px;
+        overflow-x: scroll; 
+    }
+
+    .tabela-produtos-cadastrados::-webkit-scrollbar {
+        display: none;
+    }
+      
+    .cabecalho-tabela {   
+        border-radius: 10px;
+    }  
+    
+    .informacao-tabela {
+        gap: 5px;
+        padding: 5px 8px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .informacao-tabela svg {
+        width: 15px;   
+    }
+    
+    .aviso-nenhum-produto-cadastrado {
+        padding: 20px 0px;
+    }
+    
+    .dado-produto {
+        padding: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 12px;
+    }
+
+    .imagem-produto {
+        max-width: 45px;
+        max-height: 25px;
+        width: auto;
+        height: auto;
+        
+    }  
+    
+    .container-cadastrar {
+        padding: 10px;
+    }
+    
+    .acoes-tabela {
+        gap: 5px;
+    }
+    
+    .visualizar-lucro-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .visualizar-lucro-produto svg {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .visualizar-informacoes-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .visualizar-informacoes-produto svg {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .editar-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .editar-produto svg {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .deletar-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .deletar-produto svg {
+        width: 15px;
+        height: 15px;
+    }
+    
+}
+
+
+@media (min-width: 320px) and (max-width: 376px) {
+
+    .tabela-produtos-cadastrados {
+        padding: 10px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 376px;
+        overflow-x: scroll; 
+    }
+
+    .tabela-produtos-cadastrados::-webkit-scrollbar {
+        display: none;
+    }
+      
+    .cabecalho-tabela {   
+        border-radius: 10px;
+    }  
+    
+    .informacao-tabela {
+        gap: 5px;
+        padding: 5px 8px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .informacao-tabela svg {
+        width: 15px;   
+    }
+    
+    .aviso-nenhum-produto-cadastrado {
+        padding: 20px 0px;
+    }
+    
+    .dado-produto {
+        padding: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 11px;
+    }
+
+    .imagem-produto {
+        max-width: 42px;
+        max-height: 22px;
+        width: auto;
+        height: auto;
+    }  
+    
+    .container-cadastrar {
+        padding: 10px;
+    }
+    
+    .acoes-tabela {
+        gap: 5px;
+    }
+    
+    .visualizar-lucro-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .visualizar-lucro-produto svg {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .visualizar-informacoes-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .visualizar-informacoes-produto svg {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .editar-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .editar-produto svg {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .deletar-produto {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .deletar-produto svg {
+        width: 15px;
+        height: 15px;
+    }
+
+}

@@ -87,7 +87,7 @@
 @media (min-width: 481px) and (max-width: 601px) {
 
     .titulo-painel-administracao {
-        font-size: 12px;
+        font-size: 11px;
         margin-bottom: 15px;
         gap: 10px;
     }
@@ -144,7 +144,7 @@
     }
     
     .titulo-tabela {
-        font-size: 12px;   
+        font-size: 11px;   
     }
 
 }
@@ -342,11 +342,15 @@
     .pesquisar-produto-cadastrado {
         padding: 1px 6px 1px 9px;
         border-radius: 6px;
+        
     }
     
     .pesquisar-produto-cadastrado input {
-        width: 110px;
         font-size: 10px;
+        max-width: 110px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .botao-de-pesquisar svg {

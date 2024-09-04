@@ -1,0 +1,148 @@
+@media (min-width: 601px) and (max-width: 801px) {
+
+    .numero-de-paginas {
+        margin: 25px 0px 10px 0px;
+        font-size: 16px;
+    }
+    
+    .pagina-produtos-atual {
+        width: 28px;
+        height: 28px;
+        margin: 0px 5px;
+        font-size: 16px;
+    }
+    
+    .paginas-anterior-posterior {
+        width: 28px;
+        height: 28px;
+        margin: 0px 5px;
+        font-size: 16px;
+    }
+    
+    .mudar-pagina {
+        width: 28px;
+        height: 28px;
+        margin: 0px 5px; 
+    }
+
+}
+
+
+@media (min-width: 481px) and (max-width: 601px) {
+
+    .numero-de-paginas {
+        margin: 20px 0px 10px 0px;
+        font-size: 15px;
+    }
+    
+    .pagina-produtos-atual {
+        width: 28px;
+        height: 28px;
+        margin: 0px 5px;
+        font-size: 15px;
+    }
+    
+    .paginas-anterior-posterior {
+        width: 28px;
+        height: 28px;
+        margin: 0px 5px;
+        font-size: 15px;
+    }
+    
+    .mudar-pagina {
+        width: 28px;
+        height: 28px;
+        margin: 0px 5px; 
+    }
+
+}
+
+
+@media (min-width: 431px) and (max-width: 481px) {
+
+    .numero-de-paginas {
+        margin: 20px 0px 10px 0px;
+        font-size: 14px;
+    }
+    
+    .pagina-produtos-atual {
+        width: 27px;
+        height: 27px;
+        margin: 0px 5px;
+        font-size: 13px;
+    }
+    
+    .paginas-anterior-posterior {
+        width: 27px;
+        height: 27px;
+        margin: 0px 5px;
+        font-size: 13px;
+    }
+    
+    .mudar-pagina {
+        width: 27px;
+        height: 27px;
+        margin: 0px 5px; 
+    }
+
+}
+
+
+@media (min-width: 376px) and (max-width: 431px) {
+
+    .numero-de-paginas {
+        margin: 20px 0px 10px 0px;
+        font-size: 12px;
+    }
+    
+    .pagina-produtos-atual {
+        width: 25px;
+        height: 25px;
+        margin: 0px 3px;
+        font-size: 12px;
+    }
+    
+    .paginas-anterior-posterior {
+        width: 25px;
+        height: 25px;
+        margin: 0px 3px;
+        font-size: 12px;
+    }
+    
+    .mudar-pagina {
+        width: 25px;
+        height: 25px;
+        margin: 0px 4px; 
+    }
+
+}
+
+
+@media (min-width: 320px) and (max-width: 376px) {
+
+    .numero-de-paginas {
+        margin: 20px 0px 10px 0px;
+        font-size: 12px;
+    }
+    
+    .pagina-produtos-atual {
+        width: 25px;
+        height: 25px;
+        margin: 0px 3px;
+        font-size: 12px;
+    }
+    
+    .paginas-anterior-posterior {
+        width: 25px;
+        height: 25px;
+        margin: 0px 3px;
+        font-size: 12px;
+    }
+    
+    .mudar-pagina {
+        width: 25px;
+        height: 25px;
+        margin: 0px 4px; 
+    }
+
+}

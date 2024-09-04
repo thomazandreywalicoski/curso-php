@@ -409,7 +409,6 @@ body {
     padding: 20px;
     border-radius: 20px;
     width: 100%;
-    display: none;
 }
 
 table {
@@ -477,16 +476,11 @@ tr:hover {
     text-align: center;
 }
 
-
-
-
 .container-cadastrar {
     display: flex;
     justify-content: center;
     padding: 20px;
 }
-
-
 
 .acoes-tabela {
     display: flex;
@@ -537,9 +531,7 @@ tr:hover {
 
 
 
-
-
-
+/* PAGINAÇÃO */
 
 .numero-de-paginas {
     margin: 30px 0px 20px 0px;
