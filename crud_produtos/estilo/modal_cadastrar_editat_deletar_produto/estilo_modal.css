@@ -27,6 +27,7 @@
     border-radius: 20px;
     border: 1px solid #005d00;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 15px;
 }
 
 .btn-fechar-modal-cadastrar-produto {
@@ -42,7 +43,7 @@
     border: 1px solid #ff0000;
     padding: 5px;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,12 +169,8 @@
     width: 50%;
 }
 
-.cadastro-produto-estoque {
-    width: 20%;
-}
-
 .cadastro-produto-categoria {
-    width: 30%;
+    width: 50%;
 }
 
 .cadastro-produto-dado select {
@@ -189,11 +186,11 @@
 }
 
 .cadastro-produto-quantidade {
-    width: 30%;
+    width: 40%;
 }
 
-.cadastro-produto-imagem {
-    width: 40%;
+.cadastro-produto-estoque {
+    width: 30%;
 }
 
 .cadastro-produto-validade {
@@ -202,6 +199,21 @@
 
 
 .formulario-dados-linha-4 {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.cadastro-produto-preco-fornecedor {
+    width: 50%;
+}
+
+.cadastro-produto-imagem {
+    width: 50%;
+}
+
+.formulario-dados-linha-5 {
     width: 100%;
 }
 
@@ -418,11 +430,15 @@
 }
 
 .informacoes-produtos-validade {
-    width: 50%;
+    width: 33%;
 }
 
 .informacoes-produtos-marca {
-    width: 50%;
+    width: 33%;
+}
+
+.informacoes-produtos-preco-fornecedor {
+    width: 33%;
 }
 
 

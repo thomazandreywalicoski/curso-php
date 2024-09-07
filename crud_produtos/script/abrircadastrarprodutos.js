@@ -132,6 +132,29 @@ document.addEventListener("DOMContentLoaded", function() {
         abrirModalLucrosProduto.style.display = 'flex';
         localStorage.setItem('modalLucros', 'true');
     }
+
+
+
+
+
+    // Função para abrir o modal e configurar o localStorage
+    //function abrirVisualizarLucrosProdutos() {
+    //    abrirModalLucrosProduto.style.display = 'flex';
+    //    localStorage.setItem('modalLucros', 'true');
+    //}
+
+    // Função para verificar e abrir o modal após a página ser carregada
+    //window.addEventListener('load', function() {
+    //    if (localStorage.getItem('modalLucros') === 'true') {
+    //        abrirModalLucrosProduto.style.display = 'flex';
+    //        localStorage.removeItem('modalLucros'); // Remover o valor após exibir o modal
+    //    }
+    //});
+
+
+
+    
+ 
  
     // Fechar o modal de lucros
 

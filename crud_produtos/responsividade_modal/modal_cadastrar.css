@@ -1,0 +1,234 @@
+@media (min-width: 481px) and (max-width: 601px) {
+
+    .modal-cadastrar-produto {
+        max-width: 601px;
+        padding: 25px 20px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+    
+    .btn-fechar-modal-cadastrar-produto {
+        transform: translate(8px, -12px);
+        width: 35px;
+        height: 35px;
+        border-radius: 10px;
+    }
+    
+    .titulo-formulario-cadastrar-produto h1 {
+        font-size: 18px;
+    }
+    
+    .header-formulario-cadastrar-produto p {
+        font-size: 16px;
+    }
+    
+    .cadastro-produto-tipo-dado {
+        font-size: 16px;
+    }
+    
+    .cadastro-produto-tipo-dado svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .cadastro-produto-dado input {
+        font-size: 14px;
+    }
+    
+    .cadastro-produto-dado textarea {
+        font-size: 14px;
+    }
+    
+    .btn-formulario-salvar-c {
+        margin-top: 10px;
+    }
+    
+    .btn-formulario-salvar {
+        
+        padding: 8px 20px;
+        font-size: 16px;
+    }
+
+    .btn-formulario-salvar svg {
+        width: 20px;
+        height: 20px;
+    }
+
+}
+
+
+@media (min-width: 431px) and (max-width: 481px) {
+
+    .modal-cadastrar-produto {
+        max-width: 481px;
+        padding: 20px 15px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+    
+    .btn-fechar-modal-cadastrar-produto {
+        transform: translate(8px, -12px);
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+    }
+    
+    .titulo-formulario-cadastrar-produto h1 {
+        font-size: 17px;
+    }
+    
+    .header-formulario-cadastrar-produto p {
+        font-size: 15px;
+    }
+    
+    .cadastro-produto-tipo-dado {
+        font-size: 15px;
+    }
+    
+    .cadastro-produto-tipo-dado svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .cadastro-produto-dado input {
+        font-size: 13px;
+    }
+    
+    .cadastro-produto-dado textarea {
+        font-size: 13px;
+    }
+    
+    .btn-formulario-salvar-c {
+        margin-top: 10px;
+    }
+    
+    .btn-formulario-salvar {
+        
+        padding: 8px 20px;
+        font-size: 15px;
+    }
+
+    .btn-formulario-salvar svg {
+        width: 20px;
+        height: 20px;
+    }
+
+}
+
+
+@media (min-width: 376px) and (max-width: 431px) {
+
+    .modal-cadastrar-produto {
+        max-width: 431px;
+        padding: 20px 15px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+    
+    .btn-fechar-modal-cadastrar-produto {
+        transform: translate(8px, -12px);
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+    }
+    
+    .titulo-formulario-cadastrar-produto h1 {
+        font-size: 16px;
+    }
+    
+    .header-formulario-cadastrar-produto p {
+        font-size: 14px;
+    }
+    
+    .cadastro-produto-tipo-dado {
+        font-size: 15px;
+    }
+    
+    .cadastro-produto-tipo-dado svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .cadastro-produto-dado input {
+        font-size: 12px;
+    }
+    
+    .cadastro-produto-dado textarea {
+        font-size: 12px;
+    }
+    
+    .btn-formulario-salvar-c {
+        margin-top: 10px;
+    }
+    
+    .btn-formulario-salvar {
+        
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+
+    .btn-formulario-salvar svg {
+        width: 18px;
+        height: 18px;
+    }
+
+}
+
+
+@media (min-width: 320px) and (max-width: 376px) {
+    
+    .modal-cadastrar-produto {
+        max-width: 376px;
+        padding: 20px 10px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+    
+    .btn-fechar-modal-cadastrar-produto {
+        transform: translate(8px, -12px);
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+    }
+    
+    .titulo-formulario-cadastrar-produto h1 {
+        font-size: 16px;
+    }
+    
+    .header-formulario-cadastrar-produto p {
+        font-size: 13px;
+    }
+    
+    .cadastro-produto-tipo-dado {
+        font-size: 13.5px;
+    }
+    
+    .cadastro-produto-tipo-dado svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .cadastro-produto-dado input {
+        font-size: 12px;
+    }
+    
+    .cadastro-produto-dado textarea {
+        font-size: 12px;
+    }
+    
+    .btn-formulario-salvar-c {
+        margin-top: 10px;
+    }
+    
+    .btn-formulario-salvar {
+        
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+
+    .btn-formulario-salvar svg {
+        width: 18px;
+        height: 18px;
+    }
+
+}
