@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./responsividade/tabela_produtos.css">
     <link rel="stylesheet" href="./responsividade/paginacao.css">
     <link rel="stylesheet" href="./responsividade_modal/modal_cadastrar.css">
+    <link rel="stylesheet" href="./responsividade_modal/modal_editar.css">
+    <link rel="stylesheet" href="./responsividade_modal/modal_deletar.css">
     <title>Painel de Administração</title>  
 </head>
 <body>

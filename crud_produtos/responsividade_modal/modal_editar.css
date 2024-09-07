@@ -1,0 +1,342 @@
+@media (min-width: 481px) and (max-width: 601px) {
+
+    .modal-editar-produto {
+        max-width: 601px;
+        padding: 25px 20px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+    
+    .btn-fechar-modal-editar-produto {
+        transform: translate(8px, -12px);
+        width: 35px;
+        height: 35px;
+        border-radius: 10px;
+    }
+    
+    .titulo-formulario-editar-produto h1 {
+        font-size: 18px;
+    }
+    
+    .header-formulario-editar-produto p {
+        font-size: 16px;
+    }
+    
+    .cadastro-produto-tipo-dado {
+        font-size: 16px;
+    }
+    
+    .cadastro-produto-tipo-dado svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .cadastro-produto-dado input {
+        font-size: 14px;
+    }
+    
+    .cadastro-produto-dado textarea {
+        font-size: 14px;
+    }
+    
+    .btn-formulario-salvar-c {
+        margin-top: 10px;
+    }
+    
+    .btn-formulario-salvar {
+        
+        padding: 8px 20px;
+        font-size: 16px;
+    }
+
+    .btn-formulario-salvar svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .btn-nao-deletar {
+        font-size: 16px;
+    }
+
+    .btn-nao-deletar svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .btn-deletar {
+        font-size: 16px;
+    }
+
+    .btn-deletar svg {
+        width: 18px;
+        height: 18px;
+    }
+
+}
+
+
+@media (min-width: 431px) and (max-width: 481px) {
+
+    .modal-editar-produto {
+        max-width: 481px;
+        padding: 20px 15px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+    
+    .btn-fechar-modal-editar-produto {
+        transform: translate(8px, -12px);
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+    }
+    
+    .titulo-formulario-editar-produto h1 {
+        font-size: 17px;
+    }
+    
+    .header-formulario-editar-produto p {
+        font-size: 15px;
+    }
+    
+    .cadastro-produto-tipo-dado {
+        font-size: 15px;
+    }
+    
+    .cadastro-produto-tipo-dado svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .cadastro-produto-dado input {
+        font-size: 13px;
+    }
+
+    .btn-decrementar {
+        padding: 2px 10px;
+    }
+    
+    .visualizador-estoque {
+        font-size: 15px;
+    }
+    
+    .btn-acrescentar {
+        padding: 2px 10px;
+    }
+    
+    .cadastro-produto-dado textarea {
+        font-size: 13px;
+    }
+    
+    .btn-formulario-salvar-c {
+        margin-top: 10px;
+    }
+    
+    .btn-formulario-salvar {
+        
+        padding: 8px 20px;
+        font-size: 15px;
+    }
+
+    .btn-formulario-salvar svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .btn-nao-deletar {
+        font-size: 15px;
+    }
+
+    .btn-nao-deletar svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .btn-deletar {
+        font-size: 15px;
+    }
+
+    .btn-deletar svg {
+        width: 18px;
+        height: 18px;
+    }
+
+}
+
+
+@media (min-width: 376px) and (max-width: 431px) {
+
+    .modal-editar-produto {
+        max-width: 431px;
+        padding: 20px 15px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+    
+    .btn-fechar-modal-editar-produto {
+        transform: translate(8px, -12px);
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+    }
+    
+    .titulo-formulario-editar-produto h1 {
+        font-size: 16px;
+    }
+    
+    .header-formulario-editar-produto p {
+        font-size: 14px;
+    }
+    
+    .cadastro-produto-tipo-dado {
+        font-size: 15px;
+    }
+    
+    .cadastro-produto-tipo-dado svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .cadastro-produto-dado input {
+        font-size: 12px;
+    }
+
+    .btn-decrementar {
+        padding: 1.8px 10px;
+    }
+    
+    .visualizador-estoque {
+        font-size: 14px;
+    }
+    
+    .btn-acrescentar {
+        padding: 1.8px 10px;
+    }
+    
+    .cadastro-produto-dado textarea {
+        font-size: 12px;
+    }
+    
+    .btn-formulario-salvar-c {
+        margin-top: 10px;
+    }
+    
+    .btn-formulario-salvar {
+        
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+
+    .btn-formulario-salvar svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .btn-nao-deletar {
+        font-size: 14px;
+    }
+
+    .btn-nao-deletar svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .btn-deletar {
+        font-size: 14px;
+    }
+
+    .btn-deletar svg {
+        width: 16px;
+        height: 16px;
+    }
+
+}
+
+
+@media (min-width: 320px) and (max-width: 376px) {
+    
+    .modal-deletar-produto {
+        max-width: 376px;
+        padding: 20px 10px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+    
+    .btn-fechar-modal-deletar-produto {
+        transform: translate(8px, -12px);
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+    }
+    
+    .titulo-formulario-deletar-produto h1 {
+        font-size: 16px;
+    }
+    
+    .header-formulario-deletar-produto p {
+        font-size: 13px;
+    }
+    
+    .cadastro-produto-tipo-dado {
+        font-size: 13.5px;
+    }
+    
+    .cadastro-produto-tipo-dado svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .cadastro-produto-dado input {
+        font-size: 12px;
+    }
+
+    .btn-decrementar {
+        padding: 1.5px 9px;
+    }
+    
+    .visualizador-estoque {
+        font-size: 14px;
+    }
+    
+    .btn-acrescentar {
+        padding: 1.5px 9px;
+    }
+    
+    .cadastro-produto-dado textarea {
+        font-size: 12px;
+    }
+    
+    .btn-formulario-salvar-c {
+        margin-top: 10px;
+    }
+    
+    .btn-formulario-salvar {
+        
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+
+    .btn-formulario-salvar svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .btn-nao-deletar {
+        font-size: 13px;
+    }
+
+    .btn-nao-deletar svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .btn-deletar {
+        font-size: 13px;
+    }
+
+    .btn-deletar svg {
+        width: 16px;
+        height: 16px;
+    }
+
+}

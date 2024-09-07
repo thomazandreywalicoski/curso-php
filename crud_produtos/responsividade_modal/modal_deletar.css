@@ -1,0 +1,106 @@
+@media (min-width: 481px) and (max-width: 601px) {
+
+    .modal-deletar-produto {
+        max-width: 601px;
+        padding: 25px 20px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+    
+    .btn-fechar-modal-deletar-produto {
+        transform: translate(8px, -12px);
+        width: 35px;
+        height: 35px;
+        border-radius: 10px;
+    }
+    
+    .titulo-formulario-deletar-produto h1 {
+        font-size: 18px;
+    }
+    
+    .header-formulario-deletar-produto p {
+        font-size: 16px;
+    }   
+
+}
+
+
+@media (min-width: 431px) and (max-width: 481px) {
+
+    .modal-deletar-produto {
+        max-width: 481px;
+        padding: 20px 15px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+    
+    .btn-fechar-modal-deletar-produto {
+        transform: translate(8px, -12px);
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+    }
+    
+    .titulo-formulario-deletar-produto h1 {
+        font-size: 17px;
+    }
+    
+    .header-formulario-deletar-produto p {
+        font-size: 15px;
+    }
+
+}
+
+
+@media (min-width: 376px) and (max-width: 431px) {
+
+    .modal-deletar-produto {
+        max-width: 431px;
+        padding: 20px 15px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+    
+    .btn-fechar-modal-deletar-produto {
+        transform: translate(8px, -12px);
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+    }
+    
+    .titulo-formulario-deletar-produto h1 {
+        font-size: 16px;
+    }
+    
+    .header-formulario-deletar-produto p {
+        font-size: 14px;
+    }
+    
+}
+
+
+@media (min-width: 320px) and (max-width: 376px) {
+    
+    .modal-deletar-produto {
+        max-width: 376px;
+        padding: 20px 10px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+    
+    .btn-fechar-modal-deletar-produto {
+        transform: translate(8px, -12px);
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+    }
+    
+    .titulo-formulario-dlletar-produto h1 {
+        font-size: 16px;
+    }
+    
+    .header-formulario-deletar-produto p {
+        font-size: 13px;
+    }
+    
+}
