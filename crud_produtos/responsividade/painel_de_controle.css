@@ -6,7 +6,12 @@
         gap: 10px;
     }
     
-    .titulo-painel-administracao svg {
+    .img-titulo-painel-administracao {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .seta{
         width: 20px;
     }
     
@@ -30,6 +35,11 @@
         font-size: 12px;
     }
 
+    .img-titulo-tabela {
+        width: 27px;
+        height: 27px;
+    }
+
 }
 
 
@@ -41,7 +51,12 @@
         gap: 10px;
     }
     
-    .titulo-painel-administracao svg {
+    .img-titulo-painel-administracao {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .seta{
         width: 20px;
     }
     
@@ -63,6 +78,7 @@
     
     .pesquisar-produto-cadastrado input {
         width: 240px;
+        font-size: 13px;
     }
     
     .atualizar-tabela {
@@ -81,6 +97,11 @@
         font-size: 12px;   
     }
 
+    .img-titulo-tabela {
+        width: 25px;
+        height: 25px;
+    }
+
 }
 
 
@@ -92,7 +113,12 @@
         gap: 10px;
     }
     
-    .titulo-painel-administracao svg {
+    .img-titulo-painel-administracao {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .seta{
         width: 18px;
     }
     
@@ -104,6 +130,38 @@
         padding: 15px;
         border-radius: 15px;
     }
+
+    .painel-administracao-cadastro {
+        gap: 15px;
+    }
+    
+    .pesquisar-produto-cadastrado {
+        border-radius: 10px;
+        margin-left: 0px;
+    }
+    
+    .pesquisar-produto-cadastrado input {
+        padding: 3px 10px;
+        font-size: 13px;
+    }
+    
+    .botao-de-pesquisar {
+        padding: 8px 10px;
+        border-radius: 0px 10px 10px 0px; 
+    }
+    
+    .botao-de-pesquisar svg {
+        width: 20px;
+    }
+    
+    .botao-apagar-pesquisa {
+        padding: 8px 10px;
+        border-radius: 0px 10px 10px 0px;
+    }
+    
+    .botao-apagar-pesquisa svg {
+        width: 20px;
+    }
     
     .btn-cadastrar {
         display: none;
@@ -113,22 +171,13 @@
         display: flex;
         font-size: 13px;
         padding: 8px 12px 8px 8px;
-        margin-right: 2px;
+        margin-right: 0px;
     }
 
     .btn-cadastrar-mobile svg {
         width: 22px;
     }
 
-    .pesquisar-produto-cadastrado {
-        padding: 5px 10px;
-    }
-    
-    .pesquisar-produto-cadastrado input {
-        width: 200px;
-        font-size: 12px;
-    }
-    
     .atualizar-tabela {
         display: none;
     }
@@ -147,6 +196,11 @@
         font-size: 11px;   
     }
 
+    .img-titulo-tabela {
+        width: 23px;
+        height: 23px;
+    }
+
 }
 
 
@@ -158,7 +212,12 @@
         gap: 5px;
     }
     
-    .titulo-painel-administracao svg {
+    .img-titulo-painel-administracao {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .seta{
         width: 15px;
     }
     
@@ -168,10 +227,41 @@
     
     .painel-administracao {
         padding: 12px;
-        border-radius: 10px;
         border-radius: 15px;
     }
+
+    .painel-administracao-cadastro {
+        gap: 10px;
+    }
     
+    .pesquisar-produto-cadastrado {
+        border-radius: 10px;
+        margin-left: 0px;
+    }
+    
+    .pesquisar-produto-cadastrado input {
+        padding: 3px 10px;
+        font-size: 12px;
+    }
+    
+    .botao-de-pesquisar {
+        padding: 6px 8px;
+        border-radius: 0px 10px 10px 0px; 
+    }
+    
+    .botao-de-pesquisar svg {
+        width: 18px;
+    }
+    
+    .botao-apagar-pesquisa {
+        padding: 6px 8px;
+        border-radius: 0px 10px 10px 0px;
+    }
+    
+    .botao-apagar-pesquisa svg {
+        width: 18px;
+    }
+
     .btn-cadastrar {
         display: none;
     }
@@ -180,28 +270,11 @@
         display: flex;
         font-size: 12px;
         padding: 6px 10px 6px 6px;
-        margin-right: 2px;
+        margin-right: 0px;
     }
 
     .btn-cadastrar-mobile svg {
         width: 18px;
-    }
-
-    .pesquisar-produto-cadastrado {
-        padding: 3px 10px;
-    }
-    
-    .pesquisar-produto-cadastrado input {
-        width: 170px;
-        font-size: 12px;
-    }
-
-    .botao-de-pesquisar svg {
-        width: 20px;
-    }
-    
-    .botao-apagar-pesquisa svg {
-        width: 20px;
     }
     
     .atualizar-tabela {
@@ -222,6 +295,11 @@
         font-size: 9px;   
     }
 
+    .img-titulo-tabela {
+        width: 20px;
+        height: 20px;
+    }
+
 }
 
 
@@ -233,7 +311,12 @@
         gap: 5px;
     }
     
-    .titulo-painel-administracao svg {
+    .img-titulo-painel-administracao {
+        width: 17px;
+        height: 17px;
+    }
+    
+    .seta{
         width: 12px;
     }
     
@@ -245,6 +328,46 @@
         padding: 12px;
         border-radius: 10px;
     }
+
+    .painel-administracao-cadastro {
+        gap: 0px;
+    }
+    
+    .pesquisar-produto-cadastrado {
+        border-radius: 6px;
+        margin-left: 10px;
+    }
+    
+    .pesquisar-produto-cadastrado input {
+        padding: 3px 10px;
+        font-size: 12px;
+    }
+    
+    .botao-de-pesquisar {
+        padding: 5px 8px;
+        border-radius: 0px 6px 6px 0px; 
+    }
+    
+    .botao-de-pesquisar svg {
+        width: 16px;
+    }
+    
+    .botao-apagar-pesquisa {
+        padding: 5px 8px;
+        border-radius: 0px 6px 6px 0px;
+    }
+    
+    .botao-apagar-pesquisa svg {
+        width: 16px;
+    }
+    
+    .atualizar-tabela {
+        display: none;
+    }
+    
+    .atualizar-tabela-mobile {
+        display: none;
+    }
     
     .btn-cadastrar {
         display: none;
@@ -255,48 +378,20 @@
         font-size: 12px;
         padding: 5px 10px 5px 5px;
         margin-right: 0px;
-        border-radius: 8px;
+        border-radius: 5px;
     }
 
     .btn-cadastrar-mobile svg {
         width: 18px;
     }
-
-    .pesquisar-produto-cadastrado {
-        padding: 2px 9px;
-        border-radius: 8px;
-    }
-    
-    .pesquisar-produto-cadastrado input {
-        width: 140px;
-        font-size: 10px;
-    }
-
-    .botao-de-pesquisar svg {
-        width: 20px;
-    }
-    
-    .botao-apagar-pesquisa svg {
-        width: 20px;
-    }
-    
-    .atualizar-tabela {
-        display: none;
-    }
-
-    .atualizar-tabela-mobile {
-        display: flex;
-        padding: 5px 8px;
-        margin: 0px;
-        border-radius: 8px;
-    }
-
-    .atualizar-tabela-mobile svg {
-        width: 18px;
-    }
     
     .titulo-tabela {
         font-size: 7px;   
+    }
+
+    .img-titulo-tabela {
+        width: 17px;
+        height: 17px;
     }
 
 }
@@ -309,20 +404,65 @@
         margin-bottom: 10px;
         gap: 5px;
     }
+
+    .img-titulo-painel-administracao {
+        width: 16px;
+        height: 16px;
+    }
     
-    .titulo-painel-administracao svg {
+    .seta{
         width: 12px;
     }
     
     .container-produtos-cadastrados {
         padding: 10px;
     }
-    
+
     .painel-administracao {
         padding: 10px;
         border-radius: 10px;
     }
+
+    .painel-administracao-cadastro {
+        gap: 0px;
+    }
     
+    .pesquisar-produto-cadastrado {
+        border-radius: 6px;
+        margin-left: 10px;
+    }
+    
+    .pesquisar-produto-cadastrado input {
+        padding: 3px 10px;
+        font-size: 10px;
+    }
+    
+    .botao-de-pesquisar {
+        padding: 4px 8px;
+        border-radius: 0px 6px 6px 0px; 
+    }
+    
+    .botao-de-pesquisar svg {
+        width: 16px;
+    }
+    
+    .botao-apagar-pesquisa {
+        padding: 4px 8px;
+        border-radius: 0px 6px 6px 0px;
+    }
+    
+    .botao-apagar-pesquisa svg {
+        width: 16px;
+    }
+    
+    .atualizar-tabela {
+        display: none;
+    }
+    
+    .atualizar-tabela-mobile {
+        display: none;
+    }
+
     .btn-cadastrar {
         display: none;
     }
@@ -338,46 +478,14 @@
     .btn-cadastrar-mobile svg {
         width: 17px;
     }
-
-    .pesquisar-produto-cadastrado {
-        padding: 1px 6px 1px 9px;
-        border-radius: 6px;
-        
-    }
-    
-    .pesquisar-produto-cadastrado input {
-        font-size: 10px;
-        max-width: 110px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .botao-de-pesquisar svg {
-        width: 16px;
-    }
-    
-    .botao-apagar-pesquisa svg {
-        width: 20px;
-    }
-    
-    .atualizar-tabela {
-        display: none;
-    }
-
-    .atualizar-tabela-mobile {
-        display: flex;
-        padding: 4px 8px;
-        margin: 0px;
-        border-radius: 6px;
-    }
-
-    .atualizar-tabela-mobile svg {
-        width: 16px;
-    }
     
     .titulo-tabela {
         font-size: 7px;   
+    }
+
+    .img-titulo-tabela {
+        width: 17px;
+        height: 17px;
     }
 
 

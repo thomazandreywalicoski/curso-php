@@ -18,7 +18,12 @@
         gap: 10px;
     }
 
-    .dashboard-titulo svg {
+    .img-dashboard-titulo {
+        width: 25px;
+        height: 25px;
+    }
+
+    .seta {
         width: 20px;
     }
 
@@ -83,7 +88,12 @@
         gap: 10px;
     }
 
-    .dashboard-titulo svg {
+    .img-dashboard-titulo {
+        width: 22px;
+        height: 22px;
+    }
+
+    .seta {
         width: 20px;
     }
 
@@ -118,7 +128,12 @@
         gap: 10px;
     }
 
-    .dashboard-titulo svg {
+    .img-dashboard-titulo {
+        width: 20px;
+        height: 20px;
+    }
+
+    .seta {
         width: 18px;
     }
 
@@ -166,8 +181,13 @@
         gap: 5px;
     }
 
-    .dashboard-titulo svg {
-        width: 16px;
+    .img-dashboard-titulo {
+        width: 18px;
+        height: 18px;
+    }
+
+    .seta {
+        width: 15px;
     }
 
     .dashboard-resultados-c {
@@ -214,7 +234,12 @@
         gap: 5px;
     }
 
-    .dashboard-titulo svg {
+    .img-dashboard-titulo {
+        width: 17px;
+        height: 17px;
+    }
+
+    .seta {
         width: 12px;
     }
 
@@ -282,7 +307,12 @@
         gap: 5px;
     }
 
-    .dashboard-titulo svg {
+    .img-dashboard-titulo {
+        width: 16px;
+        height: 16px;
+    }
+
+    .seta {
         width: 12px;
     }
 

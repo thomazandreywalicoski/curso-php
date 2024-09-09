@@ -270,7 +270,12 @@ body {
     gap: 10px;
 }
 
-.titulo-painel-administracao svg {
+.img-titulo-painel-administracao {
+    width: 30px;
+    height: 30px;
+}
+
+.seta {
     transform: rotate(90deg);
 }
 
@@ -292,13 +297,14 @@ body {
     padding: 20px;
     border-radius: 20px;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .painel-administracao-cadastro {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
     gap: 10px;
 }
 
@@ -317,6 +323,7 @@ body {
     cursor: pointer;  
     margin-right: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    white-space: nowrap;
 }
 
 .btn-cadastrar-mobile {
@@ -342,32 +349,51 @@ body {
     justify-content: center;
     gap: 5px;
     border: 1px solid #ccc;
-    padding: 7px 10px;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    max-width: 550px;
+    width: 100%;
 }
 
 .pesquisar-produto-cadastrado input {
     border: none;
     outline: none;
-    width: 350px;
+    width: 100%;
+    padding: 7px 10px;
+    font-size: 15px;
+    border-radius: 10px;
 }
 
 .barra-pesquisa {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 .botao-de-pesquisar {
     background-color: #fff;
     border: none;
     cursor: pointer;
+    background-color: #35AEFF;
+    padding: 9px 10px;
+    border-radius: 0px 10px 10px 0px; 
+}
+
+.botao-de-pesquisar svg {
+    vertical-align: middle;
 }
 
 .botao-apagar-pesquisa {
-    display: none
+    display: none;
+    background-color: #ff0000;
+    padding: 9px 10px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.botao-apagar-pesquisa svg {
+    vertical-align: middle;
 }
 
 .atualizar-tabela {
