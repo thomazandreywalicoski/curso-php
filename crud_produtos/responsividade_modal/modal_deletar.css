@@ -20,7 +20,25 @@
     
     .header-formulario-deletar-produto p {
         font-size: 16px;
-    }   
+    } 
+
+    .btn-nao-deletar {
+        font-size: 16px;
+    }
+
+    .btn-nao-deletar svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .btn-deletar {
+        font-size: 16px;
+    }
+
+    .btn-deletar svg {
+        width: 18px;
+        height: 18px;
+    }
 
 }
 
@@ -49,6 +67,24 @@
         font-size: 15px;
     }
 
+    .btn-nao-deletar {
+        font-size: 15px;
+    }
+
+    .btn-nao-deletar svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .btn-deletar {
+        font-size: 15px;
+    }
+
+    .btn-deletar svg {
+        width: 18px;
+        height: 18px;
+    }
+
 }
 
 
@@ -75,6 +111,24 @@
     .header-formulario-deletar-produto p {
         font-size: 14px;
     }
+
+    .btn-nao-deletar {
+        font-size: 14px;
+    }
+
+    .btn-nao-deletar svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .btn-deletar {
+        font-size: 14px;
+    }
+
+    .btn-deletar svg {
+        width: 16px;
+        height: 16px;
+    }
     
 }
 
@@ -95,7 +149,7 @@
         border-radius: 10px;
     }
     
-    .titulo-formulario-dlletar-produto h1 {
+    .titulo-formulario-deletar-produto h1 {
         font-size: 16px;
     }
     
@@ -103,4 +157,23 @@
         font-size: 13px;
     }
     
+     
+    .btn-nao-deletar {
+        font-size: 13px;
+    }
+
+    .btn-nao-deletar svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .btn-deletar {
+        font-size: 13px;
+    }
+
+    .btn-deletar svg {
+        width: 16px;
+        height: 16px;
+    }
+
 }

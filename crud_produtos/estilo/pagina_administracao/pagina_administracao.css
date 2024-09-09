@@ -141,7 +141,7 @@ body {
     gap: 10px;
 }
 
-.dashboard-titulo svg {
+.seta {
     transform: rotate(90deg);
 }
 
@@ -181,6 +181,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 5px;
+    box-shadow: rgba(255, 255, 255, 0.16) 0px 10px 36px 0px, rgba(255, 255, 255, 0.06) 0px 0px 0px 1px;
 }
 
 .estatisticas-valor-total-compras {
@@ -192,6 +193,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 5px;
+    box-shadow: rgba(255, 255, 255, 0.16) 0px 10px 36px 0px, rgba(255, 255, 255, 0.06) 0px 0px 0px 1px;
 }
 
 .estatisticas-valor-total-vendas {
@@ -203,6 +205,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 5px;
+    box-shadow: rgba(255, 255, 255, 0.16) 0px 10px 36px 0px, rgba(255, 255, 255, 0.06) 0px 0px 0px 1px;
 }
 
 .estatisticas-valor-total-lucros {
@@ -214,6 +217,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 5px;
+    box-shadow: rgba(255, 255, 255, 0.16) 0px 10px 36px 0px, rgba(255, 255, 255, 0.06) 0px 0px 0px 1px;
 }
 
 .estatisticas-titulo-resultado-c {
@@ -401,6 +405,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     margin: 10px 0px 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 
 }
 

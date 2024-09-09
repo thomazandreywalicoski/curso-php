@@ -1,0 +1,466 @@
+@media (min-width: 481px) and (max-width: 601px) {
+
+    .modal-lucro {
+        max-width: 601px;
+        padding: 25px 20px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+
+    .btn-fechar-modal-lucro {
+        transform: translate(8px, -12px);
+        width: 35px;
+        height: 35px;
+        border-radius: 10px; 
+    }
+
+    .titulo-modal-lucro h1 {
+        font-size: 18px;
+    }
+
+    .informacoes-nome-produto {
+        width: 70%;
+    }
+
+    .informacoes-estoque-produto {
+        width: 30%;
+    }
+
+    .informar-venda {
+        font-size: 17px;
+    }
+
+    .informacoes-valor-fornecedor {
+        width: 40%;
+    }
+
+    .informacoes-valor-vendido {
+        width: 35%;
+    }
+
+    .informacoes-quantidade-vendido {
+        width: 25%;
+    }
+
+    .btn-registrar-venda-c {
+        justify-content: flex-start;
+    }
+
+    .btn-registrar-venda {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .btn-cancelar-venda {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .informacoes-principais-modal-lucro {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .informacoes-vendas {
+        width: 48%;
+    }
+
+    .informacoes-despesas {
+        width: 48%;
+    }
+
+    .informacoes-lucro {
+        width: 48%;
+    }
+
+    .tipo-informacoes-produto-dados {
+        font-size: 16px;
+        margin-bottom: 2px;
+    }
+
+    .informacoes-produto-dados {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    .informacoes-produto-dados-input {
+        width: 100%;
+        padding: 2px;
+    }
+
+    .informacoes-produto-dados-quantidade-vendas {
+        height: 50px;
+        font-size: 17px;
+    }
+
+    .informacoes-produto-dados-custo {
+        height: 50px;
+        font-size: 17px;
+    }
+
+    .informacoes-produto-dados-valor-venda {
+        height: 50px;
+        font-size: 17px;
+    }
+
+    .informacoes-produto-dados-lucro {
+        height: 50px;
+        font-size: 17px;
+    }
+
+    hr {
+        margin: 5px 0px;
+    }
+
+}
+
+
+@media (min-width: 431px) and (max-width: 481px) {
+
+    .modal-lucro {
+        max-width: 481px;
+        padding: 20px 15px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+
+    .btn-fechar-modal-lucro {
+        transform: translate(8px, -12px);
+        width: 30px;
+        height: 30px;
+        border-radius: 10px; 
+    }
+
+    .titulo-modal-lucro h1 {
+        font-size: 17px;
+    }
+
+    .informacoes-nome-produto {
+        width: 70%;
+    }
+
+    .informacoes-estoque-produto {
+        width: 30%;
+    }
+
+    .informar-venda {
+        font-size: 17px;
+    }
+
+    .informacoes-valor-fornecedor {
+        width: 40%;
+    }
+
+    .informacoes-valor-vendido {
+        width: 30%;
+    }
+
+    .informacoes-quantidade-vendido {
+        width: 30%;
+    }
+
+    .btn-registrar-venda-c {
+        justify-content: flex-start;
+    }
+
+    .btn-registrar-venda {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .btn-cancelar-venda {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .informacoes-principais-modal-lucro {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .informacoes-vendas {
+        width: 48%;
+    }
+
+    .informacoes-despesas {
+        width: 48%;
+    }
+
+    .informacoes-lucro {
+        width: 48%;
+    }
+
+    .tipo-informacoes-produto-dados {
+        font-size: 15px;
+        margin-bottom: 2px;
+    }
+
+    .informacoes-produto-dados {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .informacoes-produto-dados-input {
+        width: 100%;
+        padding: 2px;
+    }
+
+    .informacoes-produto-dados-quantidade-vendas {
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .informacoes-produto-dados-custo {
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .informacoes-produto-dados-valor-venda {
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .informacoes-produto-dados-lucro {
+        height: 50px;
+        font-size: 16px;
+    }
+
+    hr {
+        margin: 5px 0px;
+    }
+
+}
+
+
+@media (min-width: 376px) and (max-width: 431px) {
+
+    .modal-lucro {
+        max-width: 431px;
+        padding: 20px 15px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+
+    .btn-fechar-modal-lucro {
+        transform: translate(8px, -12px);
+        width: 30px;
+        height: 30px;
+        border-radius: 10px; 
+    }
+
+    .titulo-modal-lucro h1 {
+        font-size: 16px;
+    }
+
+    .informacoes-nome-produto {
+        width: 70%;
+    }
+
+    .informacoes-estoque-produto {
+        width: 30%;
+    }
+
+    .informar-venda {
+        font-size: 16px;
+    }
+
+    .informacoes-valor-fornecedor {
+        width: 40%;
+    }
+
+    .informacoes-valor-vendido {
+        width: 30%;
+    }
+
+    .informacoes-quantidade-vendido {
+        width: 30%;
+    }
+
+    .btn-registrar-venda-c {
+        justify-content: space-between;
+    }
+
+    .btn-registrar-venda {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .btn-cancelar-venda {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .informacoes-principais-modal-lucro {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .informacoes-vendas {
+        width: 48%;
+    }
+
+    .informacoes-despesas {
+        width: 48%;
+    }
+
+    .informacoes-lucro {
+        width: 48%;
+    }
+
+    .tipo-informacoes-produto-dados {
+        font-size: 15px;
+        margin-bottom: 2px;
+    }
+
+    .informacoes-produto-dados {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .informacoes-produto-dados-input {
+        width: 100%;
+        padding: 2px;
+    }
+
+    .informacoes-produto-dados-quantidade-vendas {
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .informacoes-produto-dados-custo {
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .informacoes-produto-dados-valor-venda {
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .informacoes-produto-dados-lucro {
+        height: 45px;
+        font-size: 16px;
+    }
+
+    hr {
+        margin: 5px 0px;
+    }
+
+}
+
+
+@media (min-width: 320px) and (max-width: 376px) {
+
+    .modal-lucro {
+        max-width: 376px;
+        padding: 20px 10px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+
+    .btn-fechar-modal-lucro {
+        transform: translate(8px, -12px);
+        width: 30px;
+        height: 30px;
+        border-radius: 10px; 
+    }
+
+    .titulo-modal-lucro h1 {
+        font-size: 16px;
+    }
+
+    .informacoes-nome-produto {
+        width: 70%;
+    }
+
+    .informacoes-estoque-produto {
+        width: 30%;
+    }
+
+    .informar-venda {
+        font-size: 16px;
+    }
+
+    .informacoes-valor-fornecedor {
+        width: 40%;
+    }
+
+    .informacoes-valor-vendido {
+        width: 28%;
+    }
+
+    .informacoes-quantidade-vendido {
+        width: 32%;
+    }
+
+    .btn-registrar-venda-c {
+        justify-content: space-between;
+    }
+
+    .btn-registrar-venda {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .btn-cancelar-venda {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .informacoes-principais-modal-lucro {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .informacoes-vendas {
+        width: 48%;
+    }
+
+    .informacoes-despesas {
+        width: 48%;
+    }
+
+    .informacoes-lucro {
+        width: 48%;
+    }
+
+    .tipo-informacoes-produto-dados {
+        font-size: 13.5px;
+        margin-bottom: 2px;
+    }
+
+    .informacoes-produto-dados {
+        padding: 5px 10px;
+        font-size: 12.5px;
+    }
+
+    .informacoes-produto-dados-input {
+        width: 100%;
+        padding: 2px;
+    }
+
+    .informacoes-produto-dados-quantidade-vendas {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .informacoes-produto-dados-custo {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .informacoes-produto-dados-valor-venda {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .informacoes-produto-dados-lucro {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    hr {
+        margin: 5px 0px;
+    }
+
+}

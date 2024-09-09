@@ -242,7 +242,7 @@
     border: 1px solid #ff0000;
     padding: 5px;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -260,6 +260,7 @@
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     gap: 15px;
+    margin: 15px;
 }
 
 .titulo-modal-visualizar-produto {
@@ -280,8 +281,6 @@
     padding:10px; 
 
 }
-
-
 
 
 .modal-informacoes-linha-1-c {
@@ -348,19 +347,20 @@
 }
 
 .informacoes-produtos-dado {
-    background-color: #cbecff;
-    padding: 5px;
-    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #747474;
 }
 
 .informacoes-produtos-dado-img {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #cbecff;
+    background-color: #ffffff;
     padding: 10px 0px;
-    border-radius: 5px;
     height: 80%;
+    border: 1px solid #747474;
 }
 
 .informacoes-produtos-dado-img img {
@@ -378,11 +378,7 @@
 }
 
 .informacoes-produtos-nome {
-    width: 80%;
-}
-
-.informacoes-produtos-estoque {
-    width: 20%;
+    width: 100%;
 }
 
 
@@ -393,26 +389,47 @@
 }
 
 .informacoes-produtos-validade {
-    width: 33%;
+    width: 50%;
 }
 
 .informacoes-produtos-marca {
-    width: 33%;
+    width: 50%;
+}
+
+.modal-informações-linha-4-c {
+    width: 100%;
+    display: flex;
+    gap: 10px;
 }
 
 .informacoes-produtos-preco-fornecedor {
-    width: 33%;
+    width: 60%;
 }
 
+.informacoes-produtos-estoque {
+    width: 40%;
+}
+
+.modal-informações-linha-5-c {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
 
 .informacoes-produtos-dado-descricao {
-    background-color: #cbecff;
+    width: 100%;
+    background-color: #ffffff;
     padding: 10px;
     height: 80px;
-    border-radius: 10px;
     overflow: hidden;
     overflow-y: scroll;
     margin-top: 5px;
+    font-size: 14px;
+    border: 1px solid #747474;
+}
+
+.informacoes-produtos-descricao {
+    width: 100%;
 }
 
 .informacoes-produtos-dado-descricao::-webkit-scrollbar {
@@ -709,6 +726,7 @@
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     gap: 15px;
+    margin: 15px;
 }
 
 .formulario-modal-lucro {
@@ -749,7 +767,7 @@
     border: 1px solid #ff0000;
     padding: 5px;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center; 

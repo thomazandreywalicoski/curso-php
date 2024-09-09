@@ -54,23 +54,6 @@
         height: 20px;
     }
 
-    .btn-nao-deletar {
-        font-size: 16px;
-    }
-
-    .btn-nao-deletar svg {
-        width: 18px;
-        height: 18px;
-    }
-    
-    .btn-deletar {
-        font-size: 16px;
-    }
-
-    .btn-deletar svg {
-        width: 18px;
-        height: 18px;
-    }
 
 }
 
@@ -143,23 +126,6 @@
         height: 20px;
     }
 
-    .btn-nao-deletar {
-        font-size: 15px;
-    }
-
-    .btn-nao-deletar svg {
-        width: 18px;
-        height: 18px;
-    }
-    
-    .btn-deletar {
-        font-size: 15px;
-    }
-
-    .btn-deletar svg {
-        width: 18px;
-        height: 18px;
-    }
 
 }
 
@@ -221,8 +187,7 @@
         margin-top: 10px;
     }
     
-    .btn-formulario-salvar {
-        
+    .btn-formulario-salvar { 
         padding: 8px 20px;
         font-size: 14px;
     }
@@ -232,48 +197,31 @@
         height: 18px;
     }
 
-    .btn-nao-deletar {
-        font-size: 14px;
-    }
-
-    .btn-nao-deletar svg {
-        width: 16px;
-        height: 16px;
-    }
-    
-    .btn-deletar {
-        font-size: 14px;
-    }
-
-    .btn-deletar svg {
-        width: 16px;
-        height: 16px;
-    }
 
 }
 
 
 @media (min-width: 320px) and (max-width: 376px) {
     
-    .modal-deletar-produto {
+    .modal-editar-produto {
         max-width: 376px;
         padding: 20px 10px;
         border-radius: 15px;
         margin: 10px;
     }
     
-    .btn-fechar-modal-deletar-produto {
+    .btn-fechar-modal-editar-produto {
         transform: translate(8px, -12px);
         width: 30px;
         height: 30px;
         border-radius: 10px;
     }
     
-    .titulo-formulario-deletar-produto h1 {
+    .titulo-formulario-editar-produto h1 {
         font-size: 16px;
     }
     
-    .header-formulario-deletar-produto p {
+    .header-formulario-editar-produto p {
         font-size: 13px;
     }
     
@@ -320,23 +268,5 @@
         width: 18px;
         height: 18px;
     }
-    
-    .btn-nao-deletar {
-        font-size: 13px;
-    }
-
-    .btn-nao-deletar svg {
-        width: 16px;
-        height: 16px;
-    }
-    
-    .btn-deletar {
-        font-size: 13px;
-    }
-
-    .btn-deletar svg {
-        width: 16px;
-        height: 16px;
-    }
-
+   
 }
