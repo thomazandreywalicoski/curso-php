@@ -14,6 +14,11 @@
         border-radius: 10px; 
     }
 
+    .titulo-modal-lucro svg {
+        width: 22px;
+        height: 22px;
+    }
+
     .titulo-modal-lucro h1 {
         font-size: 18px;
     }
@@ -129,6 +134,11 @@
         width: 30px;
         height: 30px;
         border-radius: 10px; 
+    }
+
+    .titulo-modal-lucro svg {
+        width: 20px;
+        height: 20px;
     }
 
     .titulo-modal-lucro h1 {
@@ -248,6 +258,11 @@
         border-radius: 10px; 
     }
 
+    .titulo-modal-lucro svg {
+        width: 20px;
+        height: 20px;
+    }
+
     .titulo-modal-lucro h1 {
         font-size: 16px;
     }
@@ -305,6 +320,11 @@
 
     .informacoes-lucro {
         width: 48%;
+    }
+
+    .tipo-informacoes-produto-dados-c svg {
+        width: 18px;
+        height: 18px;
     }
 
     .tipo-informacoes-produto-dados {
@@ -365,6 +385,11 @@
         border-radius: 10px; 
     }
 
+    .titulo-modal-lucro svg {
+        width: 18px;
+        height: 18px;
+    }
+
     .titulo-modal-lucro h1 {
         font-size: 16px;
     }
@@ -422,6 +447,11 @@
 
     .informacoes-lucro {
         width: 48%;
+    }
+
+    .tipo-informacoes-produto-dados-c svg {
+        width: 16px;
+        height: 16px;
     }
 
     .tipo-informacoes-produto-dados {

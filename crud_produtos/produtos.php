@@ -26,7 +26,7 @@
             <div class="menu-opcoes-c">
                 <div class="menu-opcoes">
 
-                    <a href="#" class="menu-opcoes-opcao-1">
+                    <a href="produtos.php" class="menu-opcoes-opcao">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
                             <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
                         </svg>
@@ -47,6 +47,13 @@
                         <p>Banners</p>
                     </a>
 
+                    <a href="#" class="menu-opcoes-opcao">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                            <path d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H520q-33 0-56.5-23.5T440-240v-206l-64 62-56-56 160-160 160 160-56 56-64-62v206h220q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720q-83 0-141.5 58.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41h100v80H260Zm220-280Z"/>
+                        </svg>
+                        <p>Backup</p>
+                    </a>
+
                 </div>
             </div>
 
@@ -55,7 +62,9 @@
                     <p>Bem Estar</p>
                 </div>
                 <a href="#" class="perfil-usuario-img">
-                    <img src="logo/logo-2.png" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                        <path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/>
+                    </svg>
                 </a>
             </div>
 
@@ -1709,24 +1718,47 @@
             </div>
 
             <div class="titulo-modal-lucro">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                    <path d="M560-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM280-320q-33 0-56.5-23.5T200-400v-320q0-33 23.5-56.5T280-800h560q33 0 56.5 23.5T920-720v320q0 33-23.5 56.5T840-320H280Zm80-80h400q0-33 23.5-56.5T840-480v-160q-33 0-56.5-23.5T760-720H360q0 33-23.5 56.5T280-640v160q33 0 56.5 23.5T360-400Zm440 240H120q-33 0-56.5-23.5T40-240v-440h80v440h680v80ZM280-400v-320 320Z"/>
+                </svg>
                 <h1>Lucros e despesas</h1>
             </div>
 
             <div class="informacoes-principais-modal-lucro">
                 <div class="informacoes-vendas">
-                    <p class="tipo-informacoes-produto-dados">Total vendas</p>
+                    <div class="tipo-informacoes-produto-dados-c">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                            <path d="M856-390 570-104q-12 12-27 18t-30 6q-15 0-30-6t-27-18L103-457q-11-11-17-25.5T80-513v-287q0-33 23.5-56.5T160-880h287q16 0 31 6.5t26 17.5l352 353q12 12 17.5 27t5.5 30q0 15-5.5 29.5T856-390ZM513-160l286-286-353-354H160v286l353 354ZM260-640q25 0 42.5-17.5T320-700q0-25-17.5-42.5T260-760q-25 0-42.5 17.5T200-700q0 25 17.5 42.5T260-640Zm220 160Z"/>
+                        </svg>
+                        <p class="tipo-informacoes-produto-dados">N° vendas</p>
+                    </div>
                     <p class="informacoes-produto-dados-quantidade-vendas"><?php echo htmlspecialchars($saldo['quantidade_total_venda']); ?></p>
                 </div>
                 <div class="informacoes-despesas">
-                    <p class="tipo-informacoes-produto-dados">Valor total compra</p>
+                    <div class="tipo-informacoes-produto-dados-c">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                            <path d="M560-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM280-320q-33 0-56.5-23.5T200-400v-320q0-33 23.5-56.5T280-800h560q33 0 56.5 23.5T920-720v320q0 33-23.5 56.5T840-320H280Zm80-80h400q0-33 23.5-56.5T840-480v-160q-33 0-56.5-23.5T760-720H360q0 33-23.5 56.5T280-640v160q33 0 56.5 23.5T360-400Zm440 240H120q-33 0-56.5-23.5T40-240v-440h80v440h680v80ZM280-400v-320 320Z"/>
+                        </svg>
+                        <p class="tipo-informacoes-produto-dados">Compras</p>
+                    </div>
                     <p class="informacoes-produto-dados-custo"><?php echo "R$" .  htmlspecialchars($saldo['valor_total_compra']); ?></p>
                 </div>
                 <div class="informacoes-despesas">
-                    <p class="tipo-informacoes-produto-dados">Valor total venda</p>
+                    <div class="tipo-informacoes-produto-dados-c">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                            <path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/>
+                        </svg>
+                        <p class="tipo-informacoes-produto-dados">Vendas</p>
+                    </div>
                     <p class="informacoes-produto-dados-valor-venda"><?php echo "R$" . htmlspecialchars($saldo['valor_total_venda']); ?></p>
                 </div>
                 <div class="informacoes-lucro">
-                    <p class="tipo-informacoes-produto-dados">Lucro total</p>
+                    <div class="tipo-informacoes-produto-dados-c">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                            <path d="M441-120v-86q-53-12-91.5-46T293-348l74-30q15 48 44.5 73t77.5 25q41 0 69.5-18.5T587-356q0-35-22-55.5T463-458q-86-27-118-64.5T313-614q0-65 42-101t86-41v-84h80v84q50 8 82.5 36.5T651-650l-74 32q-12-32-34-48t-60-16q-44 0-67 19.5T393-614q0 33 30 52t104 40q69 20 104.5 63.5T667-358q0 71-42 108t-104 46v84h-80Z"/>
+                        </svg>
+                        <p class="tipo-informacoes-produto-dados">Lucros</p>
+                    </div>
                     <p class="informacoes-produto-dados-lucro"><?php echo "R$" . htmlspecialchars($saldo['valor_total_lucro']); ?></p>
                 </div>
             </div>
@@ -1747,6 +1779,9 @@
             <hr>
 
             <div class="informar-venda">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                    <path d="M720-40v-120H600v-80h120v-120h80v120h120v80H800v120h-80ZM80-160v-240H40v-80l40-200h600l40 200v80h-40v120h-80v-120H440v240H80Zm80-80h200v-160H160v160Zm-38-240h516-516ZM80-720v-80h600v80H80Zm42 240h516l-24-120H146l-24 120Z"/>
+                </svg>
                 <p>Informar venda</p>
             </div>
 

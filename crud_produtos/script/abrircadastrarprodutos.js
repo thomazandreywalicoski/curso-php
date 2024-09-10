@@ -1,3 +1,26 @@
+// Função para salvar o link clicado no localStorage
+function manterBorda(link) {
+    localStorage.setItem('linkSelecionado', link.getAttribute('data-id'));
+}
+
+// Função para restaurar a borda após o carregamento da página
+window.onload = function() {
+    const linkSelecionado = localStorage.getItem('linkSelecionado');
+    if (linkSelecionado) {
+        // Adiciona a borda ao link correspondente
+        const link = document.querySelector(`.menu-opcoes-opcao[data-id="${linkSelecionado}"]`);
+        if (link) {
+            link.classList.add('menu-opcoes-opcao-selecionada');
+        }
+    }
+};
+
+
+
+
+
+
+
 /*---------------------------------------------------------------------------------*/
 /*                FAZ O SITE ABRIR JA COM O PARÂMETRO PAGINA=1                     */
 /*---------------------------------------------------------------------------------*/
