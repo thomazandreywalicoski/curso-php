@@ -1,37 +1,38 @@
-// Função para salvar o link clicado no localStorage
-function manterBorda(link) {
-    localStorage.setItem('linkSelecionado', link.getAttribute('data-id'));
-}
+/*---------------------------------------------------------------------------------*/
+/*                       MOSTRA SOMENTE O HTML DO BACHUP                           */
+/*---------------------------------------------------------------------------------*/
 
-// Função para restaurar a borda após o carregamento da página
+
 window.onload = function() {
-    const linkSelecionado = localStorage.getItem('linkSelecionado');
-    if (linkSelecionado) {
-        // Adiciona a borda ao link correspondente
-        const link = document.querySelector(`.menu-opcoes-opcao[data-id="${linkSelecionado}"]`);
-        if (link) {
-            link.classList.add('menu-opcoes-opcao-selecionada');
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Verificar se o parâmetro 'backup' existe
+    if (urlParams.has('backup')) {
+        // Se 'backup' está presente, remover todos os outros parâmetros
+        urlParams.forEach((value, key) => {
+            if (key !== 'backup') {
+                urlParams.delete(key);
+            }
+        });
+        // Atualizar o link de backup com apenas o parâmetro 'backup'
+        document.querySelector('#backup').href = 'produtos.php?' + urlParams.toString();
+    } 
+    
+    
+    
+/*---------------------------------------------------------------------------------*/
+/*                FAZ O SITE ABRIR JA COM O PARÂMETRO PAGINA=1                     */
+/*---------------------------------------------------------------------------------*/
+    
+    else {
+        // Se 'backup' não está presente, garantir que o parâmetro 'pagina' está definido
+        if (!urlParams.has('pagina')) {
+            urlParams.set('pagina', '1');
+            window.location.search = urlParams.toString();
         }
     }
 };
 
-
-
-
-
-
-
-/*---------------------------------------------------------------------------------*/
-/*                FAZ O SITE ABRIR JA COM O PARÂMETRO PAGINA=1                     */
-/*---------------------------------------------------------------------------------*/
-
-window.onload = function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (!urlParams.has('pagina')) {
-        urlParams.set('pagina', '1');
-        window.location.search = urlParams.toString();
-    }
-};
 
 
 /*---------------------------------------------------------------------------------*/
