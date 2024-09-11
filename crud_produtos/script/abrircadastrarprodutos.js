@@ -1,5 +1,5 @@
 /*---------------------------------------------------------------------------------*/
-/*                       MOSTRA SOMENTE O HTML DO BACHUP                           */
+/*                       MOSTRA SOMENTE O HTML DO BACKUP                           */
 /*---------------------------------------------------------------------------------*/
 
 
@@ -17,15 +17,25 @@ window.onload = function() {
         // Atualizar o link de backup com apenas o parâmetro 'backup'
         document.querySelector('#backup').href = 'produtos.php?' + urlParams.toString();
     } 
-    
-    
+    // Verificar se o parâmetro 'banners' existe
+    else if (urlParams.has('banners')) {
+        // Se 'banners' está presente, remover todos os outros parâmetros
+        urlParams.forEach((value, key) => {
+            if (key !== 'banners') {
+                urlParams.delete(key);
+            }
+        });
+        // Atualizar o link de banners com apenas o parâmetro 'banners'
+        document.querySelector('#banners').href = 'produtos.php?' + urlParams.toString();
+    }
+ 
     
 /*---------------------------------------------------------------------------------*/
 /*                FAZ O SITE ABRIR JA COM O PARÂMETRO PAGINA=1                     */
 /*---------------------------------------------------------------------------------*/
     
     else {
-        // Se 'backup' não está presente, garantir que o parâmetro 'pagina' está definido
+        // Se 'backup' e 'banners' não estão presentes, garantir que o parâmetro 'pagina' está definido
         if (!urlParams.has('pagina')) {
             urlParams.set('pagina', '1');
             window.location.search = urlParams.toString();
