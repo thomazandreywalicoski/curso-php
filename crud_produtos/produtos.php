@@ -138,7 +138,7 @@
                     <div class="estatisticas-total-vendas">
                         <div class="estatisticas-titulo-resultado-c">
                             <p class="estatisticas-titulo">Total vendas</p>
-                            <p class="estatisticas-resultado"><?php echo number_format($total_quantidade_vendida, 0, ',', '.'); ?></p> 
+                            <p class="estatisticas-resultado"><?php echo $total_quantidade_vendida ?? 0; ?></p> 
                         </div> <!-- .estatisticas-titulo-resultado-c -->
                         <div class="estatisticas-img">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#b07e00">
@@ -150,7 +150,7 @@
                     <div class="estatisticas-valor-total-compras">
                         <div class="estatisticas-titulo-resultado-c">
                             <p class="estatisticas-titulo">Valor total compra</p>
-                            <p class="estatisticas-resultado">R$<?php echo number_format($total_valor_compra, 2, ',', '.'); ?></p>
+                            <p class="estatisticas-resultado">R$<?php echo number_format((float) ($total_valor_compra ?? 0), 2, ',', '.'); ?></p>
                         </div> <!-- .estatisticas-titulo-resultado-c -->
                         <div class="estatisticas-img">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#9a0000">
@@ -164,7 +164,7 @@
                     <div class="estatisticas-valor-total-vendas">
                         <div class="estatisticas-titulo-resultado-c">
                             <p class="estatisticas-titulo">Valor total venda</p>
-                            <p class="estatisticas-resultado">R$<?php echo number_format($total_valor_venda, 2, ',', '.'); ?></p>
+                            <p class="estatisticas-resultado">R$<?php echo number_format((float) ($total_valor_venda ?? 0), 2, ',', '.'); ?></p>
                         </div> <!-- .estatisticas-titulo-resultado-c -->
                         <div class="estatisticas-img">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#0068a9">
@@ -176,7 +176,7 @@
                     <div class="estatisticas-valor-total-lucros">
                         <div class="estatisticas-titulo-resultado-c">
                             <p class="estatisticas-titulo">Lucro total</p>
-                            <p class="estatisticas-resultado">R$<?php echo number_format($total_valor_lucro, 2, ',', '.'); ?></p>
+                            <p class="estatisticas-resultado">R$<?php echo number_format((float) ($total_valor_lucro ?? 0), 2, ',', '.'); ?></p>
                         </div> <!-- .estatisticas-titulo-resultado-c -->
                         <div class="estatisticas-img">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#008800">
@@ -1868,39 +1868,172 @@
 <?php
 } ?>
 
-<?php
+    <?php
 
-if(isset($_GET['backup'])) { 
+        if(isset($_GET['backup'])) { 
 
-    include_once('conexao.php'); ?>
+            include_once('conexao.php'); ?>
 
-    <div class="container-backup">
-        <div class="backup-titulo">
-            <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000">
-                <path d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H520q-33 0-56.5-23.5T440-240v-206l-64 62-56-56 160-160 160 160-56 56-64-62v206h220q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720q-83 0-141.5 58.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41h100v80H260Zm220-280Z"/>
-            </svg>
-            <h1>Fazer backup do Banco de Dados</h1>
-        </div>
-        <div class="backup-recomendacoes">
-            <p class="backup-recomendacoes-titulo">Backup Semanal Recomendado</p>
-            <p class="backup-recomendacoes-descricao">Para proteger seus dados e garantir a recuperação em caso de falhas, é recomendado realizar backups semanais. Isso ajuda a evitar a perda total de informações e assegura a continuidade do seu trabalho.</p>
-            <form action="backup.php" method="POST">
-                <button class="btn-fazer-backup" type="submit">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+            <div class="container-backup">
+                <div class="backup-titulo">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000">
                         <path d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H520q-33 0-56.5-23.5T440-240v-206l-64 62-56-56 160-160 160 160-56 56-64-62v206h220q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720q-83 0-141.5 58.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41h100v80H260Zm220-280Z"/>
                     </svg>
-                    <p>Fazer backup</p>
-                </button>
-            </form>
-        </div>
+                    <h1>Fazer backup do Banco de Dados</h1>
+                </div>
+                <div class="backup-recomendacoes">
+                    <p class="backup-recomendacoes-titulo">Backup Semanal Recomendado</p>
+                    <p class="backup-recomendacoes-descricao">Para proteger seus dados e garantir a recuperação em caso de falhas, é recomendado realizar backups semanais. Isso ajuda a evitar a perda total de informações e assegura a continuidade do seu trabalho.</p>
+                    <form action="backup.php" method="POST">
+                        <button class="btn-fazer-backup" type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                                <path d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H520q-33 0-56.5-23.5T440-240v-206l-64 62-56-56 160-160 160 160-56 56-64-62v206h220q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720q-83 0-141.5 58.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41h100v80H260Zm220-280Z"/>
+                            </svg>
+                            <p>Fazer backup</p>
+                        </button>
+                    </form>
+                </div>
 
-    </div>
+            </div>
 
-<?php
-}
+        <?php
+        }
 
-?>
+    ?>
 
+
+    <!-------------------------------------------------------------------------------------------------->
+    <!--                                   PRIMEIRO BANNER SITE                                       -->
+    <!-------------------------------------------------------------------------------------------------->
+
+    <?php
+
+        $aviso_erro = false;
+        $aviso_sucesso = false;
+
+        if (count($_POST) > 0) {
+            include_once('conexao.php');
+
+            // Processa o primeiro banner
+            $primeiro_banner = $_FILES['primeiro_banner'] ?? null;
+
+            if (isset($primeiro_banner)) {
+                // Verifica se houve erro no upload
+                if ($primeiro_banner['error'] !== UPLOAD_ERR_OK) {
+                    $aviso_erro = 'Falha ao enviar o primeiro banner!';
+                }
+
+                // Verifica o tamanho do banner
+                if ($primeiro_banner['size'] > 1048576) {
+                    $aviso_erro = 'Primeiro banner muito grande! Máx: 1MB';
+                }
+
+                $pasta_armazenamento_banner = "banners_site/";
+                $nome_primeiro_banner = $primeiro_banner['name'];
+                $novo_nome_primeiro_banner = uniqid();
+
+                $extencao_primeiro = strtolower(pathinfo($nome_primeiro_banner, PATHINFO_EXTENSION));
+
+                // Verifica a extensão da imagem
+                if ($extencao_primeiro != "jpg" && $extencao_primeiro != "png") {
+                    $aviso_erro = 'Primeiro banner não aceito! Somente imagens .jpg e .png';
+                }
+
+                // Define o caminho completo para o banner
+                $caminho_primeiro_banner = $pasta_armazenamento_banner . $novo_nome_primeiro_banner . "." . $extencao_primeiro;
+
+                // Move o arquivo para o diretório de armazenamento
+                if (move_uploaded_file($primeiro_banner['tmp_name'], $caminho_primeiro_banner)) {
+                    // Atualiza o caminho do primeiro banner no banco de dados
+                    $sql_primeiro_banner = "UPDATE primeiro_banner SET caminho_banner = '$caminho_primeiro_banner'";
+                    $primeiro_banner_enviado_sucesso = $mysqli->query($sql_primeiro_banner) or die($mysqli->error);
+
+                    if ($primeiro_banner_enviado_sucesso) {
+                        $aviso_sucesso = 'Primeiro banner atualizado com sucesso!';
+                    }
+                } else {
+                    $aviso_erro = 'Falha ao mover o banner para o diretório!';
+                }
+            }
+        }
+
+        include_once('conexao.php');
+
+        // Recupera o banner do banco de dados para exibir
+        $sql_visualizar_banner = "SELECT caminho_banner FROM primeiro_banner";
+        $query_visualizar_banner = $mysqli->query($sql_visualizar_banner) or die($mysqli->error);
+        $visualizar_primeiro_banner = $query_visualizar_banner->fetch_assoc();
+
+        // Define o caminho padrão se não houver banner carregado
+        $path_primeiro_banner = $visualizar_primeiro_banner['caminho_banner'] ?? 'banners_site/imagem_upload.png';
+    ?>
+
+
+    <!-------------------------------------------------------------------------------------------------->
+    <!--                                    SEGUNDO BANNER SITE                                       -->
+    <!-------------------------------------------------------------------------------------------------->
+
+    <?php
+
+        $aviso_erro = false;
+        $aviso_sucesso = false;
+
+        if (count($_POST) > 0) {
+            include_once('conexao.php');
+
+            // Processa o segundo banner
+            $segundo_banner = $_FILES['segundo_banner'] ?? null;
+
+            if (isset($segundo_banner)) {
+                // Verifica se houve erro no upload
+                if ($segundo_banner['error'] !== UPLOAD_ERR_OK) {
+                    $aviso_erro = 'Falha ao enviar o segundo banner!';
+                }
+
+                // Verifica o tamanho do banner
+                if ($segundo_banner['size'] > 1048576) {
+                    $aviso_erro = 'Segundo banner muito grande! Máx: 1MB';
+                }
+
+                $pasta_armazenamento_segundo_banner = "banners_site/";
+                $nome_segundo_banner = $segundo_banner['name'];
+                $novo_nome_segundo_banner = uniqid();
+
+                $extencao_segundo = strtolower(pathinfo($nome_segundo_banner, PATHINFO_EXTENSION));
+
+                // Verifica a extensão da imagem
+                if ($extencao_segundo != "jpg" && $extencao_segundo != "png") {
+                    $aviso_erro = 'Segundo banner não aceito! Somente imagens .jpg e .png';
+                }
+
+                // Define o caminho completo para o banner
+                $caminho_segundo_banner = $pasta_armazenamento_segundo_banner . $novo_nome_segundo_banner . "." . $extencao_segundo;
+
+                // Move o arquivo para o diretório de armazenamento
+                if (move_uploaded_file($segundo_banner['tmp_name'], $caminho_segundo_banner)) {
+                    // Atualiza o caminho do segundo banner no banco de dados
+                    $sql_segundo_banner = "UPDATE segundo_banner SET caminho_banner = '$caminho_segundo_banner'";
+                    $segundo_banner_enviado_sucesso = $mysqli->query($sql_segundo_banner) or die($mysqli->error);
+
+                    if ($segundo_banner_enviado_sucesso) {
+                        $aviso_sucesso = 'Segundo banner atualizado com sucesso!';
+                    }
+                } else {
+                    $aviso_erro = 'Falha ao mover o banner para o diretório!';
+                }
+            }
+        }
+
+        include_once('conexao.php');
+
+        // Recupera o segundo banner do banco de dados para exibir
+        $sql_visualizar_segundo_banner = "SELECT caminho_banner FROM segundo_banner";
+        $query_visualizar_segundo_banner = $mysqli->query($sql_visualizar_segundo_banner) or die($mysqli->error);
+        $visualizar_segundo_banner = $query_visualizar_segundo_banner->fetch_assoc();
+
+        // Define o caminho padrão se não houver banner carregado
+        $path_segundo_banner = $visualizar_segundo_banner['caminho_banner'] ?? 'banners_site/imagem_upload.png';
+    ?>
 
 
 
@@ -1911,7 +2044,12 @@ if(isset($_GET['backup'])) {
         <div class="container-banners">
 
             <div class="banners-titulo">
-                <h1>Adicionar banners ao site</h1>
+                <div class="banners-titulo-img">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000">
+                        <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm80-80h480L570-520 450-360l-90-120-120 160Zm-80 80v-480 480Z"/>
+                    </svg>
+                    <h1>Adicionar banners ao site</h1>
+                </div>
                 <p>Você pode adicionar até 2 banners ao seu site. Escolha os melhores para destacar e atrair a atenção dos seus visitantes!</p>
             </div>
 
@@ -1925,22 +2063,31 @@ if(isset($_GET['backup'])) {
                             </svg>
                             <h1>Primeiro banner</h1>
                         </div>
-                        <p>Atenção! Para garantir a melhor apresentação, os banners devem seguir as seguintes especificações:</p>
+                        <p class="banners-informacoes-descricao">Atenção! Para garantir a melhor apresentação, os banners devem seguir as seguintes especificações:</p>
                         <ul class="especificacoes-banners">
-                            <li>Dimensões: Largura de 1420px e Altura de 300px.</li>
-                            <li>Tamanho máximo do arquivo: 5MB.</li>
+                            <li><span class="especificacao-banner">Dimensões:</span> Largura de 1420px e Altura de 300px.</li>
+                            <li><span class="especificacao-banner">Tamanho máximo do arquivo:</span> 5MB.</li>
                         </ul>
-                        <p>Banners que não atenderem a essas especificações não serão aceitos. Certifique-se de que seu banner esteja dentro desses parâmetros para uma exibição ideal!</p>
+                        <p class="banners-informacoes-descricao">Banners que não atenderem a essas especificações não serão aceitos. Certifique-se de que seu banner esteja dentro desses parâmetros para uma exibição ideal!</p>
                     </div>
 
-                    <div>
-                        <form action="">
-                            <input type="file">
+                    <div class="formulario-upload-banners-c">
+                        <form enctype="multipart/form-data" action="" method="post" class="formulario-upload-banners">
+                            <input type="hidden" name="tipo_formulario" value="banner_primeiro">
+                            <input type="file" name="primeiro_banner">
+                            <button type="submit" class="btn-fazer-upload-banner">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                                    <path d="M440-200h80v-167l64 64 56-57-160-160-160 160 57 56 63-63v167ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/>
+                                </svg>
+                                <p>Fazer upload</p>
+                            </button>
                         </form>
                     </div>
 
-                    <div>
+
+                    <div class="preview-img-banner">
                         <p>Preview do banner:</p>
+                        <img src="<?php echo htmlspecialchars($path_primeiro_banner); ?>" alt="Preview do Primeiro Banner">
                     </div>
                 </div>
 
@@ -1952,22 +2099,30 @@ if(isset($_GET['backup'])) {
                             </svg>
                             <h1>Segundo banner</h1>
                         </div>
-                        <p>Atenção! Para garantir a melhor apresentação, os banners devem seguir as seguintes especificações:</p>
+                        <p class="banners-informacoes-descricao">Atenção! Para garantir a melhor apresentação, os banners devem seguir as seguintes especificações:</p>
                         <ul class="especificacoes-banners">
-                            <li>Dimensões: Largura de 1420px e Altura de 300px.</li>
-                            <li>Tamanho máximo do arquivo: 5MB.</li>
+                            <li><span class="especificacao-banner">Dimensões:</span> Largura de 1420px e Altura de 300px.</li>
+                            <li><span class="especificacao-banner">Tamanho máximo do arquivo:</span> 5MB.</li>
                         </ul>
-                        <p>Banners que não atenderem a essas especificações não serão aceitos. Certifique-se de que seu banner esteja dentro desses parâmetros para uma exibição ideal!</p>
+                        <p class="banners-informacoes-descricao">Banners que não atenderem a essas especificações não serão aceitos. Certifique-se de que seu banner esteja dentro desses parâmetros para uma exibição ideal!</p>
                     </div>
 
-                    <div>
-                        <form action="">
-                            <input type="file">
+                    <div class="formulario-upload-banners-c">
+                        <form enctype="multipart/form-data" action="" method="post" class="formulario-upload-banners">
+                        <input type="hidden" name="tipo_formulario" value="banner_segundo">
+                            <input type="file" name="segundo_banner">
+                            <button type="submit" class="btn-fazer-upload-banner">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                                    <path d="M440-200h80v-167l64 64 56-57-160-160-160 160 57 56 63-63v167ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/>
+                                </svg>
+                                <p>Fazer upload</p>
+                            </button>
                         </form>
                     </div>
 
-                    <div>
+                    <div class="preview-img-banner">
                         <p>Preview do banner:</p>
+                        <img src="<?php echo htmlspecialchars($path_segundo_banner); ?>" alt="Preview do Primeiro Banner">
                     </div>
                 </div>
 
@@ -1975,9 +2130,10 @@ if(isset($_GET['backup'])) {
 
         </div> <!-- .container-banners -->
 
-        <div class="teste-banner">
-            <img src="./imagens_produtos/img-fundo.png" alt="">
-        </div>
+
+        
+
+        
 
     <?php
     } ?>
