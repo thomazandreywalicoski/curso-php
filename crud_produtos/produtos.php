@@ -20,9 +20,9 @@
 </head>
 <body>
 
-   
-
-
+    <!-------------------------------------------------------------------------------------------------->
+    <!--                                           MENU                                               -->
+    <!-------------------------------------------------------------------------------------------------->
 
     <div class="menu-administrador-c">
         <div class="menu-administrador">
@@ -74,6 +74,29 @@
 
         </div>
     </div>
+
+
+    <!-------------------------------------------------------------------------------------------------->
+    <!--                                       MENU MOBILE                                            -->
+    <!-------------------------------------------------------------------------------------------------->
+
+
+    
+    <div class="container-menu-mobile">
+        <input type="checkbox" id="check">
+        <label for="check" class="menu-hamburguer">
+            <div class="barra barra1"></div>
+            <div class="barra barra2"></div>
+            <div class="barra barra3"></div>
+        </label>
+        <nav class="navegacao">
+            <a href="#home">Início</a>
+            <a href="#sobre">Promoções</a>
+            <a href="#servicos">Banners</a>
+            <a href="#contato">Backup</a>
+        </nav>
+    </div>
+   
 
 
 
@@ -2058,7 +2081,7 @@
                 <div class="banners-informacoes-c">
                     <div class="banners-informacoes">
                         <div class="banners-informacoes-titulo">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff">
                                 <path d="M160-240v-320 320Zm0 80q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800l80 160h120l-80-160h80l80 160h120l-80-160h80l80 160h120l-80-160h120q33 0 56.5 23.5T880-720v160H160v320h320v80H160Zm400 40v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T903-340L683-120H560Zm300-263-37-37 37 37ZM620-180h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/>
                             </svg>
                             <h1>Primeiro banner</h1>
@@ -2094,7 +2117,7 @@
                 <div class="banners-informacoes-c">
                     <div class="banners-informacoes">
                         <div class="banners-informacoes-titulo">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff">
                                 <path d="M160-240v-320 320Zm0 80q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800l80 160h120l-80-160h80l80 160h120l-80-160h80l80 160h120l-80-160h120q33 0 56.5 23.5T880-720v160H160v320h320v80H160Zm400 40v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T903-340L683-120H560Zm300-263-37-37 37 37ZM620-180h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/>
                             </svg>
                             <h1>Segundo banner</h1>
