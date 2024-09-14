@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./estilo/modal_cadastrar_editar_deletar_produto/estilo_modal.css">
     <link rel="stylesheet" href="./estilo/backup_banco_de_dados/backup.css">
     <link rel="stylesheet" href="./estilo/banners/banners.css">
+    <link rel="stylesheet" href="./responsividade/menu.css">
+    <link rel="stylesheet" href="./responsividade/menu_mobile.css">
     <link rel="stylesheet" href="./responsividade/dashboard.css">
     <link rel="stylesheet" href="./responsividade/painel_de_controle.css">
     <link rel="stylesheet" href="./responsividade/tabela_produtos.css">
@@ -90,10 +92,58 @@
             <div class="barra barra3"></div>
         </label>
         <nav class="navegacao">
-            <a href="#home">Início</a>
-            <a href="#sobre">Promoções</a>
-            <a href="#servicos">Banners</a>
-            <a href="#contato">Backup</a>
+            <a href="produtos.php?pagina=1" class="opcao-menu-mobile" id="inicio">
+                <div class="img-opcao-menu-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                        <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
+                    </svg>
+                    <p>Início</p>
+                </div>
+                <div class="seta-menu-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                        <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
+                    </svg>
+                </div>
+            </a>
+            <a href="#" class="opcao-menu-mobile">
+                <div class="img-opcao-menu-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                        <path d="M160-80v-440H80v-240h208q-5-9-6.5-19t-1.5-21q0-50 35-85t85-35q23 0 43 8.5t37 23.5q17-16 37-24t43-8q50 0 85 35t35 85q0 11-2 20.5t-6 19.5h208v240h-80v440H160Zm400-760q-17 0-28.5 11.5T520-800q0 17 11.5 28.5T560-760q17 0 28.5-11.5T600-800q0-17-11.5-28.5T560-840Zm-200 40q0 17 11.5 28.5T400-760q17 0 28.5-11.5T440-800q0-17-11.5-28.5T400-840q-17 0-28.5 11.5T360-800ZM160-680v80h280v-80H160Zm280 520v-360H240v360h200Zm80 0h200v-360H520v360Zm280-440v-80H520v80h280Z"/>
+                    </svg>
+                    <p>Promoções</p>
+                </div>
+                <div class="seta-menu-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                        <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
+                    </svg>
+                </div>
+            </a>
+            <a href="produtos.php?banners" class="opcao-menu-mobile">
+                <div class="img-opcao-menu-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                        <path d="M160-240v-320 320Zm0 80q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800l80 160h120l-80-160h80l80 160h120l-80-160h80l80 160h120l-80-160h120q33 0 56.5 23.5T880-720v160H160v320h320v80H160Zm400 40v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T903-340L683-120H560Zm300-263-37-37 37 37ZM620-180h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/>
+                    </svg>
+                    <p>Banners</p>
+                </div>
+                <div class="seta-menu-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                        <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
+                    </svg>
+                </div>
+            </a>
+            <a href="produtos.php?backup" class="opcao-menu-mobile" id="backup">
+                <div class="img-opcao-menu-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                        <path d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H520q-33 0-56.5-23.5T440-240v-206l-64 62-56-56 160-160 160 160-56 56-64-62v206h220q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720q-83 0-141.5 58.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41h100v80H260Zm220-280Z"/>
+                    </svg>
+                    <p>Backup</p>
+                </div>
+                <div class="seta-menu-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                        <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
+                    </svg>
+                </div>
+            </a>
         </nav>
     </div>
    

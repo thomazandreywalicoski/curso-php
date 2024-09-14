@@ -1,0 +1,244 @@
+@media (min-width: 601px) and (max-width: 801px) {
+
+    .container-menu-mobile {
+        max-width: 801px;
+        display: flex;
+    }
+    
+    .menu-hamburguer {
+        gap: 5px;
+        width: 25px;
+        height: 20px;
+        top: 28px;
+        left: 35px;
+    }
+    
+    .img-opcao-menu-mobile {
+        gap: 10px;
+    }
+
+    .img-opcao-menu-mobile svg {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .seta-menu-mobile {
+        width: 14px;
+        height: 14px;
+    }
+
+}
+
+
+@media (min-width: 481px) and (max-width: 601px) {
+
+    .container-menu-mobile {
+        max-width: 601px;
+        display: flex;
+    }
+    
+    .menu-hamburguer {
+        gap: 5px;
+        width: 25px;
+        height: 20px;
+        top: 21px;
+        left: 26px;
+    }
+    
+    .barra {
+        height: 2.2px;
+    }
+    
+    .navegacao {
+        padding: 60px 30px 30px 40px;
+    }
+    
+    .opcao-menu-mobile {
+        gap: 5px;
+    }
+    
+    .img-opcao-menu-mobile {
+        gap: 10px;
+    }
+
+    .img-opcao-menu-mobile svg {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .seta-menu-mobile {
+        width: 14px;
+        height: 14px;
+    }
+    
+    #check:checked + .menu-hamburguer .barra1 {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    #check:checked + .menu-hamburguer .barra3 {
+        transform: rotate(-45deg) translate(4px, -4px);
+    }
+
+}
+
+
+@media (min-width: 431px) and (max-width: 481px) {
+
+    .container-menu-mobile {
+        max-width: 481px;
+        display: flex;
+    }
+    
+    .menu-hamburguer {
+        gap: 4px;
+        width: 22px;
+        height: 22px;
+        top: 18px;
+        left: 26px;
+    }
+    
+    .barra {
+        height: 2px;
+    }
+    
+    .navegacao {
+        left: -280px;
+        width: 280px;
+        padding: 60px 30px 30px 40px;
+    }
+
+    .img-opcao-menu-mobile {
+        gap: 10px;
+    }
+
+    .img-opcao-menu-mobile svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .img-opcao-menu-mobile p {
+        font-size: 14px;
+    }
+    
+    .seta-menu-mobile {
+        width: 13px;
+        height: 13px;
+    }
+    
+    #check:checked + .menu-hamburguer .barra1 {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    #check:checked + .menu-hamburguer .barra3 {
+        transform: rotate(-45deg) translate(2px, -2px);
+    }
+
+}
+
+
+@media (min-width: 376px) and (max-width: 431px) { 
+
+    .container-menu-mobile {
+        max-width: 431px;
+        display: flex;
+    }
+    
+    .menu-hamburguer {
+        gap: 4px;
+        width: 22px;
+        height: 22px;
+        top: 18px;
+        left: 23px;
+    }
+    
+    .barra {
+        height: 2px;
+    }
+    
+    .navegacao {
+        left: -250px;
+        width: 250px;
+        padding: 60px 30px 30px 40px;
+    }
+
+    .img-opcao-menu-mobile {
+        gap: 10px;
+    }
+
+    .img-opcao-menu-mobile svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .img-opcao-menu-mobile p {
+        font-size: 14px;
+    }
+    
+    .seta-menu-mobile {
+        width: 13px;
+        height: 13px;
+    }
+    
+    #check:checked + .menu-hamburguer .barra1 {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    #check:checked + .menu-hamburguer .barra3 {
+        transform: rotate(-45deg) translate(2px, -2px);
+    }
+
+}
+
+
+@media (min-width: 320px) and (max-width: 376px) {
+
+    .container-menu-mobile {
+        max-width: 431px;
+        display: flex;
+    }
+    
+    .menu-hamburguer {
+        gap: 3.8px;
+        width: 20px;
+        height: 22px;
+        top: 18px;
+        left: 23px;
+    }
+    
+    .barra {
+        height: 1.5px;
+    }
+    
+    .navegacao {
+        left: -230px;
+        width: 230px;
+        padding: 60px 30px 30px 40px;
+    }
+
+    .img-opcao-menu-mobile {
+        gap: 10px;
+    }
+
+    .img-opcao-menu-mobile svg {
+        width: 19px;
+        height: 19px;
+    }
+    
+    .img-opcao-menu-mobile p {
+        font-size: 13px;
+    }
+    
+    .seta-menu-mobile {
+        width: 11px;
+        height: 11px;
+    }
+    
+    #check:checked + .menu-hamburguer .barra1 {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    #check:checked + .menu-hamburguer .barra3 {
+        transform: rotate(-45deg) translate(1.5px, -1.5px);
+    }
+
+}
